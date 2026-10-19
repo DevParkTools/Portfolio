@@ -134,13 +134,42 @@ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overf
 .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.66rem; font-weight: 700; }
 .more-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
 .more { display: block; padding: 11px 6px; border-radius: 12px; background: var(--chip); text-align: center; font-size: 0.82rem; font-weight: 700; }
+.tagline {
+margin: 2px 0 0; color: var(--sub); font-size: 0.78rem; line-height: 1.4;
+display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.sheet {
+width: min(94vw, 520px); max-height: 88vh; padding: 0; border: 0; border-radius: 22px;
+background: var(--card); color: var(--text); text-align: left; overflow: hidden;
+}
+.sheet[open] { display: flex; flex-direction: column; }
+.sheet::backdrop { background: rgba(10, 12, 16, 0.55); }
+.sheet-head { position: relative; padding: 18px 54px 12px 18px; border-bottom: 1px solid var(--line); }
+.sheet-head h3 { margin: 0; font-size: 1.02rem; font-weight: 800; line-height: 1.4; }
+.sheet-meta { margin: 4px 0 0; color: var(--sub); font-size: 0.78rem; font-weight: 600; }
+.sheet-meta b { margin-right: 8px; color: var(--accent); font-weight: 800; }
+.sheet-x { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: var(--chip); font-size: 0.9rem; cursor: pointer; }
+.sheet-body { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; padding: 14px 18px 18px; }
+.lead { margin: 0; padding: 12px 14px; border-radius: 12px; background: var(--accent-soft); font-size: 0.9rem; font-weight: 700; line-height: 1.5; }
+.sec { margin-top: 16px; }
+.sec h4 { margin: 0 0 8px; color: var(--accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.02em; }
+.check, .dot { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 0.86rem; line-height: 1.5; }
+.check li, .dot li { position: relative; padding-left: 22px; }
+.check li::before { content: "✓"; position: absolute; left: 0; color: #0f9d58; font-weight: 800; }
+.dot li::before { content: "•"; position: absolute; left: 6px; color: var(--sub); }
+.pkgs { display: grid; gap: 8px; }
+.pkg { padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; }
+.pkg-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.pkg-top strong { font-size: 0.86rem; }
+.pkg-top b { color: var(--accent); font-size: 0.88rem; font-weight: 800; }
+.pkg p { margin: 4px 0 0; color: var(--sub); font-size: 0.8rem; line-height: 1.45; }
+.sheet-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 18px calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--card); }
 .footer { margin-top: 18px; text-align: center; color: var(--sub); font-size: 0.75rem; }
 dialog {
 width: min(92vw, 340px); padding: 24px 18px 18px; border: 0; border-radius: 22px;
 background: var(--card); color: var(--text); text-align: center;
 }
 dialog::backdrop { background: rgba(10, 12, 16, 0.55); }
-.dlg-cover { width: 100%; aspect-ratio: 652 / 488; margin: 0 0 12px; border-radius: 14px; object-fit: cover; background: var(--chip); }
 .dlg-icon { width: 76px; height: 76px; margin: 0 auto 12px; border-radius: 19px; object-fit: cover; background: var(--chip); }
 dialog h3 { margin: 0 0 6px; font-size: 1.08rem; font-weight: 800; }
 dialog p { margin: 10px 0 0; color: var(--sub); font-size: 0.86rem; }
@@ -207,6 +236,7 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 </div>
 
 <dialog id="dlg"></dialog>
+<dialog id="sheet" class="sheet"></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -239,31 +269,127 @@ stats: [
 services: [
 {
 title: "유니티 게임 AI 자동화 1대1 맞춤형 강의",
+tagline: "AI 바이브코딩으로 내 첫 유니티 게임을 직접 완성",
 price: "19,000원~",
 rating: "★ 5.0 (19)",
+sales: "20건 판매",
 image: "https://static.cdn.kmong.com/gigs/MaFKg1781841270.jpg",
-url: "https://kmong.com/gig/578652"
+url: "https://kmong.com/gig/578652",
+outcomes: [
+"AI 바이브코딩으로 유니티 게임을 빠르게 만드는 방법을 익힙니다",
+"막히는 부분을 실시간으로 해결하며 내 게임을 직접 완성합니다",
+"기초부터 스토어 출시까지의 전체 흐름을 배웁니다"
+],
+forWhom: [
+"유니티를 처음 시작하는 분",
+"AI로 게임을 빠르게 만들어 보고 싶은 분",
+"만든 게임을 스토어에 출시하고 싶은 분",
+"팀원 교육이 필요한 기업·단체"
+],
+process: [
+"1:1 수업, 1회 60분 기준",
+"디스코드 화면 공유로 막히는 부분을 바로 해결",
+"기업 단체 교육·출장 강의 가능"
+],
+packages: [
+{ name: "STANDARD", price: "19,000원", desc: "첫 게임 완성 · 최대 2시간" },
+{ name: "DELUXE", price: "39,000원", desc: "AI 자동화 패키지" },
+{ name: "PREMIUM", price: "59,000원~", desc: "기업·단체 교육 (인당 가격, 문의 필요)" }
+],
+prep: [],
+notes: []
 },
 {
 title: "유니티 게임 구글 및 애플 출시 대행",
+tagline: "내 게임을 구글 플레이·앱스토어에 대신 출시",
 price: "49,000원~",
 rating: "★ 4.8 (10)",
+sales: "13건 판매",
 image: "https://static.cdn.kmong.com/gigs/G586R1781841257.jpg",
-url: "https://kmong.com/gig/527055"
+url: "https://kmong.com/gig/527055",
+outcomes: [
+"내 게임이 실제 스토어에 등록되어 누구나 다운로드할 수 있게 됩니다",
+"인앱 결제, 애드몹 승인, 성능 최적화까지 출시에 필요한 작업을 맡길 수 있습니다",
+"PREMIUM은 기능 추가와 버그 수정까지 함께 받습니다"
+],
+forWhom: [
+"게임은 만들었는데 출시 절차가 막막한 분",
+"구글·애플 스토어 등록과 심사 경험이 없는 분",
+"인앱 결제·광고 연동까지 맡기고 싶은 분"
+],
+process: [
+"작업 기간 2~7일 (패키지별), 수정 2회",
+"구글 첫 출시는 12명이 14일간 비공개 테스트를 해야 해서 최소 14일이 걸립니다"
+],
+packages: [
+{ name: "STANDARD", price: "49,000원", desc: "2일 · 구글 또는 애플 중 한 곳 출시" },
+{ name: "DELUXE", price: "199,000원", desc: "7일 · 구글·애플 출시 + 간단한 최적화" },
+{ name: "PREMIUM", price: "299,000원", desc: "7일 · 구글·애플 출시 + 기능 추가, 버그 수정, 최적화" }
+],
+prep: [
+"유니티 프로젝트 파일",
+"본인 인증된 구글·애플 개발자 계정",
+"광고를 넣는 경우 애드몹 계정"
+],
+notes: ["출시 후 업데이트 관리는 별도 협의입니다"]
 },
 {
 title: "유니티 게임 개발 빠르고 신속하게 해드립니다",
+tagline: "아이디어를 유니티 2D·3D 게임으로 개발",
 price: "99,000원~",
 rating: "",
+sales: "",
 image: "https://static.cdn.kmong.com/gigs/0Jjon1784073636.jpg",
-url: "https://kmong.com/gig/792943"
+url: "https://kmong.com/gig/792943",
+outcomes: [
+"프로토타입부터 출시 준비 단계까지 개발된 내 게임을 받습니다",
+"기획 정리와 중간 점검을 거치며 방향을 함께 조율합니다",
+"스토어 등록 지원까지 받을 수 있습니다"
+],
+forWhom: [
+"게임 아이디어는 있지만 개발자가 없는 분",
+"프로토타입을 빠르게 만들어 보고 싶은 분",
+"기획부터 출시 준비까지 한 번에 맡기고 싶은 분"
+],
+process: [
+"기획 정리 → 개발 → 중간 점검 → 스토어 등록 지원",
+"유니티와 AI 도구 활용 1:1 교육도 함께 가능"
+],
+packages: [
+{ name: "STANDARD", price: "99,000원", desc: "작업 기간 2일" },
+{ name: "DELUXE", price: "990,000원", desc: "작업 기간 15일" },
+{ name: "PREMIUM", price: "2,490,000원", desc: "작업 기간 30일" }
+],
+prep: [],
+notes: ["패키지별 포함 범위는 크몽 상세 페이지에서 확인하세요"]
 },
 {
 title: "유니티 게임 모든 코드 빠르게 최적화",
+tagline: "코드·빌드 오류를 해결하고 성능과 버전을 개선",
 price: "19,000원~",
 rating: "★ 5.0 (49)",
+sales: "61건 판매",
 image: "https://static.cdn.kmong.com/gigs/AIxEm1781841116.jpg",
-url: "https://kmong.com/gig/513046"
+url: "https://kmong.com/gig/513046",
+outcomes: [
+"코드 버그와 성능 문제가 정리된 프로젝트를 받습니다",
+"구글·애플 빌드가 실패하던 문제를 해결해 다시 출시할 수 있습니다",
+"광고, 인앱 결제, 로그인 같은 기능을 추가할 수 있습니다",
+"오래된 유니티·구글 API 버전을 최신으로 올립니다"
+],
+forWhom: [
+"빌드·업로드 오류로 출시가 막힌 분",
+"게임이 느리거나 버그가 많은 분",
+"구버전 유니티 프로젝트를 최신으로 올리고 싶은 분"
+],
+process: ["작업 기간 3일(영업일), 수정 2회"],
+packages: [
+{ name: "STANDARD", price: "19,000원", desc: "모든 코드 최적화 (범위에 따라 가격 협의)" },
+{ name: "DELUXE", price: "49,000원", desc: "모바일 빌드 오류 수정 (구글·애플 빌드 실패)" },
+{ name: "PREMIUM", price: "149,000원", desc: "유니티 에디터 버전 업그레이드 (구버전 → 최신)" }
+],
+prep: [],
+notes: []
 }
 ],
 works: [
@@ -333,26 +459,23 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 {
 name: "포티페이블",
 genre: "시뮬레이션",
-image: "assets/work1.png",
-stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=307400" }]
+desc: "동화 속 영웅들이 한자리에 모이는 판타지 세계.",
+icon: "https://play-lh.googleusercontent.com/D8OWYJMHj5teZRI6goWmhBXjhRwjqSquhKmQXgG5ycNvXaLQwRYPCk5MafBnfbI31gP8DC6UCcORitIceRXG=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.huweetie.fortyfable" }]
 },
 {
 name: "헤비워키데이",
 genre: "방치형",
-image: "assets/work2.png",
-stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=307399" }]
+desc: "직장인이 되어 업무를 처리하고 승진하며 성장하는 캐주얼 방치형 RPG.",
+icon: "https://play-lh.googleusercontent.com/u92bqjLe3E0cry81La0EA9iEgtkYr8cL84cDAK4Ns_G6UYfkazivPRS9-BnoKgkpGYIJi8Igt-kjrf3_Gm8KBQ=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.huweetie.workyday" }]
 },
 {
 name: "Hidden Cat",
 genre: "퍼즐",
-image: "assets/work3.png",
-stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=276106" }]
-},
-{
-name: "블록 블라스트",
-genre: "퍼즐",
-image: "assets/work4.png",
-stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=129530" }]
+desc: "제한 시간 안에 숨어 있는 고양이와 물건을 찾는 힐링 퍼즐 게임.",
+icon: "https://play-lh.googleusercontent.com/0BKLY3GYs8r-8ly5tl4stBnPRGypr_rPe67Q-lEiX2Y3qey7iDK4P_rrWYmf0qYTNMpJp7kptbUJ5o1_4YJ_3Q=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.hyeonu.seekcats" }]
 }
 ]
 };
@@ -362,7 +485,7 @@ const D = PORTFOLIO;
 const P = D.profile;
 const AVATAR_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b8fff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/><circle cx="80" cy="64" r="22" fill="#fff" fill-opacity=".85"/><path d="M36 134c6-26 24-38 44-38s38 12 44 38z" fill="#fff" fill-opacity=".85"/></svg>');
 const BOX_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa8ff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/></svg>');
-const STORE_COLORS = { "구글 플레이": "#0f9d58", "스토브 인디": "#ff6a2b", "스팀": "#1b2838", "크몽": "#3b5bfd" };
+const STORE_COLORS = { "구글 플레이": "#0f9d58", "스토브 인디": "#ff6a2b", "스팀": "#1b2838" };
 const TAB_NAMES = ["서비스", "작품"];
 const TAB_IDS = ["services", "works"];
 const ICONS = {
@@ -372,6 +495,7 @@ blog: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="
 instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>'
 };
 const dlg = document.getElementById("dlg");
+const sheet = document.getElementById("sheet");
 
 function el(tag, cls, text) {
 const n = document.createElement(tag);
@@ -452,10 +576,15 @@ function buildServices() {
 const root = el("div", "list");
 for (let i = 0; i < D.services.length; i++) {
 const s = D.services[i];
-const a = link(s.url, "item");
+const a = el("a", "item");
+a.href = "#";
+a.setAttribute("role", "button");
+a.dataset.index = i;
+a.setAttribute("aria-label", s.title + " 상세 보기");
 a.appendChild(img(s.image, "thumb", s.title, 184, 104, BOX_FALLBACK));
 const info = el("div", "item-body");
 info.appendChild(el("h3", null, s.title));
+info.appendChild(el("p", "tagline", s.tagline));
 const meta = el("div", "meta");
 meta.appendChild(el("b", null, s.price));
 if (s.rating) meta.appendChild(el("span", null, s.rating));
@@ -464,12 +593,78 @@ a.appendChild(info);
 a.appendChild(el("span", "chev", "›"));
 root.appendChild(a);
 }
+root.addEventListener("click", function (e) {
+const a = e.target.closest("a.item");
+if (!a) return;
+e.preventDefault();
+openService(D.services[a.dataset.index]);
+});
 return root;
+}
+
+function textList(items, cls) {
+const ul = el("ul", cls);
+for (let i = 0; i < items.length; i++) ul.appendChild(el("li", null, items[i]));
+return ul;
+}
+
+function section(title, node) {
+const w = el("section", "sec");
+w.appendChild(el("h4", null, title));
+w.appendChild(node);
+return w;
+}
+
+function openService(s) {
+sheet.textContent = "";
+const head = el("div", "sheet-head");
+head.appendChild(el("h3", null, s.title));
+const meta = el("p", "sheet-meta");
+meta.appendChild(el("b", null, s.price));
+const extra = [s.rating, s.sales].filter(Boolean).join(" · ");
+if (extra) meta.appendChild(document.createTextNode(extra));
+head.appendChild(meta);
+const x = el("button", "sheet-x", "✕");
+x.type = "button";
+x.setAttribute("aria-label", "닫기");
+x.addEventListener("click", function () {
+sheet.close();
+});
+head.appendChild(x);
+sheet.appendChild(head);
+
+const body = el("div", "sheet-body");
+body.appendChild(el("p", "lead", s.tagline));
+body.appendChild(section("받으면 이렇게 됩니다", textList(s.outcomes, "check")));
+body.appendChild(section("이런 분께 추천해요", textList(s.forWhom, "dot")));
+body.appendChild(section("진행 방식", textList(s.process, "dot")));
+const pk = el("div", "pkgs");
+for (let i = 0; i < s.packages.length; i++) {
+const p = s.packages[i];
+const box = el("div", "pkg");
+const top = el("div", "pkg-top");
+top.appendChild(el("strong", null, p.name));
+top.appendChild(el("b", null, p.price));
+box.appendChild(top);
+box.appendChild(el("p", null, p.desc));
+pk.appendChild(box);
+}
+body.appendChild(section("패키지 · 가격", pk));
+if (s.prep.length) body.appendChild(section("준비물", textList(s.prep, "dot")));
+if (s.notes.length) body.appendChild(section("참고", textList(s.notes, "dot")));
+sheet.appendChild(body);
+
+const cta = el("div", "sheet-cta");
+cta.appendChild(iconLink(s.url, "btn kmong", ICONS.kmong, "크몽에서 신청"));
+cta.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, "카카오톡 문의"));
+sheet.appendChild(cta);
+sheet.showModal();
+body.scrollTop = 0;
 }
 
 function openWork(w) {
 dlg.textContent = "";
-dlg.appendChild(w.image ? img(w.image, "dlg-cover", w.name, 652, 488, BOX_FALLBACK) : img(w.icon, "dlg-icon", w.name, 76, 76, BOX_FALLBACK));
+dlg.appendChild(img(w.icon, "dlg-icon", w.name, 76, 76, BOX_FALLBACK));
 dlg.appendChild(el("h3", null, w.name));
 dlg.appendChild(el("span", "pill", w.genre));
 if (w.desc) dlg.appendChild(el("p", null, w.desc));
@@ -499,7 +694,7 @@ const b = el("button", "game");
 b.type = "button";
 b.dataset.index = i;
 b.setAttribute("aria-label", w.name + " 상세 보기");
-b.appendChild(img(w.image || w.icon, null, w.name, 52, 52, BOX_FALLBACK));
+b.appendChild(img(w.icon, null, w.name, 52, 52, BOX_FALLBACK));
 b.appendChild(el("strong", null, w.name));
 b.appendChild(el("span", "pill", w.genre));
 grid.appendChild(b);
@@ -581,6 +776,9 @@ select(start >= 0 ? start : 0, false);
 function setupDialog() {
 dlg.addEventListener("click", function (e) {
 if (e.target === dlg) dlg.close();
+});
+sheet.addEventListener("click", function (e) {
+if (e.target === sheet) sheet.close();
 });
 }
 
