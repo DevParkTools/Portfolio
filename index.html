@@ -244,7 +244,7 @@ const PORTFOLIO = {
 profile: {
 name: "박성현 | 게임 개발자",
 intro: "디지털 크리에이터 · 게임을 사랑하는 개발자",
-photo: "assets/profile.jpg",
+photo: "assets/profile",
 kakao: "https://open.kakao.com/o/sXegYMDi",
 kmong: "https://kmong.com/@DevPark",
 kmongPortfolios: "https://kmong.com/@DevPark/portfolios",
@@ -486,6 +486,7 @@ const P = D.profile;
 const AVATAR_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b8fff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/><circle cx="80" cy="64" r="22" fill="#fff" fill-opacity=".85"/><path d="M36 134c6-26 24-38 44-38s38 12 44 38z" fill="#fff" fill-opacity=".85"/></svg>');
 const BOX_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa8ff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/></svg>');
 const STORE_COLORS = { "구글 플레이": "#0f9d58", "스토브 인디": "#ff6a2b", "스팀": "#1b2838" };
+const AVATAR_EXT = ["png", "jpg", "jpeg", "webp"];
 const TAB_NAMES = ["서비스", "작품"];
 const TAB_IDS = ["services", "works"];
 const ICONS = {
@@ -536,11 +537,17 @@ return a;
 
 function renderTop() {
 const avatar = document.getElementById("avatar");
+let ext = 0;
 avatar.onerror = function () {
+ext++;
+if (ext < AVATAR_EXT.length) {
+avatar.src = P.photo + "." + AVATAR_EXT[ext];
+return;
+}
 avatar.onerror = null;
 avatar.src = AVATAR_FALLBACK;
 };
-avatar.src = P.photo;
+avatar.src = P.photo + "." + AVATAR_EXT[0];
 document.getElementById("name").textContent = P.name;
 document.getElementById("intro").textContent = P.intro;
 
