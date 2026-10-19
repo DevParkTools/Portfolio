@@ -201,6 +201,35 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .list { grid-template-columns: 1fr 1fr; }
 .thumb { width: 100px; }
 }
+@media (min-width: 1024px) {
+.app { max-width: 1120px; display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 24px; align-items: start; padding: 40px 28px 48px; }
+.banner { height: 96px; }
+.top-body { padding: 0 24px 24px; }
+.avatar { width: 104px; height: 104px; }
+.who { flex-direction: column; gap: 10px; margin-top: -52px; }
+.who-text { margin-top: 0; }
+.who h1 { font-size: 1.5rem; }
+.intro { font-size: 0.9rem; }
+.bio { font-size: 0.88rem; }
+.content { min-width: 0; }
+.tabs { margin: 0 0 14px; }
+.panel { padding: 18px; }
+.list { grid-template-columns: 1fr 1fr; gap: 14px; }
+.item { flex-direction: column; align-items: stretch; gap: 0; padding: 0; overflow: hidden; }
+.item .thumb { width: 100%; border-radius: 0; }
+.item-body { padding: 12px 14px 14px; }
+.item h3 { font-size: 0.95rem; }
+.tagline { font-size: 0.82rem; }
+.chev { display: none; }
+.games { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 12px; }
+.game { padding: 14px 8px 12px; }
+.game img { width: 64px; height: 64px; }
+.sheet { width: min(94vw, 560px); }
+}
+@media (min-width: 1024px) and (min-height: 760px) {
+.top { position: sticky; top: 24px; }
+}
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
 .btn, .item, .game, .toast { transition: none; }
 }
@@ -227,10 +256,12 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 </div>
 </header>
 
+<div class="content">
 <div class="tabs" id="tabs" role="tablist" aria-label="포트폴리오 메뉴"></div>
 <main class="card" id="panels"></main>
 
 <footer class="footer" id="footer"></footer>
+</div>
 </div>
 
 <dialog id="dlg"></dialog>
