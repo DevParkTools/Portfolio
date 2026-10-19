@@ -90,8 +90,6 @@ transition: transform 0.15s ease, opacity 0.15s ease;
 .btn:active { transform: scale(0.97); }
 .btn.kakao { background: #fee500; color: #191919; }
 .btn.kmong { background: #3b5bfd; }
-.btn.blog { background: #f2542d; }
-.btn.insta { background: linear-gradient(45deg, #f9a03f, #e1306c 55%, #833ab4); }
 .btn.ghost { background: var(--chip); color: var(--text); }
 .tabs { display: flex; gap: 4px; margin: 14px 0 10px; padding: 4px; border-radius: 14px; background: var(--chip); }
 .tab {
@@ -243,34 +241,29 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 const PORTFOLIO = {
 profile: {
 name: "박성현 | 게임 개발자",
-intro: "디지털 크리에이터 · 게임을 사랑하는 개발자",
+intro: "유니티 · AI 바이브코딩 1:1 강의 · 게임 개발자",
 photo: "assets/profile",
 kakao: "https://open.kakao.com/o/sXegYMDi",
 kmong: "https://kmong.com/@DevPark",
 kmongPortfolios: "https://kmong.com/@DevPark/portfolios",
-playDeveloper: "https://play.google.com/store/apps/dev?id=8493220400768769623",
-blog: "https://parksh3641.tistory.com/",
-instagram: "https://www.instagram.com/dev_game_psh/"
+playDeveloper: "https://play.google.com/store/apps/dev?id=8493220400768769623"
 },
 about: [
-{ icon: "🔥", text: "도파민 터지는 \"재밌는\" 게임을 만들고 있어요!" },
-{ icon: "📱", text: "구글 · 애플 · 스팀 · 스토브 인디 등 45종+ 게임 앱 출시" },
-{ icon: "🛒", text: "크몽 개발 의뢰 100건+ 수행 (평점 4.9, 만족도 100%)" },
-{ icon: "🕹", text: "유니티 게임 개발 경력 4년+ (프리랜서 3년), 기획부터 출시까지 총괄" },
-{ icon: "🎓", text: "유니티 · AI 바이브코딩 1:1 맞춤 교육, 숭실대 IT 프로젝트 특강(2026), (주)리딩게이트 강의" },
-{ icon: "🏆", text: "인디 게임 공모전 선정 및 전시" },
-{ icon: "👋", text: "게임을 만들어 보고 싶은 분이라면 언제든 환영합니다" }
+{ icon: "🎓", text: "유니티 · AI 바이브코딩 1:1 맞춤 강의 — 처음 시작해도 내 첫 게임을 직접 완성합니다" },
+{ icon: "🕹", text: "유니티 게임 개발 경력 4년+ (프리랜서 3년), 구글 · 애플 · 스팀 · 스토브 인디 등 45종+ 출시 경험으로 출시까지 알려드립니다" },
+{ icon: "🏫", text: "크몽 강의 평점 5.0 (19건), 숭실대 IT 프로젝트 특강(2026), (주)리딩게이트 프로젝트 강의" }
 ],
 stats: [
-{ value: "★ 4.9", label: "크몽 평점 (97)" },
-{ value: "118건", label: "총 작업 수" },
-{ value: "45종+", label: "출시 프로젝트" }
+{ value: "★ 5.0", label: "강의 평점 (19)" },
+{ value: "118건", label: "크몽 작업" },
+{ value: "45종+", label: "출시 경험" }
 ],
 services: [
 {
 title: "유니티 게임 AI 자동화 1대1 맞춤형 강의",
 tagline: "AI 바이브코딩으로 내 첫 유니티 게임을 직접 완성",
 price: "19,000원~",
+badge: "대표 강의",
 rating: "★ 5.0 (19)",
 sales: "20건 판매",
 image: "https://static.cdn.kmong.com/gigs/MaFKg1781841270.jpg",
@@ -491,9 +484,7 @@ const TAB_NAMES = ["서비스", "작품"];
 const TAB_IDS = ["services", "works"];
 const ICONS = {
 kakao: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.87 5.33 4.69 6.74l-.9 3.3a.4.4 0 0 0 .6.44L10.4 19c.53.07 1.07.1 1.6.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>',
-kmong: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>',
-blog: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>',
-instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>'
+kmong: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>'
 };
 const dlg = document.getElementById("dlg");
 const sheet = document.getElementById("sheet");
@@ -574,8 +565,6 @@ stats.appendChild(sf);
 const actions = document.getElementById("actions");
 actions.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, "카카오톡 문의"));
 actions.appendChild(iconLink(P.kmong, "btn kmong", ICONS.kmong, "크몽 프로필"));
-actions.appendChild(iconLink(P.blog, "btn blog", ICONS.blog, "개발 블로그"));
-actions.appendChild(iconLink(P.instagram, "btn insta", ICONS.instagram, "인스타그램"));
 document.getElementById("footer").textContent = "© " + new Date().getFullYear() + " " + P.name;
 }
 
@@ -595,6 +584,7 @@ info.appendChild(el("p", "tagline", s.tagline));
 const meta = el("div", "meta");
 meta.appendChild(el("b", null, s.price));
 if (s.rating) meta.appendChild(el("span", null, s.rating));
+if (s.badge) meta.appendChild(el("span", "pill", s.badge));
 info.appendChild(meta);
 a.appendChild(info);
 a.appendChild(el("span", "chev", "›"));
