@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박성현 | 게임 개발자</title>
+<meta name="description" content="유니티 게임 개발, 구글·애플 출시 대행, 1:1 강의. 게임 개발자 박성현의 포트폴리오">
+<meta name="theme-color" content="#eef0f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
+<style>
+:root {
+--bg: #eef0f5;
+--card: #ffffff;
+--text: #12151b;
+--sub: #5b6472;
+--line: #e3e6ed;
+--accent: #3b5bfd;
+--accent-2: #7a5cff;
+--accent-soft: color-mix(in srgb, var(--accent) 11%, transparent);
+--chip: #eceef4;
+--radius: 18px;
+--shadow: 0 1px 2px rgba(18, 21, 27, 0.05), 0 8px 24px rgba(18, 21, 27, 0.06);
+}
+@media (prefers-color-scheme: dark) {
+:root {
+--bg: #111318;
+--card: #1b1e25;
+--text: #f2f4f8;
+--sub: #9ba3b0;
+--line: #2a2e38;
+--accent: #7b93ff;
+--accent-2: #a58bff;
+--accent-soft: color-mix(in srgb, var(--accent) 16%, transparent);
+--chip: #262a33;
+--shadow: none;
+}
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+margin: 0;
+background: var(--bg);
+color: var(--text);
+font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+.app {
+max-width: 720px;
+margin: 0 auto;
+padding: calc(14px + env(safe-area-inset-top)) 14px calc(20px + env(safe-area-inset-bottom));
+}
+.card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); }
+.top { position: relative; overflow: hidden; }
+.banner { height: 68px; background: linear-gradient(120deg, var(--accent), var(--accent-2)); }
+.share {
+position: absolute; top: 12px; right: 12px;
+width: 36px; height: 36px; display: grid; place-items: center;
+border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.22); color: #fff; cursor: pointer;
+backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.top-body { padding: 0 16px 16px; }
+.who { display: flex; align-items: flex-start; gap: 14px; margin-top: -34px; }
+.avatar {
+flex: 0 0 auto; width: 76px; height: 76px; border-radius: 50%; object-fit: cover;
+background: var(--chip); border: 4px solid var(--card);
+}
+.who-text { margin-top: 40px; min-width: 0; }
+.who h1 { margin: 0; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
+.intro { margin: 2px 0 0; color: var(--sub); font-size: 0.82rem; font-weight: 600; }
+.bio { list-style: none; margin: 14px 0 0; padding: 12px 14px; display: grid; gap: 6px; border-radius: 14px; background: var(--chip); font-size: 0.84rem; line-height: 1.5; }
+.bio li { display: flex; gap: 8px; }
+.bio li > span:first-child { flex: 0 0 auto; width: 20px; text-align: center; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 12px; border: 1px solid var(--line); border-radius: 14px; }
+.stat { padding: 10px 4px; text-align: center; }
+.stat + .stat { border-left: 1px solid var(--line); }
+.stat strong { display: block; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; }
+.stat span { color: var(--sub); font-size: 0.72rem; font-weight: 600; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.btn {
+display: flex; align-items: center; justify-content: center;
+min-height: 46px; padding: 0 12px; border: 0; border-radius: 12px;
+background: var(--accent); color: #fff;
+font-size: 0.88rem; font-weight: 700; cursor: pointer;
+transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.btn svg { flex: 0 0 auto; width: 18px; height: 18px; margin-right: 8px; }
+.btn:active { transform: scale(0.97); }
+.btn.kakao { background: #fee500; color: #191919; }
+.btn.kmong { background: #3b5bfd; }
+.btn.blog { background: #f2542d; }
+.btn.insta { background: linear-gradient(45deg, #f9a03f, #e1306c 55%, #833ab4); }
+.btn.ghost { background: var(--chip); color: var(--text); }
+.tabs { display: flex; gap: 4px; margin: 14px 0 10px; padding: 4px; border-radius: 14px; background: var(--chip); }
+.tab {
+flex: 1 1 0; min-height: 40px; padding: 0 4px; border: 0; border-radius: 10px;
+background: transparent; color: var(--sub);
+font-size: 0.88rem; font-weight: 700; white-space: nowrap; cursor: pointer;
+}
+.tab[aria-selected="true"] { background: var(--card); color: var(--text); box-shadow: var(--shadow); }
+.panel { padding: 10px; }
+.panel[hidden] { display: none; }
+.list { display: grid; gap: 8px; }
+.item {
+display: flex; align-items: center; gap: 12px; padding: 8px 12px 8px 8px;
+border: 1px solid var(--line); border-radius: 14px; transition: background 0.15s ease, border-color 0.15s ease;
+}
+.item:active { background: var(--chip); }
+.thumb { flex: 0 0 auto; width: 92px; aspect-ratio: 16 / 9; border-radius: 9px; object-fit: cover; background: var(--chip); }
+.item-body { flex: 1 1 auto; min-width: 0; }
+.item h3 {
+margin: 0; font-size: 0.9rem; font-weight: 700; line-height: 1.35;
+display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.meta { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 0.78rem; }
+.meta b { color: var(--accent); font-weight: 800; }
+.meta span { color: var(--sub); font-weight: 600; }
+.chev { flex: 0 0 auto; color: var(--sub); font-size: 1.1rem; }
+.games { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.game {
+display: flex; flex-direction: column; align-items: center; gap: 6px;
+padding: 10px 4px 8px; border: 1px solid var(--line); border-radius: 14px;
+background: var(--card); text-align: center; cursor: pointer;
+transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.game:active { transform: scale(0.97); }
+.game img { width: 52px; height: 52px; border-radius: 13px; object-fit: cover; background: var(--chip); }
+.game strong {
+font-size: 0.72rem; font-weight: 700; line-height: 1.3;
+display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.66rem; font-weight: 700; }
+.more-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.more { display: block; padding: 11px 6px; border-radius: 12px; background: var(--chip); text-align: center; font-size: 0.82rem; font-weight: 700; }
+.footer { margin-top: 18px; text-align: center; color: var(--sub); font-size: 0.75rem; }
+dialog {
+width: min(92vw, 340px); padding: 24px 18px 18px; border: 0; border-radius: 22px;
+background: var(--card); color: var(--text); text-align: center;
+}
+dialog::backdrop { background: rgba(10, 12, 16, 0.55); }
+.dlg-cover { width: 100%; aspect-ratio: 652 / 488; margin: 0 0 12px; border-radius: 14px; object-fit: cover; background: var(--chip); }
+.dlg-icon { width: 76px; height: 76px; margin: 0 auto 12px; border-radius: 19px; object-fit: cover; background: var(--chip); }
+dialog h3 { margin: 0 0 6px; font-size: 1.08rem; font-weight: 800; }
+dialog p { margin: 10px 0 0; color: var(--sub); font-size: 0.86rem; }
+.stores { display: grid; gap: 8px; margin-top: 16px; }
+.toast {
+position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom));
+transform: translate(-50%, 20px); padding: 10px 18px; border-radius: 999px;
+background: var(--text); color: var(--bg); font-size: 0.85rem; font-weight: 600;
+opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (hover: hover) {
+.btn:hover { opacity: 0.9; }
+.item:hover { background: var(--chip); }
+.game:hover { border-color: var(--accent); }
+.more:hover { opacity: 0.85; }
+.tab:hover:not([aria-selected="true"]) { color: var(--text); }
+}
+@media (min-width: 720px) {
+.app { padding-top: 32px; }
+.banner { height: 84px; }
+.top-body { padding: 0 24px 24px; }
+.avatar { width: 88px; height: 88px; }
+.who { margin-top: -40px; }
+.who-text { margin-top: 48px; }
+.who h1 { font-size: 1.4rem; }
+.panel { padding: 14px; }
+.games { grid-template-columns: repeat(6, 1fr); }
+.game img { width: 60px; height: 60px; }
+.game strong { font-size: 0.78rem; }
+.list { grid-template-columns: 1fr 1fr; }
+.thumb { width: 100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+.btn, .item, .game, .toast { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="card top">
+<div class="banner"></div>
+<button class="share" id="shareBtn" type="button" aria-label="링크 복사">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+</button>
+<div class="top-body">
+<div class="who">
+<img class="avatar" id="avatar" alt="프로필 사진" width="76" height="76">
+<div class="who-text">
+<h1 id="name"></h1>
+<p class="intro" id="intro"></p>
+</div>
+</div>
+<ul class="bio" id="bio"></ul>
+<div class="stats" id="stats"></div>
+<div class="actions" id="actions"></div>
+</div>
+</header>
+
+<div class="tabs" id="tabs" role="tablist" aria-label="포트폴리오 메뉴"></div>
+<main class="card" id="panels"></main>
+
+<footer class="footer" id="footer"></footer>
+</div>
+
+<dialog id="dlg"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const PORTFOLIO = {
+profile: {
+name: "박성현 | 게임 개발자",
+intro: "디지털 크리에이터 · 게임을 사랑하는 개발자",
+photo: "assets/profile.jpg",
+kakao: "https://open.kakao.com/o/sXegYMDi",
+kmong: "https://kmong.com/@DevPark",
+kmongPortfolios: "https://kmong.com/@DevPark/portfolios",
+playDeveloper: "https://play.google.com/store/apps/dev?id=8493220400768769623",
+blog: "https://parksh3641.tistory.com/",
+instagram: "https://www.instagram.com/dev_game_psh/"
+},
+about: [
+{ icon: "🔥", text: "도파민 터지는 \"재밌는\" 게임을 만들고 있어요!" },
+{ icon: "📱", text: "구글 · 애플 · 스팀 · 스토브 인디 등 45종+ 게임 앱 출시" },
+{ icon: "🛒", text: "크몽 개발 의뢰 100건+ 수행 (평점 4.9, 만족도 100%)" },
+{ icon: "🕹", text: "유니티 게임 개발 경력 4년+ (프리랜서 3년), 기획부터 출시까지 총괄" },
+{ icon: "🎓", text: "유니티 · AI 바이브코딩 1:1 맞춤 교육, 숭실대 IT 프로젝트 특강(2026), (주)리딩게이트 강의" },
+{ icon: "🏆", text: "인디 게임 공모전 선정 및 전시" },
+{ icon: "👋", text: "게임을 만들어 보고 싶은 분이라면 언제든 환영합니다" }
+],
+stats: [
+{ value: "★ 4.9", label: "크몽 평점 (97)" },
+{ value: "118건", label: "총 작업 수" },
+{ value: "45종+", label: "출시 프로젝트" }
+],
+services: [
+{
+title: "유니티 게임 AI 자동화 1대1 맞춤형 강의",
+price: "19,000원~",
+rating: "★ 5.0 (19)",
+image: "https://static.cdn.kmong.com/gigs/MaFKg1781841270.jpg",
+url: "https://kmong.com/gig/578652"
+},
+{
+title: "유니티 게임 구글 및 애플 출시 대행",
+price: "49,000원~",
+rating: "★ 4.8 (10)",
+image: "https://static.cdn.kmong.com/gigs/G586R1781841257.jpg",
+url: "https://kmong.com/gig/527055"
+},
+{
+title: "유니티 게임 개발 빠르고 신속하게 해드립니다",
+price: "99,000원~",
+rating: "",
+image: "https://static.cdn.kmong.com/gigs/0Jjon1784073636.jpg",
+url: "https://kmong.com/gig/792943"
+},
+{
+title: "유니티 게임 모든 코드 빠르게 최적화",
+price: "19,000원~",
+rating: "★ 5.0 (49)",
+image: "https://static.cdn.kmong.com/gigs/AIxEm1781841116.jpg",
+url: "https://kmong.com/gig/513046"
+}
+],
+works: [
+{
+name: "왕국 디펜스 M",
+genre: "전략",
+desc: "타워를 짓고 영웅을 이끌어 왕국을 지키는 디펜스 게임.",
+icon: "https://play-lh.googleusercontent.com/tsXFBKZFBAXTtqxWGT2CRH0BB5IwMYIxX9hhfxlI6xrPGh28fMXV8tieC4z3A_wyiEhIq5HhV6lKkVktqRJ_ng=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.kingdomdefensem" }]
+},
+{
+name: "깨면 레전드",
+genre: "아케이드",
+desc: "미사일과 레이저를 피해 달에서 탈출하는 하드코어 탑다운 아케이드.",
+icon: "https://play-lh.googleusercontent.com/kNidkPRnYP6jKccBgi4l2PIgIhYOedvrFJdg92tH6M7CwdDJ49RD1FUy41p6-vqZxao4LVuotIZUTBPVOzvpiA=s128",
+stores: [
+{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.chaosstudio.superhardgame" },
+{ label: "스토브 인디", url: "https://store.onstove.com/ko/games/100578" },
+{ label: "스팀", url: "https://store.steampowered.com/app/3620750/Super_Hard_Game/" }
+]
+},
+{
+name: "푸드 마스터",
+genre: "시뮬레이션",
+desc: "우주에서 가장 강력한 음식을 모으고 키우는 방치형 게임.",
+icon: "https://play-lh.googleusercontent.com/ucRVJio847sY5Y4cT2y75Tf7iQN_e8UFbTBkUzN0uVpp0x8EshfS8NMg9ejOrUTeHnz1O9YnitpvQq-iysftXA=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.whilili.foodtruck" }]
+},
+{
+name: "벽돌 깨기",
+genre: "퍼즐",
+desc: "지루할 때 즐기는 쉽고 재미있는 벽돌 깨기.",
+icon: "https://play-lh.googleusercontent.com/zSKBZVGvPRImuDdhefCBdZyQJksPcH-TDges42f5PugcJdz1Mg05gm-9erJQg-ZVK3GiBYMqFMFCujonez3jxA=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.brickbreaker" }]
+},
+{
+name: "지뢰 찾기",
+genre: "캐주얼",
+desc: "지루할 때 즐기는 쉽고 재미있는 지뢰찾기.",
+icon: "https://play-lh.googleusercontent.com/tRpICPqwh5AkfdyByACc5aZMe2WTO6dxdqu6uN6AUKJAXIlwvTqeV-aLQ1-T7ecJl8NuSSzOvvTUL-qRTknYqgE=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.minesweeper" }]
+},
+{
+name: "비둘기의 모험",
+genre: "캐주얼",
+desc: "비둘기가 되어 신비로운 도시를 날아 탐험하는 게임.",
+icon: "https://play-lh.googleusercontent.com/T5afSP6kY5uWLphMJ4R6uj1CO6QkRGNJ7VQ3kblCvJQp4JF1tehpMiUwfKNLGDOzc3eHkQr6YgdOatuUUvoT=s128",
+stores: [
+{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.unity3d.doveincity" },
+{ label: "스토브 인디", url: "https://store.onstove.com/ko/games/2031" }
+]
+},
+{
+name: "OX Quiz",
+genre: "퀴즈",
+desc: "60초 안에 상식 퀴즈를 풀고 부엉이 펫을 키우는 게임.",
+icon: "https://play-lh.googleusercontent.com/LNJ7xuWIS2QDkCWrCREWeCv6VPmt4lJ9GrXlA-p7laSYjGPR8dk48HEIJSMb4kHNcUxa68L1lPfC1rJK3m3omg=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.flutter.gosuoflife" }]
+},
+{
+name: "Drag & Touch",
+genre: "퍼즐",
+desc: "드래그와 탭으로 즐기는 8가지 두뇌 퍼즐.",
+icon: "https://play-lh.googleusercontent.com/aL57OVqA9aA8UJRjlV-Tds-mcxYqN-1tIX82EiwQ2EnaL7m1LGLCJ-mwSuXMIbnwEktqLDEKgu3tqzrKT7U02s0=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.unity3d.toucharcade" }]
+},
+{
+name: "포티페이블",
+genre: "시뮬레이션",
+image: "assets/work1.png",
+stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=307400" }]
+},
+{
+name: "헤비워키데이",
+genre: "방치형",
+image: "assets/work2.png",
+stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=307399" }]
+},
+{
+name: "Hidden Cat",
+genre: "퍼즐",
+image: "assets/work3.png",
+stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=276106" }]
+},
+{
+name: "블록 블라스트",
+genre: "퍼즐",
+image: "assets/work4.png",
+stores: [{ label: "크몽", url: "https://kmong.com/gig/527055?portfolio_id=129530" }]
+}
+]
+};
+
+(function () {
+const D = PORTFOLIO;
+const P = D.profile;
+const AVATAR_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b8fff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/><circle cx="80" cy="64" r="22" fill="#fff" fill-opacity=".85"/><path d="M36 134c6-26 24-38 44-38s38 12 44 38z" fill="#fff" fill-opacity=".85"/></svg>');
+const BOX_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa8ff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/></svg>');
+const STORE_COLORS = { "구글 플레이": "#0f9d58", "스토브 인디": "#ff6a2b", "스팀": "#1b2838", "크몽": "#3b5bfd" };
+const TAB_NAMES = ["서비스", "작품"];
+const TAB_IDS = ["services", "works"];
+const ICONS = {
+kakao: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.87 5.33 4.69 6.74l-.9 3.3a.4.4 0 0 0 .6.44L10.4 19c.53.07 1.07.1 1.6.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>',
+kmong: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>',
+blog: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>',
+instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>'
+};
+const dlg = document.getElementById("dlg");
+
+function el(tag, cls, text) {
+const n = document.createElement(tag);
+if (cls) n.className = cls;
+if (text !== undefined) n.textContent = text;
+return n;
+}
+
+function img(src, cls, alt, w, h, fallback) {
+const n = el("img", cls);
+n.alt = alt || "";
+n.loading = "lazy";
+n.decoding = "async";
+if (w) n.width = w;
+if (h) n.height = h;
+n.onerror = function () {
+n.onerror = null;
+n.src = fallback;
+};
+n.src = src;
+return n;
+}
+
+function link(href, cls, text) {
+const a = el("a", cls, text);
+a.href = href;
+a.target = "_blank";
+a.rel = "noopener noreferrer";
+return a;
+}
+
+function iconLink(href, cls, svg, label) {
+const a = link(href, cls);
+a.innerHTML = svg;
+a.appendChild(el("span", null, label));
+return a;
+}
+
+function renderTop() {
+const avatar = document.getElementById("avatar");
+avatar.onerror = function () {
+avatar.onerror = null;
+avatar.src = AVATAR_FALLBACK;
+};
+avatar.src = P.photo;
+document.getElementById("name").textContent = P.name;
+document.getElementById("intro").textContent = P.intro;
+
+const bio = document.getElementById("bio");
+const bf = document.createDocumentFragment();
+for (let i = 0; i < D.about.length; i++) {
+const li = el("li");
+li.appendChild(el("span", null, D.about[i].icon));
+li.appendChild(el("span", null, D.about[i].text));
+bf.appendChild(li);
+}
+bio.appendChild(bf);
+
+const stats = document.getElementById("stats");
+const sf = document.createDocumentFragment();
+for (let i = 0; i < D.stats.length; i++) {
+const s = el("div", "stat");
+s.appendChild(el("strong", null, D.stats[i].value));
+s.appendChild(el("span", null, D.stats[i].label));
+sf.appendChild(s);
+}
+stats.appendChild(sf);
+
+const actions = document.getElementById("actions");
+actions.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, "카카오톡 문의"));
+actions.appendChild(iconLink(P.kmong, "btn kmong", ICONS.kmong, "크몽 프로필"));
+actions.appendChild(iconLink(P.blog, "btn blog", ICONS.blog, "개발 블로그"));
+actions.appendChild(iconLink(P.instagram, "btn insta", ICONS.instagram, "인스타그램"));
+document.getElementById("footer").textContent = "© " + new Date().getFullYear() + " " + P.name;
+}
+
+function buildServices() {
+const root = el("div", "list");
+for (let i = 0; i < D.services.length; i++) {
+const s = D.services[i];
+const a = link(s.url, "item");
+a.appendChild(img(s.image, "thumb", s.title, 184, 104, BOX_FALLBACK));
+const info = el("div", "item-body");
+info.appendChild(el("h3", null, s.title));
+const meta = el("div", "meta");
+meta.appendChild(el("b", null, s.price));
+if (s.rating) meta.appendChild(el("span", null, s.rating));
+info.appendChild(meta);
+a.appendChild(info);
+a.appendChild(el("span", "chev", "›"));
+root.appendChild(a);
+}
+return root;
+}
+
+function openWork(w) {
+dlg.textContent = "";
+dlg.appendChild(w.image ? img(w.image, "dlg-cover", w.name, 652, 488, BOX_FALLBACK) : img(w.icon, "dlg-icon", w.name, 76, 76, BOX_FALLBACK));
+dlg.appendChild(el("h3", null, w.name));
+dlg.appendChild(el("span", "pill", w.genre));
+if (w.desc) dlg.appendChild(el("p", null, w.desc));
+const stores = el("div", "stores");
+for (let i = 0; i < w.stores.length; i++) {
+const st = w.stores[i];
+const a = link(st.url, "btn", st.label + "에서 더보기");
+a.style.background = STORE_COLORS[st.label] || "";
+stores.appendChild(a);
+}
+const close = el("button", "btn ghost", "닫기");
+close.type = "button";
+close.addEventListener("click", function () {
+dlg.close();
+});
+stores.appendChild(close);
+dlg.appendChild(stores);
+dlg.showModal();
+}
+
+function buildWorks() {
+const wrap = el("div");
+const grid = el("div", "games");
+for (let i = 0; i < D.works.length; i++) {
+const w = D.works[i];
+const b = el("button", "game");
+b.type = "button";
+b.dataset.index = i;
+b.setAttribute("aria-label", w.name + " 상세 보기");
+b.appendChild(img(w.image || w.icon, null, w.name, 52, 52, BOX_FALLBACK));
+b.appendChild(el("strong", null, w.name));
+b.appendChild(el("span", "pill", w.genre));
+grid.appendChild(b);
+}
+grid.addEventListener("click", function (e) {
+const b = e.target.closest("button.game");
+if (b) openWork(D.works[b.dataset.index]);
+});
+wrap.appendChild(grid);
+const more = el("div", "more-row");
+more.appendChild(link(P.playDeveloper, "more", "구글 플레이 전체 →"));
+more.appendChild(link(P.kmongPortfolios, "more", "크몽 포트폴리오 전체 →"));
+wrap.appendChild(more);
+return wrap;
+}
+
+function setupTabs() {
+const tabRoot = document.getElementById("tabs");
+const panelRoot = document.getElementById("panels");
+const builders = [buildServices, buildWorks];
+const tabs = new Array(TAB_IDS.length);
+const panels = new Array(TAB_IDS.length);
+const tf = document.createDocumentFragment();
+const pf = document.createDocumentFragment();
+for (let i = 0; i < TAB_IDS.length; i++) {
+const t = el("button", "tab", TAB_NAMES[i]);
+t.type = "button";
+t.id = "tab-" + TAB_IDS[i];
+t.setAttribute("role", "tab");
+t.setAttribute("aria-controls", "panel-" + TAB_IDS[i]);
+t.setAttribute("aria-selected", "false");
+t.tabIndex = -1;
+const p = el("section", "panel");
+p.id = "panel-" + TAB_IDS[i];
+p.setAttribute("role", "tabpanel");
+p.setAttribute("aria-labelledby", t.id);
+p.hidden = true;
+p.appendChild(builders[i]());
+tabs[i] = t;
+panels[i] = p;
+tf.appendChild(t);
+pf.appendChild(p);
+}
+tabRoot.appendChild(tf);
+panelRoot.appendChild(pf);
+
+let current = -1;
+function select(i, focus) {
+if (i === current) return;
+if (current >= 0) {
+tabs[current].setAttribute("aria-selected", "false");
+tabs[current].tabIndex = -1;
+panels[current].hidden = true;
+}
+tabs[i].setAttribute("aria-selected", "true");
+tabs[i].tabIndex = 0;
+panels[i].hidden = false;
+current = i;
+if (focus) tabs[i].focus();
+try {
+history.replaceState(null, "", "#" + TAB_IDS[i]);
+} catch (e) {}
+}
+
+tabRoot.addEventListener("click", function (e) {
+const i = tabs.indexOf(e.target);
+if (i >= 0) select(i, false);
+});
+tabRoot.addEventListener("keydown", function (e) {
+if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+const step = e.key === "ArrowRight" ? 1 : -1;
+select((current + step + tabs.length) % tabs.length, true);
+});
+
+const start = TAB_IDS.indexOf(location.hash.slice(1));
+select(start >= 0 ? start : 0, false);
+}
+
+function setupDialog() {
+dlg.addEventListener("click", function (e) {
+if (e.target === dlg) dlg.close();
+});
+}
+
+function setupShare() {
+const btn = document.getElementById("shareBtn");
+const toast = document.getElementById("toast");
+let timer = 0;
+function show(msg) {
+toast.textContent = msg;
+toast.classList.add("show");
+clearTimeout(timer);
+timer = setTimeout(function () {
+toast.classList.remove("show");
+}, 1800);
+}
+btn.addEventListener("click", async function () {
+try {
+if (navigator.share) {
+await navigator.share({ title: document.title, url: location.href });
+} else {
+await navigator.clipboard.writeText(location.href);
+show("링크가 복사되었습니다");
+}
+} catch (e) {
+if (e && e.name !== "AbortError") show("복사에 실패했습니다");
+}
+});
+}
+
+renderTop();
+setupTabs();
+setupDialog();
+setupShare();
+})();
+</script>
+</body>
+</html>
