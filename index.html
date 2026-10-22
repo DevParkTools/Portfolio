@@ -444,6 +444,27 @@ notes: []
 ],
 works: [
 {
+name: "Mini Hollow Knight",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 메트로이드바니아 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230a0d1a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%233a4a7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M40%2030l10%2022h28l10-22%206%2040c0%2022-14%2036-30%2036s-30-14-30-36z%22%20fill=%22%23e8ecff%22/%3E%3Cellipse%20cx=%2252%22%20cy=%2270%22%20rx=%227%22%20ry=%2211%22%20fill=%22%230a0d1a%22/%3E%3Cellipse%20cx=%2276%22%20cy=%2270%22%20rx=%227%22%20ry=%2211%22%20fill=%22%230a0d1a%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_HollowKnight/"
+},
+{
+name: "Mini Zelda",
+genre: "웹 · 어드벤처",
+desc: "브라우저에서 바로 즐기는 탑다운 어드벤처 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%231d5a2a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%238ac84a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2024l22%2038H42z%22%20fill=%22%23ffe27a%22/%3E%3Cpath%20d=%22M42%2062l22%2038%2022-38z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M20%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M64%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_Zelda/"
+},
+{
+name: "Mini Pokemon",
+genre: "웹 · RPG",
+desc: "브라우저에서 바로 즐기는 미니 몬스터 RPG.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23b3261e%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23ff6a4d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Ccircle%20cx=%2264%22%20cy=%2264%22%20r=%2238%22%20fill=%22%23fff%22/%3E%3Cpath%20d=%22M26%2064a38%2038%200%200%201%2076%200z%22%20fill=%22%23e53935%22/%3E%3Crect%20x=%2226%22%20y=%2261%22%20width=%2276%22%20height=%226%22%20fill=%22%23222%22/%3E%3Ccircle%20cx=%2264%22%20cy=%2264%22%20r=%2212%22%20fill=%22%23fff%22%20stroke=%22%23222%22%20stroke-width=%226%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_Pokemon/"
+},
+{
 name: "Mini StarCraft",
 genre: "웹 · 전략",
 desc: "브라우저에서 바로 즐기는 미니 실시간 전략 게임.",
@@ -868,9 +889,6 @@ tabs[i].tabIndex = 0;
 panels[i].hidden = false;
 current = i;
 if (focus) tabs[i].focus();
-try {
-history.replaceState(null, "", "#" + TAB_IDS[i]);
-} catch (e) {}
 }
 
 tabRoot.addEventListener("click", function (e) {
@@ -883,8 +901,7 @@ const step = e.key === "ArrowRight" ? 1 : -1;
 select((current + step + tabs.length) % tabs.length, true);
 });
 
-const start = TAB_IDS.indexOf(location.hash.slice(1));
-select(start >= 0 ? start : 0, false);
+select(0, false);
 }
 
 function setupDialog() {
