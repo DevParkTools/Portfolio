@@ -22,7 +22,7 @@
 --shadow: 0 1px 2px rgba(18, 21, 27, 0.05), 0 8px 24px rgba(18, 21, 27, 0.06);
 }
 @media (prefers-color-scheme: dark) {
-:root {
+:root:not([data-theme="light"]) {
 --bg: #111318;
 --card: #1b1e25;
 --text: #f2f4f8;
@@ -35,6 +35,19 @@
 --shadow: none;
 }
 }
+:root[data-theme="dark"] {
+--bg: #111318;
+--card: #1b1e25;
+--text: #f2f4f8;
+--sub: #9ba3b0;
+--line: #2a2e38;
+--accent: #7b93ff;
+--accent-2: #a58bff;
+--accent-soft: color-mix(in srgb, var(--accent) 16%, transparent);
+--chip: #262a33;
+--shadow: none;
+}
+
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -55,6 +68,24 @@ padding: calc(14px + env(safe-area-inset-top)) 14px calc(96px + env(safe-area-in
 .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); }
 .top { position: relative; overflow: hidden; }
 .banner { height: 68px; background: linear-gradient(120deg, var(--accent), var(--accent-2)); }
+.theme-btn {
+position: absolute; top: 12px; right: 56px;
+width: 36px; height: 36px; display: grid; place-items: center;
+border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.22); color: #fff; cursor: pointer;
+backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.theme-btn svg { width: 18px; height: 18px; }
+.theme-btn .i-sun { display: none; }
+:root[data-theme="dark"] .theme-btn .i-sun { display: block; }
+:root[data-theme="dark"] .theme-btn .i-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme="light"]) .theme-btn .i-sun { display: block; }
+:root:not([data-theme="light"]) .theme-btn .i-moon { display: none; }
+}
+.sec.box { padding: 12px 14px; border-radius: 14px; background: var(--chip); }
+.sec.box h4 { font-size: 0.88rem; color: var(--text); }
+.sec.box.no { background: color-mix(in srgb, #e5484d 9%, var(--chip)); }
+.dot.no li::before { content: "✕"; position: absolute; left: 0; color: #e5484d; font-weight: 800; }
 .share {
 position: absolute; top: 12px; right: 12px;
 width: 36px; height: 36px; display: grid; place-items: center;
@@ -257,6 +288,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 <div class="app">
 <header class="card top">
 <div class="banner"></div>
+<button class="theme-btn" id="themeBtn" type="button" aria-label="다크 모드 전환"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 <button class="share" id="shareBtn" type="button" aria-label="링크 복사">
 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
 </button>
@@ -332,12 +364,14 @@ outcomes: [
 "막히는 부분을 실시간으로 해결하며 내 게임을 직접 완성합니다",
 "기초부터 스토어 출시까지의 전체 흐름을 배웁니다"
 ],
+
 forWhom: [
 "유니티를 처음 시작하는 분",
 "AI로 게임을 빠르게 만들어 보고 싶은 분",
 "만든 게임을 스토어에 출시하고 싶은 분",
 "팀원 교육이 필요한 기업·단체"
 ],
+notFor: ["게임 전체를 대신 만들어 주길 원하는 분","한 번의 수업으로 모든 것을 끝내길 원하는 분"],
 process: [
 "1:1 수업, 1회 60분 기준",
 "디스코드 화면 공유로 막히는 부분을 바로 해결",
@@ -364,11 +398,13 @@ outcomes: [
 "인앱 결제, 애드몹 승인, 성능 최적화까지 출시에 필요한 작업을 맡길 수 있습니다",
 "PREMIUM은 기능 추가와 버그 수정까지 함께 받습니다"
 ],
+
 forWhom: [
 "게임은 만들었는데 출시 절차가 막막한 분",
 "구글·애플 스토어 등록과 심사 경험이 없는 분",
 "인앱 결제·광고 연동까지 맡기고 싶은 분"
 ],
+notFor: ["출시 후 업데이트·운영까지 계속 맡기길 원하는 분","구글 14일 비공개 테스트 기간 없이 바로 출시를 원하는 분","심사 통과·다운로드·매출을 보장받길 원하는 분"],
 process: [
 "작업 기간 2~7일 (패키지별), 수정 2회",
 "구글 첫 출시는 12명이 14일간 비공개 테스트를 해야 해서 최소 14일이 걸립니다"
@@ -398,11 +434,13 @@ outcomes: [
 "기획 정리와 중간 점검을 거치며 방향을 함께 조율합니다",
 "스토어 등록 지원까지 받을 수 있습니다"
 ],
+
 forWhom: [
 "게임 아이디어는 있지만 개발자가 없는 분",
 "프로토타입을 빠르게 만들어 보고 싶은 분",
 "기획부터 출시 준비까지 한 번에 맡기고 싶은 분"
 ],
+notFor: ["기획 없이 완성된 상용 게임을 단기간에 원하는 분","범위와 일정 조율 없이 진행하길 원하는 분","출시 후 장기 운영·유지보수를 맡기길 원하는 분"],
 process: [
 "기획 정리 → 개발 → 중간 점검 → 스토어 등록 지원",
 "유니티와 AI 도구 활용 1:1 교육도 함께 가능"
@@ -429,11 +467,13 @@ outcomes: [
 "광고, 인앱 결제, 로그인 같은 기능을 추가할 수 있습니다",
 "오래된 유니티·구글 API 버전을 최신으로 올립니다"
 ],
+
 forWhom: [
 "빌드·업로드 오류로 출시가 막힌 분",
 "게임이 느리거나 버그가 많은 분",
 "구버전 유니티 프로젝트를 최신으로 올리고 싶은 분"
 ],
+notFor: ["처음부터 새 게임을 만들어 주길 원하는 분","범위를 정하지 않고 모든 코드 수정을 원하는 분","출시와 매출을 보장받길 원하는 분"],
 process: ["작업 기간 3일(영업일), 수정 2회"],
 packages: [
 { name: "STANDARD", price: "19,000원", desc: "모든 코드 최적화 (범위에 따라 가격 협의)" },
@@ -742,8 +782,8 @@ for (let i = 0; i < items.length; i++) ul.appendChild(el("li", null, items[i]));
 return ul;
 }
 
-function section(title, node) {
-const w = el("section", "sec");
+function section(title, node, cls) {
+const w = el("section", cls ? "sec " + cls : "sec");
 w.appendChild(el("h4", null, title));
 w.appendChild(node);
 return w;
@@ -769,8 +809,8 @@ sheet.appendChild(head);
 
 const body = el("div", "sheet-body");
 body.appendChild(el("p", "lead", s.tagline));
-body.appendChild(section("받으면 이렇게 됩니다", textList(s.outcomes, "check")));
-body.appendChild(section("이런 분께 추천해요", textList(s.forWhom, "dot")));
+body.appendChild(section("🎯 받으면 이렇게 됩니다", textList(s.outcomes, "check"), "box"));
+body.appendChild(section("👍 이런 분께 추천해요", textList(s.forWhom, "check"), "box"));
 body.appendChild(section("진행 방식", textList(s.process, "dot")));
 const pk = el("div", "pkgs");
 for (let i = 0; i < s.packages.length; i++) {
@@ -784,6 +824,7 @@ box.appendChild(el("p", null, p.desc));
 pk.appendChild(box);
 }
 body.appendChild(section("패키지 · 가격", pk));
+if (s.notFor && s.notFor.length) body.appendChild(section("🚫 이런 분께는 권하지 않아요", textList(s.notFor, "dot no"), "box no"));
 if (s.prep.length) body.appendChild(section("준비물", textList(s.prep, "dot")));
 if (s.notes.length) body.appendChild(section("참고", textList(s.notes, "dot")));
 sheet.appendChild(body);
@@ -920,6 +961,31 @@ if (e.target === sheet) sheet.close();
 }
 
 function setupShare() {
+const themeBtn = document.getElementById("themeBtn");
+const root = document.documentElement;
+const metaLight = document.querySelector('meta[name="theme-color"][media*="light"]');
+const metaDark = document.querySelector('meta[name="theme-color"][media*="dark"]');
+const mq = window.matchMedia("(prefers-color-scheme: dark)");
+function isDark() {
+const t = root.getAttribute("data-theme");
+return t ? t === "dark" : mq.matches;
+}
+function syncMeta() {
+const c = isDark() ? "#111318" : "#eef0f5";
+if (metaLight) { metaLight.setAttribute("content", c); metaLight.removeAttribute("media"); }
+if (metaDark) metaDark.remove();
+}
+try {
+const saved = localStorage.getItem("theme");
+if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
+} catch (e) {}
+syncMeta();
+themeBtn.addEventListener("click", function () {
+const next = isDark() ? "light" : "dark";
+root.setAttribute("data-theme", next);
+try { localStorage.setItem("theme", next); } catch (e) {}
+syncMeta();
+});
 const btn = document.getElementById("shareBtn");
 const toast = document.getElementById("toast");
 let timer = 0;
