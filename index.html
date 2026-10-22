@@ -128,6 +128,8 @@ transition: transform 0.15s ease, border-color 0.15s ease;
 font-size: 0.72rem; font-weight: 700; line-height: 1.3;
 display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
+.game.playable { position: relative; }
+.play-badge { display: inline-block; white-space: nowrap; margin-top: 2px; padding: 2px 9px; border-radius: 999px; background: #16a34a; color: #fff; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.01em; }
 .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.66rem; font-weight: 700; }
 .more-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
 .more { display: block; padding: 11px 6px; border-radius: 12px; background: var(--chip); text-align: center; font-size: 0.82rem; font-weight: 700; }
@@ -452,7 +454,7 @@ url: "https://devparktools.github.io/Mini_HollowKnight/"
 },
 {
 name: "Mini Zelda",
-genre: "웹 · 어드벤처",
+genre: "웹 · 모험",
 desc: "브라우저에서 바로 즐기는 탑다운 어드벤처 게임.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%231d5a2a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%238ac84a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2024l22%2038H42z%22%20fill=%22%23ffe27a%22/%3E%3Cpath%20d=%22M42%2062l22%2038%2022-38z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M20%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M64%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3C/svg%3E",
 url: "https://devparktools.github.io/Mini_Zelda/"
@@ -829,6 +831,10 @@ b.setAttribute("aria-label", w.url ? w.name + " 바로 플레이 (새 탭)" : w.
 b.appendChild(img(w.icon, null, w.name, 52, 52, BOX_FALLBACK));
 b.appendChild(el("strong", null, w.name));
 b.appendChild(el("span", "pill", w.genre));
+if (w.url) {
+b.classList.add("playable");
+b.appendChild(el("span", "play-badge", "▶ 플레이"));
+}
 grid.appendChild(b);
 }
 grid.addEventListener("click", function (e) {
