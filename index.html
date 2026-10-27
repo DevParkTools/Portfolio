@@ -235,6 +235,7 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .game.new, .game.new:hover { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .game.hot, .game.hot:hover { border-color: #ff4d4f; box-shadow: 0 0 0 1px #ff4d4f; }
 .tag { position: absolute; top: -8px; right: 8px; padding: 1px 8px; border-radius: 999px; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; }
+.tag.left { right: auto; left: 8px; }
 .tag.new { background: var(--accent); }
 .tag.hot { background: #ff4d4f; }
 @media (min-width: 720px) {
@@ -494,6 +495,8 @@ works: [
 {
 name: "탕탕메이플",
 genre: "메이플 월드 · 서바이버",
+tag: "NEW",
+tagPos: "left",
 desc: "몰려오는 몬스터를 탕탕 쓸어버리는 메이플스토리 월드 서바이버 게임.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23ffd166%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23ff8c42%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2018l9%2020%2018-6-4%2020%2020-4-11%2018%2015%2012-28%202%202%2016-15-6v22H59V96l-15%206%202-16-28-2%2015-12-11-18%2020%204-4-20%2018%206z%22%20fill=%22%23d9480f%22/%3E%3C/svg%3E",
 url: "https://maplestoryworlds.nexon.com/ko/play/7b2e9497886d4d94bd0f7a1d8610eccf/"
@@ -539,6 +542,13 @@ genre: "웹 · 액션",
 desc: "브라우저에서 바로 즐기는 횡스크롤 액션 게임.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%231a3a99%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%232f6bff%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20fill=%22url%28%23g%29%22/%3E%3Crect%20x=%2234%22%20y=%2240%22%20width=%2260%22%20height=%2250%22%20rx=%2214%22%20fill=%22%23dbe8ff%22/%3E%3Crect%20x=%2244%22%20y=%2254%22%20width=%2240%22%20height=%2216%22%20rx=%228%22%20fill=%22%2310131f%22/%3E%3Crect%20x=%2250%22%20y=%2259%22%20width=%2210%22%20height=%226%22%20fill=%22%238fd3ff%22/%3E%3Crect%20x=%2268%22%20y=%2259%22%20width=%2210%22%20height=%226%22%20fill=%22%238fd3ff%22/%3E%3Cpath%20d=%22M96%2024l-14%2022h12l-8%2022%2022-28H94z%22%20fill=%22%23ffe36b%22/%3E%3C/svg%3E",
 url: "https://devparktools.github.io/Mini_Megaman/"
+},
+{
+name: "Mini Sonic",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 고속 횡스크롤 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230b3d91%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%232f8bff%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Ccircle%20cx=%2264%22%20cy=%2260%22%20r=%2228%22%20fill=%22none%22%20stroke=%22%23ffd23f%22%20stroke-width=%2212%22/%3E%3Cpath%20d=%22M18%20100q46-6%2094-44%22%20fill=%22none%22%20stroke=%22%23ffffff%22%20stroke-width=%228%22%20stroke-linecap=%22round%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_Sonic/"
 },
 {
 name: "던전 앞 상점",
@@ -927,7 +937,7 @@ b.appendChild(el("span", "play-badge", "▶ 플레이"));
 if (w.tag) {
 const k = w.tag.toLowerCase();
 b.classList.add(k);
-b.appendChild(el("span", "tag " + k, w.tag));
+b.appendChild(el("span", "tag " + k + (w.tagPos === "left" ? " left" : ""), w.tag));
 }
 grid.appendChild(b);
 }
