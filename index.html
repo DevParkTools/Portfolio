@@ -231,6 +231,12 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .more:hover { opacity: 0.85; }
 .tab:hover:not([aria-selected="true"]) { color: var(--text); }
 }
+.game.new, .game.hot { position: relative; }
+.game.new, .game.new:hover { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.game.hot, .game.hot:hover { border-color: #ff4d4f; box-shadow: 0 0 0 1px #ff4d4f; }
+.tag { position: absolute; top: -8px; right: 8px; padding: 1px 8px; border-radius: 999px; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; }
+.tag.new { background: var(--accent); }
+.tag.hot { background: #ff4d4f; }
 @media (min-width: 720px) {
 .app { padding-top: 32px; }
 .banner { height: 84px; }
@@ -493,18 +499,11 @@ icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%2
 url: "https://maplestoryworlds.nexon.com/ko/play/7b2e9497886d4d94bd0f7a1d8610eccf/"
 },
 {
-name: "Mini Hollow Knight",
-genre: "웹 · 액션",
-desc: "브라우저에서 바로 즐기는 메트로이드바니아 액션 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230a0d1a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%233a4a7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M40%2030l10%2022h28l10-22%206%2040c0%2022-14%2036-30%2036s-30-14-30-36z%22%20fill=%22%23e8ecff%22/%3E%3Cellipse%20cx=%2252%22%20cy=%2270%22%20rx=%227%22%20ry=%2211%22%20fill=%22%230a0d1a%22/%3E%3Cellipse%20cx=%2276%22%20cy=%2270%22%20rx=%227%22%20ry=%2211%22%20fill=%22%230a0d1a%22/%3E%3C/svg%3E",
-url: "https://devparktools.github.io/Mini_HollowKnight/"
-},
-{
-name: "Mini Zelda",
-genre: "웹 · 모험",
-desc: "브라우저에서 바로 즐기는 탑다운 어드벤처 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%231d5a2a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%238ac84a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2024l22%2038H42z%22%20fill=%22%23ffe27a%22/%3E%3Cpath%20d=%22M42%2062l22%2038%2022-38z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M20%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M64%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3C/svg%3E",
-url: "https://devparktools.github.io/Mini_Zelda/"
+name: "Mini LOL",
+genre: "웹 · AOS",
+desc: "브라우저에서 바로 즐기는 2 vs 2 칼바람나락 스타일 AOS 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230a1a33%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23c8a24a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2020l12%2050H52z%22%20fill=%22%23f4e4b0%22/%3E%3Crect%20x=%2242%22%20y=%2270%22%20width=%2244%22%20height=%228%22%20rx=%224%22%20fill=%22%23f4e4b0%22/%3E%3Crect%20x=%2260%22%20y=%2278%22%20width=%228%22%20height=%2226%22%20fill=%22%23f4e4b0%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_LOL/"
 },
 {
 name: "Mini Pokemon",
@@ -514,11 +513,25 @@ icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%2
 url: "https://devparktools.github.io/Mini_Pokemon/"
 },
 {
+name: "Mini Zelda",
+genre: "웹 · 모험",
+desc: "브라우저에서 바로 즐기는 탑다운 어드벤처 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%231d5a2a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%238ac84a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2024l22%2038H42z%22%20fill=%22%23ffe27a%22/%3E%3Cpath%20d=%22M42%2062l22%2038%2022-38z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M20%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3Cpath%20d=%22M64%20100l22-38%2022%2038z%22%20fill=%22%23ffe27a%22%20opacity=%22.85%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_Zelda/"
+},
+{
 name: "Mini StarCraft",
 genre: "웹 · 전략",
 desc: "브라우저에서 바로 즐기는 미니 실시간 전략 게임.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230b1b3a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%232a4aa8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20fill=%22url%28%23g%29%22/%3E%3Cg%20fill=%22%237fe3ff%22%3E%3Cpath%20d=%22M64%2022l16%2030h-32z%22/%3E%3Cpath%20d=%22M64%20106l-16-30h32z%22%20opacity=%22.55%22/%3E%3Cpath%20d=%22M22%2064l30-16v32z%22%20opacity=%22.75%22/%3E%3Cpath%20d=%22M106%2064l-30%2016v-32z%22%20opacity=%22.75%22/%3E%3C/g%3E%3Ccircle%20cx=%2264%22%20cy=%2264%22%20r=%229%22%20fill=%22%23fff%22/%3E%3C/svg%3E",
 url: "https://devparktools.github.io/Mini_StarCraft/"
+},
+{
+name: "Mini Hollow Knight",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 메트로이드바니아 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230a0d1a%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%233a4a7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M40%2030l10%2022h28l10-22%206%2040c0%2022-14%2036-30%2036s-30-14-30-36z%22%20fill=%22%23e8ecff%22/%3E%3Cellipse%20cx=%2252%22%20cy=%2270%22%20rx=%227%22%20ry=%2211%22%20fill=%22%230a0d1a%22/%3E%3Cellipse%20cx=%2276%22%20cy=%2270%22%20rx=%227%22%20ry=%2211%22%20fill=%22%230a0d1a%22/%3E%3C/svg%3E",
+url: "https://devparktools.github.io/Mini_HollowKnight/"
 },
 {
 name: "Mini Megaman",
@@ -528,15 +541,9 @@ icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%2
 url: "https://devparktools.github.io/Mini_Megaman/"
 },
 {
-name: "Mini LOL",
-genre: "웹 · AOS",
-desc: "브라우저에서 바로 즐기는 2 vs 2 칼바람나락 스타일 AOS 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%230a1a33%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23c8a24a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2020l12%2050H52z%22%20fill=%22%23f4e4b0%22/%3E%3Crect%20x=%2242%22%20y=%2270%22%20width=%2244%22%20height=%228%22%20rx=%224%22%20fill=%22%23f4e4b0%22/%3E%3Crect%20x=%2260%22%20y=%2278%22%20width=%228%22%20height=%2226%22%20fill=%22%23f4e4b0%22/%3E%3C/svg%3E",
-url: "https://devparktools.github.io/Mini_LOL/"
-},
-{
 name: "던전 앞 상점",
 genre: "시뮬레이션",
+tag: "NEW",
 desc: "작은 던전 노점을 전설의 상점으로 키우는 픽셀 상점 경영 게임.",
 icon: "https://play-lh.googleusercontent.com/biYWXMQT_kJYZ20kilUtO23nGX7go9urw__uMpZ3TtW95Ii06Vfv4xP_tW3_djf_-eMpxJGcYEaVDq_figsqauM=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.dungeonfrontshop" }]
@@ -544,6 +551,7 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 {
 name: "룬 어센드",
 genre: "카드",
+tag: "NEW",
 desc: "룬을 새기고 원소를 융합해 탑을 오르는 덱빌딩 카드 로그라이크.",
 icon: "https://play-lh.googleusercontent.com/6Z1_zUOqvAwImpTBC70a0QAimC-zdCGMLZwbMJuzskpVjw7QUWIB-5zDVH_rZSKAovQrocMRLq9xTJ3RUOQziw=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.runehand" }]
@@ -551,6 +559,7 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 {
 name: "왕국 디펜스 M",
 genre: "전략",
+tag: "NEW",
 desc: "타워를 짓고 영웅을 이끌어 왕국을 지키는 디펜스 게임.",
 icon: "https://play-lh.googleusercontent.com/tsXFBKZFBAXTtqxWGT2CRH0BB5IwMYIxX9hhfxlI6xrPGh28fMXV8tieC4z3A_wyiEhIq5HhV6lKkVktqRJ_ng=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.kingdomdefensem" }]
@@ -558,6 +567,7 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 {
 name: "깨면 레전드",
 genre: "아케이드",
+tag: "HOT",
 desc: "미사일과 레이저를 피해 달에서 탈출하는 하드코어 탑다운 아케이드.",
 icon: "https://play-lh.googleusercontent.com/kNidkPRnYP6jKccBgi4l2PIgIhYOedvrFJdg92tH6M7CwdDJ49RD1FUy41p6-vqZxao4LVuotIZUTBPVOzvpiA=s128",
 stores: [
@@ -565,6 +575,14 @@ stores: [
 { label: "스토브 인디", url: "https://store.onstove.com/ko/games/100578" },
 { label: "스팀", url: "https://store.steampowered.com/app/3620750/Super_Hard_Game/" }
 ]
+},
+{
+name: "윈드체스",
+genre: "보드게임",
+tag: "HOT",
+desc: "귀여운 영웅들과 PvP 대결을 즐기는 픽셀 아트 전략 보드게임.",
+icon: "https://play-lh.googleusercontent.com/WFtPfUAuMIEeDrX9a96Dv_tCwuPmuQtQ5LD2c3xaiOMU5-i3Gn_Tu0NnEkIY9zBDBOgUZKVx3cdeyoowt92E=s128",
+stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.bluebook.windchess" }]
 },
 {
 name: "푸드 마스터",
@@ -602,6 +620,7 @@ name: "OX Quiz",
 genre: "퀴즈",
 desc: "60초 안에 상식 퀴즈를 풀고 부엉이 펫을 키우는 게임.",
 icon: "https://play-lh.googleusercontent.com/LNJ7xuWIS2QDkCWrCREWeCv6VPmt4lJ9GrXlA-p7laSYjGPR8dk48HEIJSMb4kHNcUxa68L1lPfC1rJK3m3omg=s128",
+url: "https://touch-party-67378457.web.app",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.flutter.gosuoflife" }]
 },
 {
@@ -872,6 +891,7 @@ dlg.appendChild(el("h3", null, w.name));
 dlg.appendChild(el("span", "pill", w.genre));
 if (w.desc) dlg.appendChild(el("p", null, w.desc));
 const stores = el("div", "stores");
+if (w.url) stores.appendChild(link(w.url, "btn", "웹에서 바로 플레이"));
 for (let i = 0; i < w.stores.length; i++) {
 const st = w.stores[i];
 const a = link(st.url, "btn", st.label + "에서 더보기");
@@ -896,7 +916,7 @@ const w = D.works[i];
 const b = el("button", "game");
 b.type = "button";
 b.dataset.index = i;
-b.setAttribute("aria-label", w.url ? w.name + " 바로 플레이 (새 탭)" : w.name + " 상세 보기");
+b.setAttribute("aria-label", w.url && !w.stores ? w.name + " 바로 플레이 (새 탭)" : w.name + " 상세 보기");
 b.appendChild(img(w.icon, null, w.name, 52, 52, BOX_FALLBACK));
 b.appendChild(el("strong", null, w.name));
 b.appendChild(el("span", "pill", w.genre));
@@ -904,13 +924,18 @@ if (w.url) {
 b.classList.add("playable");
 b.appendChild(el("span", "play-badge", "▶ 플레이"));
 }
+if (w.tag) {
+const k = w.tag.toLowerCase();
+b.classList.add(k);
+b.appendChild(el("span", "tag " + k, w.tag));
+}
 grid.appendChild(b);
 }
 grid.addEventListener("click", function (e) {
 const b = e.target.closest("button.game");
 if (!b) return;
 const w = D.works[b.dataset.index];
-if (w.url) window.open(w.url, "_blank", "noopener");
+if (w.url && !w.stores) window.open(w.url, "_blank", "noopener");
 else openWork(w);
 });
 wrap.appendChild(grid);
