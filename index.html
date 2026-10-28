@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>박성현 | 게임 개발자</title>
 <meta name="description" content="유니티 게임 개발, 구글·애플 출시 대행, 1:1 강의. 게임 개발자 박성현의 포트폴리오">
+<meta property="og:type" content="website">
+<meta property="og:title" content="박성현 | 게임 개발자">
+<meta property="og:description" content="유니티 게임 개발, 구글·애플 출시 대행, 1:1 강의. 게임 개발자 박성현의 포트폴리오">
 <meta name="theme-color" content="#eef0f5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)">
 <style>
@@ -146,7 +149,7 @@ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overf
 .meta b { color: var(--accent); font-weight: 800; }
 .meta span { color: var(--sub); font-weight: 600; }
 .chev { flex: 0 0 auto; color: var(--sub); font-size: 1.1rem; }
-.games { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.games { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
 .game {
 display: flex; flex-direction: column; align-items: center; gap: 6px;
 padding: 10px 4px 8px; border: 1px solid var(--line); border-radius: 14px;
@@ -156,11 +159,11 @@ transition: transform 0.15s ease, border-color 0.15s ease;
 .game:active { transform: scale(0.97); }
 .game img { width: 52px; height: 52px; border-radius: 13px; object-fit: cover; background: var(--chip); }
 .game strong {
-font-size: 0.72rem; font-weight: 700; line-height: 1.3;
+font-size: 0.72rem; font-weight: 700; line-height: 1.3; min-height: 2.6em;
 display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .game.playable { position: relative; }
-.play-badge { display: inline-block; white-space: nowrap; margin-top: 2px; padding: 2px 9px; border-radius: 999px; background: #16a34a; color: #fff; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.01em; }
+.play-badge { display: inline-block; white-space: nowrap; margin-top: auto; padding: 2px 6px; border-radius: 999px; background: #16a34a; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.01em; }
 .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.66rem; font-weight: 700; }
 .more-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
 .more { display: block; padding: 11px 6px; border-radius: 12px; background: var(--chip); text-align: center; font-size: 0.82rem; font-weight: 700; }
@@ -234,10 +237,27 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .game.new, .game.hot { position: relative; }
 .game.new, .game.new:hover { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .game.hot, .game.hot:hover { border-color: #ff4d4f; box-shadow: 0 0 0 1px #ff4d4f; }
-.tag { position: absolute; top: -8px; right: 8px; padding: 1px 8px; border-radius: 999px; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; }
-.tag.left { right: auto; left: 8px; }
+.tag { position: absolute; top: -8px; left: 8px; padding: 1px 8px; border-radius: 999px; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; }
 .tag.new { background: var(--accent); }
 .tag.hot { background: #ff4d4f; }
+.chips { display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: 0 0 auto; min-height: 34px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--sub); font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.game[hidden] { display: none; }
+.empty { margin: 14px 0 4px; text-align: center; color: var(--sub); font-size: 0.84rem; }
+.empty[hidden] { display: none; }
+.faq { display: grid; gap: 6px; }
+.faq details { border: 1px solid var(--line); border-radius: 12px; padding: 0 12px; }
+.faq summary { padding: 10px 0; font-size: 0.86rem; font-weight: 700; cursor: pointer; }
+.faq p { margin: 0 0 10px; color: var(--sub); font-size: 0.82rem; line-height: 1.5; }
+@media (max-width: 400px) {
+.game { padding-left: 2px; padding-right: 2px; }
+.play-badge { padding: 2px 4px; font-size: 0.56rem; letter-spacing: -0.03em; }
+}
+@media (max-width: 340px) {
+.games { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (min-width: 720px) {
 .app { padding-top: 32px; }
 .banner { height: 84px; }
@@ -247,7 +267,7 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .who-text { margin-top: 48px; }
 .who h1 { font-size: 1.4rem; }
 .panel { padding: 14px; }
-.games { grid-template-columns: repeat(6, 1fr); }
+.games { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .game img { width: 60px; height: 60px; }
 .game strong { font-size: 0.78rem; }
 .list { grid-template-columns: 1fr 1fr; }
@@ -366,6 +386,12 @@ rating: "★ 5.0 (19)",
 sales: "20건 판매",
 image: "https://static.cdn.kmong.com/gigs/MaFKg1781841270.jpg",
 url: "https://kmong.com/gig/578652",
+faq: [
+["유니티를 처음 써 봐도 괜찮나요?", "괜찮습니다. 기초부터 시작하고, 막히는 부분은 화면 공유로 바로 해결합니다."],
+["수업은 어떻게 진행되나요?", "1:1 수업이고 1회 60분 기준입니다. 디스코드 화면 공유로 진행합니다."],
+["기업·단체 교육도 되나요?", "가능합니다. PREMIUM은 인당 가격이며 인원과 일정은 문의가 필요합니다."]
+],
+
 outcomes: [
 "AI 바이브코딩으로 유니티 게임을 빠르게 만드는 방법을 익힙니다",
 "막히는 부분을 실시간으로 해결하며 내 게임을 직접 완성합니다",
@@ -400,6 +426,12 @@ rating: "★ 4.8 (10)",
 sales: "13건 판매",
 image: "https://static.cdn.kmong.com/gigs/G586R1781841257.jpg",
 url: "https://kmong.com/gig/527055",
+faq: [
+["출시까지 얼마나 걸리나요?", "작업 기간은 패키지별 2~7일입니다. 구글 첫 출시는 12명이 14일간 비공개 테스트를 해야 해서 최소 14일이 걸립니다."],
+["무엇을 준비해야 하나요?", "유니티 프로젝트 파일, 본인 인증된 구글·애플 개발자 계정이 필요하고, 광고를 넣는 경우 애드몹 계정도 필요합니다."],
+["심사 통과를 보장하나요?", "심사 통과, 다운로드, 매출은 보장하지 않습니다. 출시 후 업데이트 관리는 별도 협의입니다."]
+],
+
 outcomes: [
 "내 게임이 실제 스토어에 등록되어 누구나 다운로드할 수 있게 됩니다",
 "인앱 결제, 애드몹 승인, 성능 최적화까지 출시에 필요한 작업을 맡길 수 있습니다",
@@ -436,6 +468,12 @@ rating: "",
 sales: "",
 image: "https://static.cdn.kmong.com/gigs/0Jjon1784073636.jpg",
 url: "https://kmong.com/gig/792943",
+faq: [
+["기획서가 없어도 되나요?", "괜찮습니다. 기획 정리부터 함께 진행하고 중간 점검으로 방향을 조율합니다."],
+["작업 기간은 얼마나 걸리나요?", "STANDARD 2일, DELUXE 15일, PREMIUM 30일입니다."],
+["출시 후 유지보수도 해 주나요?", "장기 운영·유지보수는 포함되지 않습니다. 패키지별 포함 범위는 크몽 상세 페이지에서 확인하세요."]
+],
+
 outcomes: [
 "프로토타입부터 출시 준비 단계까지 개발된 내 게임을 받습니다",
 "기획 정리와 중간 점검을 거치며 방향을 함께 조율합니다",
@@ -468,6 +506,12 @@ rating: "★ 5.0 (49)",
 sales: "61건 판매",
 image: "https://static.cdn.kmong.com/gigs/AIxEm1781841116.jpg",
 url: "https://kmong.com/gig/513046",
+faq: [
+["어디까지 수정해 주나요?", "STANDARD는 모든 코드 최적화이고, 범위에 따라 가격을 협의합니다. 빌드 오류는 DELUXE, 에디터 버전 업그레이드는 PREMIUM입니다."],
+["작업 기간과 수정 횟수는요?", "작업 기간은 3일(영업일)이고 수정은 2회입니다."],
+["새 게임을 만들어 주나요?", "아니요. 이미 있는 프로젝트의 오류 수정과 성능·버전 개선을 맡습니다."]
+],
+
 outcomes: [
 "코드 버그와 성능 문제가 정리된 프로젝트를 받습니다",
 "구글·애플 빌드가 실패하던 문제를 해결해 다시 출시할 수 있습니다",
@@ -496,7 +540,6 @@ works: [
 name: "탕탕메이플",
 genre: "메이플 월드 · 서바이버",
 tag: "NEW",
-tagPos: "left",
 desc: "몰려오는 몬스터를 탕탕 쓸어버리는 메이플스토리 월드 서바이버 게임.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23ffd166%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23ff8c42%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%22128%22%20height=%22128%22%20rx=%2228%22%20fill=%22url%28%23g%29%22/%3E%3Cpath%20d=%22M64%2018l9%2020%2018-6-4%2020%2020-4-11%2018%2015%2012-28%202%202%2016-15-6v22H59V96l-15%206%202-16-28-2%2015-12-11-18%2020%204-4-20%2018%206z%22%20fill=%22%23d9480f%22/%3E%3C/svg%3E",
 url: "https://maplestoryworlds.nexon.com/ko/play/7b2e9497886d4d94bd0f7a1d8610eccf/"
@@ -884,6 +927,17 @@ w.appendChild(node);
 return w;
 }
 
+function faqList(items) {
+const root = el("div", "faq");
+for (let i = 0; i < items.length; i++) {
+const d = el("details");
+d.appendChild(el("summary", null, items[i][0]));
+d.appendChild(el("p", null, items[i][1]));
+root.appendChild(d);
+}
+return root;
+}
+
 function openService(s) {
 sheet.textContent = "";
 const head = el("div", "sheet-head");
@@ -922,6 +976,7 @@ body.appendChild(section("패키지 · 가격", pk));
 if (s.notFor && s.notFor.length) body.appendChild(section("🚫 이런 분께는 권하지 않아요", textList(s.notFor, "dot no"), "box no"));
 if (s.prep.length) body.appendChild(section("준비물", textList(s.prep, "dot")));
 if (s.notes.length) body.appendChild(section("참고", textList(s.notes, "dot")));
+if (s.faq && s.faq.length) body.appendChild(section("자주 묻는 질문", faqList(s.faq)));
 sheet.appendChild(body);
 
 const cta = el("div", "sheet-cta");
@@ -956,37 +1011,100 @@ dlg.appendChild(stores);
 dlg.showModal();
 }
 
-function buildWorks() {
-const wrap = el("div");
-const grid = el("div", "games");
-for (let i = 0; i < D.works.length; i++) {
+const CATS = ["전체", "바로 플레이", "구글 플레이", "액션", "RPG·전략", "퍼즐·캐주얼"];
+const GENRE_RULES = [
+["액션", /액션|AOS|서바이버|아케이드|플랫포머|대전/],
+["RPG·전략", /RPG|전략|모험|시뮬레이션|방치형|카드|보드게임/],
+["퍼즐·캐주얼", /퍼즐|캐주얼|퀴즈|리듬/]
+];
+
+function workMatches(w, cat) {
+if (cat === "전체") return true;
+if (cat === "바로 플레이") return !!w.url;
+if (cat === "구글 플레이") {
+if (!w.stores) return false;
+for (let i = 0; i < w.stores.length; i++) if (w.stores[i].label === "구글 플레이") return true;
+return false;
+}
+for (let i = 0; i < GENRE_RULES.length; i++) {
+if (GENRE_RULES[i][0] === cat) return GENRE_RULES[i][1].test(w.genre);
+}
+return false;
+}
+
+function buildGame(i) {
 const w = D.works[i];
+const direct = w.url && !w.stores;
 const b = el("button", "game");
 b.type = "button";
 b.dataset.index = i;
-b.setAttribute("aria-label", w.url && !w.stores ? w.name + " 바로 플레이 (새 탭)" : w.name + " 상세 보기");
+b.setAttribute("aria-label", direct ? w.name + " 바로 플레이 (새 탭)" : w.name + " 상세 보기");
 b.appendChild(img(w.icon, null, w.name, 52, 52, BOX_FALLBACK));
 b.appendChild(el("strong", null, w.name));
 b.appendChild(el("span", "pill", w.genre));
 if (w.url) {
 b.classList.add("playable");
-b.appendChild(el("span", "play-badge", "▶ 플레이"));
+b.appendChild(el("span", "play-badge", "▶ 바로 플레이"));
 }
 if (w.tag) {
 const k = w.tag.toLowerCase();
 b.classList.add(k);
-b.appendChild(el("span", "tag " + k + (w.tagPos === "left" ? " left" : ""), w.tag));
+b.appendChild(el("span", "tag " + k, w.tag));
 }
-grid.appendChild(b);
+return b;
 }
-grid.addEventListener("click", function (e) {
+
+function buildWorks() {
+const wrap = el("div");
+
+const chips = el("div", "chips");
+chips.setAttribute("role", "group");
+chips.setAttribute("aria-label", "게임 필터");
+const chipBtns = [];
+for (let i = 0; i < CATS.length; i++) {
+const c = el("button", "chip", CATS[i]);
+c.type = "button";
+c.dataset.cat = CATS[i];
+c.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+chipBtns.push(c);
+chips.appendChild(c);
+}
+wrap.appendChild(chips);
+
+const grid = el("div", "games");
+const games = [];
+for (let i = 0; i < D.works.length; i++) {
+const g = buildGame(i);
+games.push(g);
+grid.appendChild(g);
+}
+wrap.appendChild(grid);
+const empty = el("p", "empty", "해당하는 게임이 없습니다");
+empty.hidden = true;
+wrap.appendChild(empty);
+
+chips.addEventListener("click", function (e) {
+const c = e.target.closest("button.chip");
+if (!c) return;
+const cat = c.dataset.cat;
+for (let i = 0; i < chipBtns.length; i++) chipBtns[i].setAttribute("aria-pressed", chipBtns[i] === c ? "true" : "false");
+let shown = 0;
+for (let i = 0; i < games.length; i++) {
+const ok = workMatches(D.works[i], cat);
+games[i].hidden = !ok;
+if (ok) shown++;
+}
+empty.hidden = shown > 0;
+});
+
+wrap.addEventListener("click", function (e) {
 const b = e.target.closest("button.game");
 if (!b) return;
 const w = D.works[b.dataset.index];
 if (w.url && !w.stores) window.open(w.url, "_blank", "noopener");
 else openWork(w);
 });
-wrap.appendChild(grid);
+
 const more = el("div", "more-row");
 more.appendChild(link(P.playDeveloper, "more", "구글 플레이 전체 →"));
 more.appendChild(link(P.kmongPortfolios, "more", "크몽 포트폴리오 전체 →"));
