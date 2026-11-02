@@ -77,6 +77,13 @@ width: 36px; height: 36px; display: grid; place-items: center;
 border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.22); color: #fff; cursor: pointer;
 backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 }
+.lang-sel {
+position: absolute; top: 12px; right: 100px; height: 36px; padding: 0 10px;
+border: 0; border-radius: 18px; background: rgba(255, 255, 255, 0.22); color: #fff; cursor: pointer;
+font: inherit; font-size: 0.82rem; font-weight: 700; appearance: none; -webkit-appearance: none; text-align: center;
+backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.lang-sel option { color: #12151b; background: #fff; }
 .theme-btn svg { width: 18px; height: 18px; }
 .theme-btn .i-sun { display: none; }
 :root[data-theme="dark"] .theme-btn .i-sun { display: block; }
@@ -317,6 +324,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 <div class="app">
 <header class="card top">
 <div class="banner"></div>
+<select class="lang-sel" id="langSel"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">中文</option></select>
 <button class="theme-btn" id="themeBtn" type="button" aria-label="다크 모드 전환"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 <button class="share" id="shareBtn" type="button" aria-label="링크 복사">
 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
@@ -854,14 +862,1044 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 ]
 };
 
+const I18N = {
+ko: {
+ui: {
+title: "박성현 | 게임 개발자",
+name: "박성현 | 게임 개발자",
+intro: "유니티 게임 개발 · 출시 · 최적화 전문",
+metaDesc: "유니티 게임 개발, 구글·애플 출시 대행, 코드 최적화, 1:1 강의. 게임 개발자 박성현의 포트폴리오",
+responseNote: "평균 2시간 이내 답변",
+themeAria: "다크 모드 전환",
+shareAria: "링크 복사",
+avatarAlt: "프로필 사진",
+tabsAria: "포트폴리오 메뉴",
+langAria: "언어",
+tabs: ["내 앱", "강의 · 서비스"],
+hook: "설치 없이 바로 플레이 가능한 게임 {n}개",
+more: "더보기",
+less: "접기",
+kakao: "카카오톡 문의",
+kmongProfile: "크몽 프로필",
+kmongApply: "크몽에서 신청",
+reviewsTitle: "수강 후기",
+reviewsAria: "수강 후기",
+detail: "{n} 상세 보기",
+close: "닫기",
+secOutcomes: "🎯 받으면 이렇게 됩니다",
+secForWhom: "👍 이런 분께 추천해요",
+secProcess: "진행 방식",
+secPackages: "패키지 · 가격",
+secOptions: "추가 옵션",
+secNotFor: "🚫 이런 분께는 권하지 않아요",
+secPrep: "준비물",
+secInquiry: "문의하실 때 알려 주세요",
+secNotes: "참고",
+secFaq: "자주 묻는 질문",
+playWeb: "웹에서 바로 플레이",
+storeMore: "{s}에서 더보기",
+playBadge: "▶ 바로 플레이",
+playAria: "{n} 바로 플레이 (새 탭)",
+filterAria: "게임 필터",
+empty: "해당하는 게임이 없습니다",
+moreGoogle: "구글 플레이 전체 →",
+moreKmong: "크몽 포트폴리오 전체 →",
+copied: "링크가 복사되었습니다",
+copyFail: "복사에 실패했습니다",
+sold: "{n}건 판매",
+negotiable: "협의",
+cats: { "전체": "전체", "바로 플레이": "바로 플레이", "구글 플레이": "구글 플레이", "액션": "액션", "RPG·전략": "RPG·전략", "퍼즐·캐주얼": "퍼즐·캐주얼" },
+stores: { "구글 플레이": "구글 플레이", "스토브 인디": "스토브 인디", "스팀": "스팀" },
+genres: {}
+}
+},
+en: {
+ui: {
+title: "Sunghyun Park | Game Developer",
+name: "Sunghyun Park | Game Developer",
+intro: "Unity game development · release · optimization specialist",
+metaDesc: "Unity game development, Google Play & App Store release support, code optimization, 1:1 lessons. Portfolio of game developer Sunghyun Park.",
+responseNote: "Replies within 2 hours on average",
+themeAria: "Toggle dark mode",
+shareAria: "Copy link",
+avatarAlt: "Profile photo",
+tabsAria: "Portfolio menu",
+langAria: "Language",
+tabs: ["My Apps", "Lessons · Services"],
+hook: "{n} games you can play instantly, no install",
+more: "Show more",
+less: "Show less",
+kakao: "Contact on KakaoTalk",
+kmongProfile: "Kmong profile",
+kmongApply: "Order on Kmong",
+reviewsTitle: "Student reviews (original Korean)",
+reviewsAria: "Student reviews",
+detail: "{n} details",
+close: "Close",
+secOutcomes: "🎯 What you'll get",
+secForWhom: "👍 Recommended for",
+secProcess: "How it works",
+secPackages: "Packages · Pricing",
+secOptions: "Add-ons",
+secNotFor: "🚫 Not recommended for",
+secPrep: "What to prepare",
+secInquiry: "Please tell me when you inquire",
+secNotes: "Notes",
+secFaq: "FAQ",
+playWeb: "Play instantly in browser",
+storeMore: "More on {s}",
+playBadge: "▶ Play now",
+playAria: "{n} – play now (new tab)",
+filterAria: "Game filter",
+empty: "No matching games",
+moreGoogle: "All on Google Play →",
+moreKmong: "All Kmong portfolios →",
+copied: "Link copied",
+copyFail: "Copy failed",
+sold: "{n} sold",
+negotiable: "Negotiable",
+cats: { "전체": "All", "바로 플레이": "Play now", "구글 플레이": "Google Play", "액션": "Action", "RPG·전략": "RPG · Strategy", "퍼즐·캐주얼": "Puzzle · Casual" },
+stores: { "구글 플레이": "Google Play", "스토브 인디": "STOVE Indie", "스팀": "Steam" },
+genres: { "웹": "Web", "AOS": "AOS", "RPG": "RPG", "모험": "Adventure", "전략": "Strategy", "액션": "Action", "리듬": "Rhythm", "플랫포머": "Platformer", "대전": "Versus", "시뮬레이션": "Simulation", "카드": "Card", "아케이드": "Arcade", "보드게임": "Board game", "방치형": "Idle", "퍼즐": "Puzzle", "캐주얼": "Casual", "퀴즈": "Quiz", "메이플 월드": "Maple World", "서바이버": "Survivor" }
+},
+about: [
+"Released 45+ projects on Google Play, App Store, Steam, STOVE Indie and more",
+"100+ development orders completed on Kmong (rating 4.9)",
+"7 years of development experience (3 company dev teams + freelance)",
+"Selected and exhibited in an indie game contest",
+"Led games of various genres through the whole process, from planning to release",
+"Teaching Unity and AI vibe coding in tailored 1:1 lessons",
+"2026 IT project guest lecture, Dept. of Digital Media, Soongsil University",
+"Project lecture at Readinggate Co., Ltd."
+],
+descs: [
+"A MapleStory Worlds survivor game where you mow down waves of monsters.",
+"A 2 vs 2 ARAM-style AOS game you can play right in your browser.",
+"A mini monster RPG you can play right in your browser.",
+"A top-down adventure game you can play right in your browser.",
+"A mini real-time strategy game you can play right in your browser.",
+"A metroidvania action game you can play right in your browser.",
+"A side-scrolling action game you can play right in your browser.",
+"A high-speed side-scrolling action game you can play right in your browser.",
+"A cheer-squad rhythm game you can play right in your browser.",
+"An Undertale-style story RPG you can play right in your browser.",
+"A pixel platformer with dashes and wall jumps, playable right in your browser.",
+"A belt-scroll action game you can play right in your browser.",
+"A water-balloon battle game you can play right in your browser.",
+"A pixel shop-management game where you grow a small dungeon stall into a legendary shop.",
+"A deck-building card roguelike where you inscribe runes and fuse elements to climb the tower.",
+"A defense game where you build towers and lead heroes to protect the kingdom.",
+"A hardcore top-down arcade game: dodge missiles and lasers to escape the moon.",
+"A pixel-art strategy board game with PvP battles featuring cute heroes.",
+"An idle game where you collect and raise the most powerful food in the universe.",
+"Easy and fun brick breaker for when you're bored.",
+"Easy and fun Minesweeper for when you're bored.",
+"A game where you become a pigeon and fly through a mysterious city.",
+"A game where you answer trivia quizzes in 60 seconds and raise an owl pet.",
+"8 brain puzzles played with drags and taps.",
+"A fantasy world where fairy-tale heroes gather in one place.",
+"A casual idle RPG where you become an office worker, handle tasks and get promoted.",
+"A relaxing puzzle game where you find hidden cats and objects before time runs out."
+],
+services: [
+{
+title: "Unity AI Vibe Coding 1:1 Lessons",
+tagline: "Finish your first Unity game yourself with AI vibe coding",
+badge: "Flagship Course",
+faq: [
+["Is it okay if I've never used Unity?", "Yes. We start from the basics, and anything you get stuck on is solved right away via screen sharing."],
+["How are the lessons run?", "One-on-one, 60 minutes per session, held over Discord with screen sharing."],
+["Do I need to know programming?", "No. Lessons focus on how to give requests to AI, and I explain any needed code concepts along the way."],
+["Can I build a game with just the trial lesson?", "The trial covers setup and your first screen. Choose DELUXE to complete a game, or PREMIUM to cover the release flow."],
+["Do you offer corporate or group training?", "Yes. Tell me the headcount and schedule in an inquiry and I'll send a quote."]
+],
+outcomes: [
+"Learn how to build Unity games quickly with AI vibe coding",
+"Get stuck points solved in real time and finish your own game",
+"Learn the whole flow from the basics to store release"
+],
+forWhom: [
+"People just starting with Unity",
+"Anyone who wants to build games quickly with AI",
+"Anyone who wants to release their game on the stores",
+"Companies and groups that need team training (inquire separately)"
+],
+notFor: [
+"Anyone who wants the entire game built for them",
+"Anyone who expects to finish everything in a single lesson"
+],
+process: [
+"1:1 lessons, 60 minutes per session",
+"Get unstuck instantly via Discord screen sharing",
+"Session 1: Unity installation and interface, AI tool setup, building your first scene",
+"Session 2: Ask AI to implement character movement, collisions and scoring",
+"Session 3: Fixing common errors, builds, and the store release flow",
+"Corporate group training and on-site lectures available after inquiry"
+],
+packages: [
+"Trial lesson · 1 session of 60 min, Unity installation, AI tool setup, building your first screen",
+"Finish your first game · 3 sessions (60 min each), AI automation setup, Q&A support for 7 days",
+"Complete through release · 6 sessions (60 min each), store release flow, Q&A support for 14 days"
+],
+options: [
+"Extra lesson hour",
+"Lesson recording",
+"Extend Q&A support by 7 days"
+],
+inquiry: [
+"Unity experience (beginner / some experience)",
+"Type of game you want to make",
+"Your PC environment (Windows / Mac)",
+"Preferred lesson times"
+],
+prep: [],
+notes: [
+"This is not a service that builds the whole game for you. Long-term consulting outside lesson time can be extended as an add-on"
+]
+},
+{
+title: "App Store & Google Play Release, Rejection Handling",
+tagline: "I release your game on Google Play and the App Store for you",
+faq: [
+["How long does it take?", "Work takes 1–7 days depending on the package. Google requires 12 testers for 14 days of closed testing on a first release, so it takes at least 14 days."],
+["What do I need to prepare?", "Your project files and identity-verified Google / Apple developer accounts. If you run ads, an AdMob account is also needed."],
+["I already got rejected. Can you help?", "Yes. Send me the rejection email in an inquiry and I'll tell you first whether I can handle it."],
+["Do you accept AI-built apps or non-Unity projects?", "Tell me the project type and I'll check feasibility and let you know."],
+["Do you guarantee approval?", "Approval, downloads and revenue are not guaranteed. Post-release update management is arranged separately."]
+],
+outcomes: [
+"Your game gets listed on the real stores for anyone to download",
+"You receive a pre-check report that catches likely rejection points in advance",
+"You can also hand off in-app purchases, AdMob approval and performance optimization needed for release"
+],
+forWhom: [
+"You made a game but the release process feels overwhelming",
+"You have no experience with Google / Apple store registration and review",
+"You were rejected and don't know how to fix it",
+"You want in-app purchases and ads integrated as well"
+],
+notFor: [
+"Anyone who wants ongoing updates and operations after release",
+"Anyone who wants to release immediately without Google's 14-day closed testing",
+"Anyone who wants guaranteed approval, downloads or revenue"
+],
+process: [
+"Pre-purchase inquiry to confirm project type and target store",
+"Check developer accounts and build environment",
+"Create and sign the release build (AAB/IPA)",
+"Write the store listing (description, images, privacy policy check)",
+"Guidance for Google closed testing (12 testers, 14 days)",
+"Submit for review; fix and resubmit if rejected",
+"1–7 days depending on package, 2 revisions"
+],
+packages: [
+"Pre-release check · 1 day, report on build, policy and store items",
+"Release on one store · 3 days, Google or Apple (one), 1 resubmission after rejection",
+"Google + Apple release · 7 days, light optimization, 2 resubmissions, store image creation"
+],
+options: [
+"1 additional resubmission after rejection",
+"In-app product registration and integration",
+"AdMob ad integration",
+"Store images and description writing",
+"Rush work (half the working time)"
+],
+inquiry: [
+"Project type (Unity / Flutter / other)",
+"Target store (Google / Apple / both)",
+"Whether you have developer accounts",
+"Rejection email contents, if you were rejected before"
+],
+prep: [
+"Unity project files (or app source)",
+"Identity-verified Google / Apple developer accounts",
+"AdMob account if you run ads"
+],
+notes: [
+"Developer account sign-up fees are not included",
+"Post-release update management is arranged separately"
+]
+},
+{
+title: "Unity Mobile Game Development (Outsourcing)",
+tagline: "I develop your idea into a 2D or 3D Unity game",
+faq: [
+["Do I need a design document?", "No. We organize the plan together and adjust direction through midpoint reviews."],
+["How long does it take?", "STANDARD 3 days, DELUXE 15 days, PREMIUM 30 days."],
+["Do you also make graphics and sound?", "By default I use free assets or assets I own. If custom production is needed, we agree on the scope."],
+["Can I get the source code?", "You receive the complete project files."],
+["Do you provide maintenance after release?", "Long-term operation and maintenance are not included. Check each package's scope on the Kmong page."]
+],
+outcomes: [
+"You receive your game developed from prototype to release-ready stage",
+"We organize the plan and adjust direction together through midpoint reviews",
+"Store registration support is available"
+],
+forWhom: [
+"You have a game idea but no developer",
+"You want to build a prototype quickly",
+"You want to hand off everything from planning to release preparation"
+],
+notFor: [
+"Anyone who wants a finished commercial game in a short time without a plan",
+"Anyone who wants to proceed without agreeing on scope and schedule",
+"Anyone who wants long-term operation and maintenance after release"
+],
+process: [
+"Pre-purchase inquiry to confirm your idea and references",
+"Organize the plan and fix scope and schedule",
+"Development (1–2 midpoint reviews)",
+"Testing and revisions (2 revisions)",
+"Store registration support and handover",
+"Working time is counted in business days, excluding weekends",
+"1:1 lessons on Unity and AI tools are also available together"
+],
+packages: [
+"1 prototype · 3 days, a playable build with 1–2 core features working",
+"Casual game development · 15 days, store registration support, interim build sharing, 2 revisions",
+"Mid-size game development · 30 days, store registration support, 2 weeks of post-release bug fixes"
+],
+options: [
+"Additional stages / levels",
+"AdMob ad integration",
+"In-app purchase integration",
+"Store release service",
+"Rush work (30% shorter schedule)"
+],
+inquiry: [
+"Description of the game you want (one line is enough)",
+"Reference game styles",
+"Target platform (Android / iOS / Web)",
+"Your budget and desired completion date"
+],
+prep: [],
+notes: [
+"Costs for external graphics and sound production are not included",
+"Check each package's scope on the Kmong page"
+]
+},
+{
+title: "Unity Error, Build Failure & Lag Optimization",
+tagline: "Fix code and build errors, and improve performance and versions",
+faq: [
+["How far do you fix things?", "STANDARD diagnoses and fixes one error; DELUXE fixes mobile build errors with basic optimization; PREMIUM covers editor version upgrade and full optimization."],
+["What about work time and revisions?", "STANDARD 1 day, DELUXE 3 days, PREMIUM 7 days, with 2 revisions each."],
+["Do you fix AI-generated code too?", "Yes. Please send me the error message and symptoms first."],
+["I'm worried about sending my source.", "I use it only for the work and delete the originals afterward. I can agree to an NDA if needed."],
+["Do you build new games?", "No. I handle error fixes and performance / version improvements for existing projects. For new development, please use the game development service."]
+],
+outcomes: [
+"You receive a project with code bugs and performance issues sorted out",
+"Fix the Google / Apple build failures so you can release again",
+"I explain the cause so the same problem doesn't recur",
+"Upgrade outdated Unity and Google API versions to the latest"
+],
+forWhom: [
+"Your release is blocked by build or upload errors",
+"Your game is slow or full of bugs",
+"AI-written code got tangled and you can't fix it anymore",
+"You want to upgrade an old Unity project to the latest version"
+],
+notFor: [
+"Anyone who wants a new game built from scratch",
+"Anyone who wants all code fixed without defining the scope",
+"Anyone who wants guaranteed release and revenue"
+],
+process: [
+"Pre-purchase inquiry to confirm symptoms and error messages",
+"Receive the project and confirm reproduction",
+"Analyze the cause, then explain scope and schedule",
+"Fix and test",
+"Deliver with a summary of changes",
+"1–7 days depending on package, 2 revisions"
+],
+packages: [
+"Fix 1 error · 1 day, one error type or one slow screen, cause explanation included",
+"Build errors + optimization · 3 days, fix Google / Apple build failures, recurrence-prevention notes",
+"Version upgrade · 7 days, upgrade to the latest editor, full optimization, SDK compatibility check"
+],
+options: [
+"1 additional error fix",
+"AdMob ad integration",
+"In-app purchase integration",
+"Rush work (same day to next day)",
+"1 additional revision"
+],
+inquiry: [
+"Unity version you use",
+"Symptoms (lag, crashes, build failure, etc.) and the full error message or a screenshot",
+"Target device (Android / iOS)"
+],
+prep: [],
+notes: [
+"New feature development is a separate option, and new game production is not included"
+]
+}
+]
+},
+ja: {
+ui: {
+title: "パク・ソンヒョン | ゲーム開発者",
+name: "パク・ソンヒョン | ゲーム開発者",
+intro: "Unityゲーム開発・リリース・最適化の専門家",
+metaDesc: "Unityゲーム開発、Google Play・App Storeリリース代行、コード最適化、1:1レッスン。ゲーム開発者パク・ソンヒョンのポートフォリオ。",
+responseNote: "平均2時間以内に返信",
+themeAria: "ダークモード切替",
+shareAria: "リンクをコピー",
+avatarAlt: "プロフィール写真",
+tabsAria: "ポートフォリオメニュー",
+langAria: "言語",
+tabs: ["マイアプリ", "レッスン・サービス"],
+hook: "インストール不要ですぐ遊べるゲーム{n}本",
+more: "もっと見る",
+less: "閉じる",
+kakao: "カカオトークで問い合わせ",
+kmongProfile: "Kmongプロフィール",
+kmongApply: "Kmongで依頼する",
+reviewsTitle: "受講レビュー(韓国語原文)",
+reviewsAria: "受講レビュー",
+detail: "{n} 詳細",
+close: "閉じる",
+secOutcomes: "🎯 受け取れる成果",
+secForWhom: "👍 こんな方におすすめ",
+secProcess: "進め方",
+secPackages: "パッケージ・料金",
+secOptions: "追加オプション",
+secNotFor: "🚫 おすすめしない方",
+secPrep: "ご準備いただくもの",
+secInquiry: "お問い合わせ時にお知らせください",
+secNotes: "備考",
+secFaq: "よくある質問",
+playWeb: "ブラウザですぐプレイ",
+storeMore: "{s}で詳しく見る",
+playBadge: "▶ すぐプレイ",
+playAria: "{n} すぐプレイ(新しいタブ)",
+filterAria: "ゲームフィルター",
+empty: "該当するゲームがありません",
+moreGoogle: "Google Play全作品 →",
+moreKmong: "Kmongポートフォリオ全体 →",
+copied: "リンクをコピーしました",
+copyFail: "コピーに失敗しました",
+sold: "{n}件販売",
+negotiable: "要相談",
+cats: { "전체": "すべて", "바로 플레이": "すぐプレイ", "구글 플레이": "Google Play", "액션": "アクション", "RPG·전략": "RPG・戦略", "퍼즐·캐주얼": "パズル・カジュアル" },
+stores: { "구글 플레이": "Google Play", "스토브 인디": "STOVE Indie", "스팀": "Steam" },
+genres: { "웹": "Web", "AOS": "AOS", "RPG": "RPG", "모험": "アドベンチャー", "전략": "戦略", "액션": "アクション", "리듬": "リズム", "플랫포머": "プラットフォーマー", "대전": "対戦", "시뮬레이션": "シミュレーション", "카드": "カード", "아케이드": "アーケード", "보드게임": "ボードゲーム", "방치형": "放置型", "퍼즐": "パズル", "캐주얼": "カジュアル", "퀴즈": "クイズ", "메이플 월드": "メイプルワールド", "서바이버": "サバイバー" }
+},
+about: [
+"Google Play、App Store、Steam、STOVE Indieなど計45本以上のプロジェクトをリリース",
+"Kmongで開発依頼100件以上を遂行(評価4.9)",
+"開発経験は合計7年(企業の開発チーム3社+フリーランス)",
+"インディーゲームコンテストに選出・展示",
+"さまざまなジャンルのゲームを企画からリリースまで一貫して統括",
+"UnityとAIバイブコーディングのマンツーマンレッスンを実施",
+"2026年 崇実大学校デジタルメディア学科 ITプロジェクト特別講義を担当",
+"(株)リーディングゲート プロジェクト講義"
+],
+descs: [
+"押し寄せるモンスターを一掃する、メイプルストーリーワールドのサバイバーゲーム。",
+"ブラウザですぐ遊べる、2対2のARAMスタイルAOSゲーム。",
+"ブラウザですぐ遊べる、ミニモンスターRPG。",
+"ブラウザですぐ遊べる、トップダウンのアドベンチャーゲーム。",
+"ブラウザですぐ遊べる、ミニリアルタイムストラテジー。",
+"ブラウザですぐ遊べる、メトロイドヴァニアアクションゲーム。",
+"ブラウザですぐ遊べる、横スクロールアクションゲーム。",
+"ブラウザですぐ遊べる、高速横スクロールアクションゲーム。",
+"ブラウザですぐ遊べる、応援団リズムゲーム。",
+"ブラウザですぐ遊べる、Undertale風ストーリーRPG。",
+"ブラウザですぐ遊べる、ダッシュと壁ジャンプのピクセルプラットフォーマー。",
+"ブラウザですぐ遊べる、ベルトスクロールアクションゲーム。",
+"ブラウザですぐ遊べる、水風船対戦ゲーム。",
+"小さなダンジョンの屋台を伝説の店に育てる、ピクセル店舗経営ゲーム。",
+"ルーンを刻み属性を融合して塔を登る、デッキ構築カードローグライク。",
+"タワーを建て英雄を率いて王国を守る、ディフェンスゲーム。",
+"ミサイルとレーザーをかわして月から脱出する、ハードコアなトップダウンアーケード。",
+"かわいい英雄たちとPvP対戦を楽しむ、ピクセルアートの戦略ボードゲーム。",
+"宇宙で最も強力な食べ物を集めて育てる、放置型ゲーム。",
+"退屈なときに楽しめる、手軽で面白いブロック崩し。",
+"退屈なときに楽しめる、手軽で面白いマインスイーパー。",
+"ハトになって不思議な街を飛び回り探検するゲーム。",
+"60秒以内に一般常識クイズを解き、フクロウのペットを育てるゲーム。",
+"ドラッグとタップで遊ぶ8種類の頭脳パズル。",
+"童話の英雄たちが一堂に集まるファンタジーの世界。",
+"会社員になって業務をこなし昇進して成長する、カジュアル放置型RPG。",
+"制限時間内に隠れているネコやモノを探す、癒やしのパズルゲーム。"
+],
+services: [
+{
+title: "Unity AIバイブコーディング 1:1レッスン",
+tagline: "AIバイブコーディングで、初めてのUnityゲームを自分で完成",
+badge: "代表講座",
+faq: [
+["Unityを初めて使う場合でも大丈夫ですか?", "大丈夫です。基礎から始め、つまずいたところは画面共有ですぐに解決します。"],
+["レッスンはどのように進みますか?", "マンツーマンで、1回60分が基準です。Discordの画面共有で行います。"],
+["プログラミングを知らなくても受講できますか?", "可能です。AIへの依頼の仕方を中心に進め、必要なコードの概念はレッスン中に説明します。"],
+["お試しレッスンだけでゲームを作れますか?", "お試しはインストールと最初の画面までです。ゲーム完成はDELUXE、リリースの流れまではPREMIUMをお選びください。"],
+["企業・団体向けの研修も可能ですか?", "可能です。人数と日程をお問い合わせでお知らせいただければ、お見積りをご案内します。"]
+],
+outcomes: [
+"AIバイブコーディングでUnityゲームを素早く作る方法が身につきます",
+"つまずく部分をリアルタイムで解決しながら自分のゲームを完成させます",
+"基礎からストアリリースまでの全体の流れを学びます"
+],
+forWhom: [
+"Unityを初めて始める方",
+"AIでゲームを素早く作ってみたい方",
+"作ったゲームをストアにリリースしたい方",
+"チーム研修が必要な企業・団体(別途お問い合わせ)"
+],
+notFor: [
+"ゲーム全体を代わりに作ってほしい方",
+"1回のレッスンですべてを終わらせたい方"
+],
+process: [
+"マンツーマンレッスン、1回60分が基準",
+"Discordの画面共有で、つまずいた部分をその場で解決",
+"第1回:Unityのインストールと画面構成、AIツールの設定、最初のシーン作り",
+"第2回:AIに依頼してキャラクター移動・衝突・スコア機能を実装",
+"第3回:よくあるエラーの解決法、ビルド、ストアリリースの流れ",
+"企業の団体研修・出張講義はお問い合わせ後に対応可能"
+],
+packages: [
+"お試し1回 · 1回60分、Unityのインストール、AIツール設定、最初の画面作り",
+"最初のゲーム完成 · 3回(各60分)、AI自動化設定、質問サポート7日間",
+"リリースまで完成 · 6回(各60分)、ストアリリースの流れ、質問サポート14日間"
+],
+options: [
+"レッスン1時間追加",
+"レッスン録画の提供",
+"質問サポート7日間延長"
+],
+inquiry: [
+"Unityの使用経験(初めて / 少し経験あり)",
+"作りたいゲームの種類",
+"使用中のPC環境(Windows / Mac)",
+"希望するレッスン時間帯"
+],
+prep: [],
+notes: [
+"ゲーム全体を代行制作するサービスではありません。レッスン時間外の長期相談はオプションで延長できます"
+]
+},
+{
+title: "ストアリリース代行・審査リジェクト対応",
+tagline: "あなたのゲームをGoogle PlayとApp Storeに代わってリリース",
+faq: [
+["リリースまでどのくらいかかりますか?", "作業期間はパッケージにより1〜7日です。Googleの初回リリースは12人による14日間のクローズドテストが必要なため、最短でも14日かかります。"],
+["何を準備すればよいですか?", "プロジェクトファイルと、本人確認済みのGoogle・Appleデベロッパーアカウントが必要です。広告を入れる場合はAdMobアカウントも必要です。"],
+["すでに審査でリジェクトされましたが対応できますか?", "可能です。お問い合わせでリジェクトのメール内容をお送りいただければ、対応可否を先にご案内します。"],
+["AIで作ったアプリやUnity以外のプロジェクトも対応できますか?", "プロジェクトの種類をお知らせいただければ、対応可否を確認してご案内します。"],
+["審査通過は保証されますか?", "審査通過・ダウンロード・売上は保証しません。リリース後のアップデート管理は別途ご相談ください。"]
+],
+outcomes: [
+"あなたのゲームが実際のストアに登録され、誰でもダウンロードできるようになります",
+"リリース前にリジェクトされそうな項目を洗い出した点検レポートを受け取れます",
+"アプリ内課金、AdMob承認、パフォーマンス最適化などリリースに必要な作業も依頼できます"
+],
+forWhom: [
+"ゲームは作ったが、リリース手順が分からない方",
+"GoogleやAppleのストア登録・審査の経験がない方",
+"審査でリジェクトされ、どう直せばよいか分からない方",
+"アプリ内課金・広告連携まで任せたい方"
+],
+notFor: [
+"リリース後のアップデートや運営まで継続して任せたい方",
+"Googleの14日間クローズドテスト期間なしですぐにリリースしたい方",
+"審査通過・ダウンロード・売上の保証を求める方"
+],
+process: [
+"購入前のお問い合わせでプロジェクトの種類と対象ストアを確認",
+"デベロッパーアカウントとビルド環境の点検",
+"リリースビルド(AAB/IPA)の作成と署名",
+"ストア掲載情報の作成(説明文、画像、プライバシーポリシーの確認)",
+"Googleクローズドテストの進め方をご案内(テスター12人、14日)",
+"審査提出、リジェクト時は修正して再提出",
+"作業期間はパッケージにより1〜7日、修正2回"
+],
+packages: [
+"リリース事前点検 · 1日、ビルド・ポリシー・ストア項目の点検レポート",
+"1ストアのリリース代行 · 3日、GoogleまたはApple 1つのリリース、リジェクト再提出1回",
+"Google+Appleリリース · 7日、簡単な最適化、再提出2回、ストア画像制作"
+],
+options: [
+"リジェクト後の再提出を1回追加",
+"アプリ内課金商品の登録・連携",
+"AdMob広告の連携",
+"ストア紹介画像・説明文の制作",
+"特急作業(作業期間を半分に)"
+],
+inquiry: [
+"プロジェクトの種類(Unity / Flutter / その他)",
+"リリースするストア(Google / Apple / 両方)",
+"デベロッパーアカウントの有無",
+"リジェクト履歴がある場合はそのメール内容"
+],
+prep: [
+"Unityプロジェクトファイル(またはアプリのソース)",
+"本人確認済みのGoogle・Appleデベロッパーアカウント",
+"広告を入れる場合はAdMobアカウント"
+],
+notes: [
+"デベロッパーアカウントの登録料は含まれません",
+"リリース後のアップデート管理は別途ご相談ください"
+]
+},
+{
+title: "Unityモバイルゲーム制作(外注)",
+tagline: "アイデアをUnityの2D・3Dゲームとして開発します",
+faq: [
+["企画書がなくても大丈夫ですか?", "大丈夫です。企画の整理から一緒に進め、中間確認で方向性を調整します。"],
+["作業期間はどのくらいですか?", "STANDARD 3日、DELUXE 15日、PREMIUM 30日です。"],
+["グラフィックやサウンドも作ってもらえますか?", "基本は無料素材または自分が保有する素材を使用します。別途制作が必要な場合は範囲に合わせて相談します。"],
+["ソースコードはもらえますか?", "完成したプロジェクトファイル一式をお渡しします。"],
+["リリース後の保守もしてもらえますか?", "長期の運営・保守は含まれません。パッケージごとの範囲はKmongの詳細ページでご確認ください。"]
+],
+outcomes: [
+"プロトタイプからリリース準備の段階まで開発されたゲームを受け取れます",
+"企画の整理と中間確認を通じて、方向性を一緒に調整します",
+"ストア登録のサポートも受けられます"
+],
+forWhom: [
+"ゲームのアイデアはあるが開発者がいない方",
+"プロトタイプを素早く作ってみたい方",
+"企画からリリース準備まで一括で任せたい方"
+],
+notFor: [
+"企画なしで完成した商用ゲームを短期間で求める方",
+"範囲と日程の調整なしに進めたい方",
+"リリース後の長期運営・保守を任せたい方"
+],
+process: [
+"購入前のお問い合わせでアイデアと参考事項を確認",
+"企画の整理と範囲・日程の確定",
+"開発(中間確認1〜2回)",
+"テストと修正(修正2回)",
+"ストア登録サポートと引き渡し",
+"作業期間は土日を除く営業日基準です",
+"UnityとAIツール活用のマンツーマンレッスンも併せて可能"
+],
+packages: [
+"プロトタイプ1本 · 3日、主要機能1〜2個が動作するプレイ可能なビルド",
+"カジュアルゲーム制作 · 15日、ストア登録サポート、中間ビルド共有、修正2回",
+"中規模ゲーム制作 · 30日、ストア登録サポート、リリース後バグ修正2週間"
+],
+options: [
+"ステージ・レベル追加",
+"広告(AdMob)連携",
+"アプリ内課金連携",
+"ストアリリース代行",
+"特急作業(期間30%短縮)"
+],
+inquiry: [
+"作りたいゲームの説明(一行で十分です)",
+"参考にしたいゲームのスタイル",
+"希望プラットフォーム(Android / iOS / Web)",
+"希望予算と完成希望時期"
+],
+prep: [],
+notes: [
+"外部グラフィック・サウンドの制作費は含まれません",
+"パッケージごとの範囲はKmongの詳細ページでご確認ください"
+]
+},
+{
+title: "Unityエラー・ビルドエラー・ラグ最適化",
+tagline: "コードやビルドのエラーを解決し、性能とバージョンを改善",
+faq: [
+["どこまで修正してもらえますか?", "STANDARDはエラー1件の原因診断と解決、DELUXEはモバイルビルドエラーの解決と基本的な最適化、PREMIUMはエディタのバージョンアップグレードと全体最適化です。"],
+["作業期間と修正回数は?", "STANDARD 1日、DELUXE 3日、PREMIUM 7日で、修正はいずれも2回です。"],
+["AIが作ったコードも直してもらえますか?", "可能です。まずエラーメッセージと症状をお送りください。"],
+["ソースを送るのが心配です。", "作業目的のみに使用し、作業後に元のファイルは削除します。必要であれば秘密保持にも同意します。"],
+["新しいゲームを作ってもらえますか?", "いいえ。既存プロジェクトのエラー修正と、性能・バージョンの改善を担当します。新規制作はゲーム開発サービスをご利用ください。"]
+],
+outcomes: [
+"コードのバグとパフォーマンスの問題が整理されたプロジェクトを受け取れます",
+"失敗していたGoogle・Appleビルドの問題を解決し、再びリリースできます",
+"原因を説明するので、同じ問題が繰り返されないようにサポートします",
+"古いUnityやGoogle APIのバージョンを最新に上げます"
+],
+forWhom: [
+"ビルドやアップロードのエラーでリリースが止まっている方",
+"ゲームが重い、またはバグが多い方",
+"AIが書いたコードが絡まって、これ以上直せない方",
+"古いバージョンのUnityプロジェクトを最新にしたい方"
+],
+notFor: [
+"最初から新しいゲームを作ってほしい方",
+"範囲を決めずにすべてのコード修正を求める方",
+"リリースや売上の保証を求める方"
+],
+process: [
+"購入前のお問い合わせで症状とエラーメッセージを確認",
+"プロジェクトの受け取りと再現の確認",
+"原因を分析し、修正範囲と日程をご案内",
+"修正とテスト",
+"変更内容の整理資料とともにお渡し",
+"作業期間はパッケージにより1〜7日、修正2回"
+],
+packages: [
+"エラー1件の解決 · 1日、エラー1種類または重い画面1か所、原因説明つき",
+"ビルドエラー+最適化 · 3日、Google・Appleビルド失敗の解決、再発防止メモ",
+"バージョンアップグレード · 7日、エディタを最新にアップグレード、全体最適化、SDK互換性の点検"
+],
+options: [
+"エラー1件の追加修正",
+"広告(AdMob)連携",
+"アプリ内課金連携",
+"特急作業(当日〜翌日)",
+"修正回数を1回追加"
+],
+inquiry: [
+"使用中のUnityバージョン",
+"症状(ラグ、クラッシュ、ビルド失敗など)とエラーメッセージの全文またはスクリーンショット",
+"対象デバイス(Android / iOS)"
+],
+prep: [],
+notes: [
+"新機能の開発は別オプションで、新規ゲームの制作は含まれません"
+]
+}
+]
+},
+zh: {
+ui: {
+title: "朴成贤 | 游戏开发者",
+name: "朴成贤 | 游戏开发者",
+intro: "Unity游戏开发 · 上架 · 优化专家",
+metaDesc: "Unity游戏开发、Google Play与App Store上架代办、代码优化、1对1教学。游戏开发者朴成贤的作品集。",
+responseNote: "平均2小时内回复",
+themeAria: "切换深色模式",
+shareAria: "复制链接",
+avatarAlt: "头像",
+tabsAria: "作品集菜单",
+langAria: "语言",
+tabs: ["我的应用", "教学 · 服务"],
+hook: "无需安装即可畅玩的游戏 {n} 款",
+more: "展开更多",
+less: "收起",
+kakao: "通过KakaoTalk咨询",
+kmongProfile: "Kmong主页",
+kmongApply: "在Kmong下单",
+reviewsTitle: "学员评价(韩文原文)",
+reviewsAria: "学员评价",
+detail: "{n} 详情",
+close: "关闭",
+secOutcomes: "🎯 您将获得",
+secForWhom: "👍 适合这些人",
+secProcess: "服务流程",
+secPackages: "套餐 · 价格",
+secOptions: "附加选项",
+secNotFor: "🚫 不太适合这些人",
+secPrep: "需要准备的资料",
+secInquiry: "咨询时请告知",
+secNotes: "备注",
+secFaq: "常见问题",
+playWeb: "在浏览器中立即游玩",
+storeMore: "在{s}查看更多",
+playBadge: "▶ 立即游玩",
+playAria: "{n} 立即游玩(新标签页)",
+filterAria: "游戏筛选",
+empty: "没有符合条件的游戏",
+moreGoogle: "Google Play全部作品 →",
+moreKmong: "Kmong全部作品集 →",
+copied: "链接已复制",
+copyFail: "复制失败",
+sold: "已售{n}单",
+negotiable: "面议",
+cats: { "전체": "全部", "바로 플레이": "立即游玩", "구글 플레이": "Google Play", "액션": "动作", "RPG·전략": "RPG · 策略", "퍼즐·캐주얼": "益智 · 休闲" },
+stores: { "구글 플레이": "Google Play", "스토브 인디": "STOVE Indie", "스팀": "Steam" },
+genres: { "웹": "网页", "AOS": "AOS", "RPG": "RPG", "모험": "冒险", "전략": "策略", "액션": "动作", "리듬": "节奏", "플랫포머": "平台跳跃", "대전": "对战", "시뮬레이션": "模拟经营", "카드": "卡牌", "아케이드": "街机", "보드게임": "桌游", "방치형": "放置", "퍼즐": "益智", "캐주얼": "休闲", "퀴즈": "问答", "메이플 월드": "新枫之谷世界", "서바이버": "生存" }
+},
+about: [
+"已在Google Play、App Store、Steam、STOVE Indie等平台上架共45个以上项目",
+"在Kmong完成100单以上开发委托(评分4.9)",
+"开发经验共7年(3家公司开发团队+自由职业)",
+"入选并参展独立游戏比赛",
+"从策划到上架,全程负责多种类型的游戏",
+"提供Unity与AI氛围编程(Vibe Coding)的1对1定制教学",
+"2026年 崇实大学数字媒体系 IT项目特别讲座讲师",
+"(株)Readinggate 项目讲师"
+],
+descs: [
+"横扫蜂拥而来的怪物,新枫之谷世界的生存游戏。",
+"在浏览器中即可畅玩的2对2大乱斗风格AOS游戏。",
+"在浏览器中即可畅玩的迷你怪物RPG。",
+"在浏览器中即可畅玩的俯视角冒险游戏。",
+"在浏览器中即可畅玩的迷你即时战略游戏。",
+"在浏览器中即可畅玩的银河恶魔城式动作游戏。",
+"在浏览器中即可畅玩的横版卷轴动作游戏。",
+"在浏览器中即可畅玩的高速横版卷轴动作游戏。",
+"在浏览器中即可畅玩的啦啦队节奏游戏。",
+"在浏览器中即可畅玩的Undertale风格剧情RPG。",
+"在浏览器中即可畅玩的冲刺、蹬墙跳像素平台跳跃游戏。",
+"在浏览器中即可畅玩的横版清关动作游戏。",
+"在浏览器中即可畅玩的水球对战游戏。",
+"把地下城小摊经营成传说商店的像素店铺经营游戏。",
+"镌刻符文、融合元素攀登高塔的卡组构筑卡牌Roguelike。",
+"建造防御塔、率领英雄守护王国的塔防游戏。",
+"躲避导弹和激光、逃离月球的硬核俯视角街机游戏。",
+"与可爱英雄展开PvP对战的像素风策略桌游。",
+"收集并养成宇宙最强美食的放置游戏。",
+"无聊时轻松有趣的打砖块。",
+"无聊时轻松有趣的扫雷。",
+"化身鸽子,在神秘城市中飞行探险的游戏。",
+"在60秒内回答常识问答并养成猫头鹰宠物的游戏。",
+"用拖动和点击来玩的8种烧脑益智游戏。",
+"童话英雄齐聚一堂的奇幻世界。",
+"成为上班族处理工作、晋升成长的休闲放置RPG。",
+"在限定时间内找出藏起来的猫咪和物品的治愈益智游戏。"
+],
+services: [
+{
+title: "Unity AI氛围编程 1对1教学",
+tagline: "用AI氛围编程,亲手完成您的第一款Unity游戏",
+badge: "主打课程",
+faq: [
+["第一次接触Unity也可以吗?", "可以。从基础开始,遇到卡住的地方会通过屏幕共享当场解决。"],
+["课程是怎么进行的?", "1对1授课,每节课60分钟,通过Discord屏幕共享进行。"],
+["不懂编程也可以学吗?", "可以。课程以如何向AI提出需求为主,需要的代码概念会在课上讲解。"],
+["只上体验课能做出游戏吗?", "体验课涵盖安装和第一个画面。想完成游戏请选择DELUXE,想学到上架流程请选择PREMIUM。"],
+["可以做企业、团体培训吗?", "可以。请在咨询时告知人数和日程,我会提供报价。"]
+],
+outcomes: [
+"学会用AI氛围编程快速制作Unity游戏的方法",
+"实时解决卡住的问题,亲手完成自己的游戏",
+"学习从基础到商店上架的完整流程"
+],
+forWhom: [
+"刚开始接触Unity的人",
+"想用AI快速做出游戏的人",
+"想把自己做的游戏上架商店的人",
+"需要团队培训的企业、团体(请另行咨询)"
+],
+notFor: [
+"希望由我代做整个游戏的人",
+"希望一节课解决所有问题的人"
+],
+process: [
+"1对1授课,每节课60分钟",
+"通过Discord屏幕共享,当场解决卡住的问题",
+"第1节:安装Unity与界面介绍、AI工具设置、制作第一个场景",
+"第2节:向AI提出需求,实现角色移动、碰撞与计分功能",
+"第3节:常见错误的解决方法、打包构建、商店上架流程",
+"企业团体培训、上门授课需咨询后确定"
+],
+packages: [
+"体验1节课 · 1节60分钟,安装Unity、设置AI工具、制作第一个画面",
+"完成第一款游戏 · 3节(每节60分钟),AI自动化设置,7天答疑支持",
+"完成到上架 · 6节(每节60分钟),商店上架流程,14天答疑支持"
+],
+options: [
+"增加1小时课程",
+"提供课程录像",
+"答疑支持延长7天"
+],
+inquiry: [
+"Unity使用经验(初次 / 略有经验)",
+"想制作的游戏类型",
+"使用的电脑环境(Windows / Mac)",
+"希望的上课时间段"
+],
+prep: [],
+notes: [
+"本服务不是代做整个游戏。课程之外的长期咨询可通过选项延长"
+]
+},
+{
+title: "应用商店上架代办,审核被拒应对",
+tagline: "代您把游戏上架到Google Play和App Store",
+faq: [
+["上架需要多长时间?", "根据套餐,工作时间为1~7天。Google首次上架需要12人进行14天封闭测试,所以至少需要14天。"],
+["需要准备什么?", "需要项目文件、已完成实名认证的Google、Apple开发者账号;如果要加广告,还需要AdMob账号。"],
+["已经被审核拒绝了,还能处理吗?", "可以。请在咨询时发来被拒邮件内容,我会先告知能否处理。"],
+["AI做的应用或非Unity项目也可以吗?", "请告诉我项目类型,我会确认是否可行后答复您。"],
+["保证审核通过吗?", "不保证审核通过、下载量和收入。上架后的更新维护需另行协商。"]
+],
+outcomes: [
+"您的游戏会在真实的应用商店上架,任何人都可以下载",
+"您会收到提前排查出可能被拒项目的检查报告",
+"上架所需的应用内购买、AdMob审批、性能优化等工作也可以委托"
+],
+forWhom: [
+"游戏做好了,但对上架流程感到茫然的人",
+"没有Google、Apple商店注册和审核经验的人",
+"被审核拒绝,不知道该怎么修改的人",
+"希望一并接入应用内购买和广告的人"
+],
+notFor: [
+"希望上架后持续负责更新和运营的人",
+"希望不经过Google 14天封闭测试就直接上架的人",
+"希望保证审核通过、下载量和收入的人"
+],
+process: [
+"购买前咨询,确认项目类型和目标商店",
+"检查开发者账号和构建环境",
+"生成并签名发布版本(AAB/IPA)",
+"撰写商店信息(简介、图片、隐私政策检查)",
+"说明Google封闭测试的进行方式(12名测试者,14天)",
+"提交审核,被拒则修改后重新提交",
+"根据套餐1~7天,可修改2次"
+],
+packages: [
+"上架前检查 · 1天,构建、政策、商店项目检查报告",
+"单商店上架代办 · 3天,Google或Apple其中一个商店上架,被拒后重新提交1次",
+"Google+Apple上架 · 7天,简单优化,被拒后重新提交2次,制作商店图片"
+],
+options: [
+"审核被拒后追加重新提交1次",
+"应用内购买商品注册与对接",
+"AdMob广告对接",
+"商店介绍图片与文案制作",
+"加急处理(工期减半)"
+],
+inquiry: [
+"项目类型(Unity / Flutter / 其他)",
+"要上架的商店(Google / Apple / 两者)",
+"是否已有开发者账号",
+"若有被拒记录,请提供被拒邮件内容"
+],
+prep: [
+"Unity项目文件(或应用源码)",
+"已完成实名认证的Google、Apple开发者账号",
+"若要加广告,需要AdMob账号"
+],
+notes: [
+"不包含开发者账号注册费用",
+"上架后的更新维护需另行协商"
+]
+},
+{
+title: "Unity手游开发外包",
+tagline: "把您的创意开发成Unity 2D、3D游戏",
+faq: [
+["没有策划案也可以吗?", "可以。从整理策划开始一起进行,并通过中期检查来调整方向。"],
+["工期需要多久?", "STANDARD 3天,DELUXE 15天,PREMIUM 30天。"],
+["也会制作美术和音效吗?", "默认使用免费素材或我自己拥有的素材。如需另行制作,会根据范围协商。"],
+["可以拿到源代码吗?", "会交付完整的项目文件。"],
+["上架后提供维护吗?", "不包含长期运营和维护。各套餐的包含范围请查看Kmong详情页。"]
+],
+outcomes: [
+"收到从原型到上架准备阶段开发完成的游戏",
+"通过策划整理和中期检查,共同调整方向",
+"可获得商店注册支持"
+],
+forWhom: [
+"有游戏创意但没有开发者的人",
+"想快速做出原型的人",
+"想把从策划到上架准备一并委托的人"
+],
+notFor: [
+"没有策划却希望短期内得到完整商业游戏的人",
+"希望不协商范围和日程就直接开工的人",
+"希望上架后长期运营、维护的人"
+],
+process: [
+"购买前咨询,确认创意和参考资料",
+"整理策划,确定范围和日程",
+"开发(1~2次中期检查)",
+"测试与修改(可修改2次)",
+"商店注册支持与交接",
+"工期按工作日计算(不含周末)",
+"也可同时进行Unity与AI工具的1对1教学"
+],
+packages: [
+"1个原型 · 3天,1~2个核心功能可运行的可玩版本",
+"休闲游戏开发 · 15天,商店注册支持,共享中期版本,可修改2次",
+"中型游戏开发 · 30天,商店注册支持,上架后2周Bug修复"
+],
+options: [
+"追加关卡",
+"广告(AdMob)对接",
+"应用内购买对接",
+"商店上架代办",
+"加急处理(工期缩短30%)"
+],
+inquiry: [
+"想制作的游戏简介(一句话即可)",
+"想参考的游戏风格",
+"目标平台(Android / iOS / 网页)",
+"预算和希望完成的时间"
+],
+prep: [],
+notes: [
+"不包含外部美术、音效的制作费用",
+"各套餐的包含范围请查看Kmong详情页"
+]
+},
+{
+title: "Unity报错、构建失败、卡顿优化",
+tagline: "解决代码与构建错误,改善性能与版本",
+faq: [
+["可以修复到什么程度?", "STANDARD诊断并解决1个错误;DELUXE解决移动端构建错误并做基础优化;PREMIUM包含编辑器版本升级和整体优化。"],
+["工期和修改次数是怎样的?", "STANDARD 1天、DELUXE 3天、PREMIUM 7天,均可修改2次。"],
+["AI写的代码也能修吗?", "可以。请先发来错误信息和症状。"],
+["把源码发给您,我有些担心。", "仅用于工作,完成后会删除原始文件。如有需要,也可签署保密协议。"],
+["可以帮我做新游戏吗?", "不可以。我负责已有项目的错误修复以及性能、版本改善。新开发请使用游戏开发服务。"]
+],
+outcomes: [
+"收到代码Bug和性能问题已整理好的项目",
+"解决Google、Apple构建失败的问题,重新上架",
+"说明问题原因,帮助避免同样的问题再次发生",
+"把过旧的Unity和Google API版本升级到最新"
+],
+forWhom: [
+"因构建、上传错误而无法上架的人",
+"游戏卡顿或Bug很多的人",
+"AI写的代码乱成一团,再也改不动的人",
+"想把旧版本Unity项目升级到最新的人"
+],
+notFor: [
+"希望从零开始做新游戏的人",
+"不界定范围就想修改所有代码的人",
+"希望保证上架和收入的人"
+],
+process: [
+"购买前咨询,确认症状和错误信息",
+"接收项目并确认可复现",
+"分析原因后说明修改范围和日程",
+"修改与测试",
+"连同变更内容说明一起交付",
+"根据套餐1~7天,可修改2次"
+],
+packages: [
+"解决1个错误 · 1天,1种错误或1处卡顿画面,含原因说明",
+"构建错误+优化 · 3天,解决Google、Apple构建失败,附防止复发备忘",
+"版本升级 · 7天,编辑器升级到最新,整体优化,SDK兼容性检查"
+],
+options: [
+"追加修复1个错误",
+"广告(AdMob)对接",
+"应用内购买对接",
+"加急处理(当天~次日)",
+"追加1次修改"
+],
+inquiry: [
+"使用的Unity版本",
+"症状(卡顿、崩溃、构建失败等)以及完整的错误信息或截图",
+"目标设备(Android / iOS)"
+],
+prep: [],
+notes: [
+"新功能开发为另行选项,不包含新游戏制作"
+]
+}
+]
+}
+};
+
 (function () {
-const D = PORTFOLIO;
-const P = D.profile;
+const BASE = PORTFOLIO;
+const LANGS = ["ko", "en", "ja", "zh"];
+let LANG = "ko";
+let U = I18N.ko.ui;
+let D = BASE;
+let P = BASE.profile;
+let lastTab = 0;
+let dockObs = null;
 const AVATAR_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b8fff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/><circle cx="80" cy="64" r="22" fill="#fff" fill-opacity=".85"/><path d="M36 134c6-26 24-38 44-38s38 12 44 38z" fill="#fff" fill-opacity=".85"/></svg>');
 const BOX_FALLBACK = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa8ff"/><stop offset="1" stop-color="#4f6bff"/></linearGradient></defs><rect width="160" height="160" fill="url(#g)"/></svg>');
 const STORE_COLORS = { "구글 플레이": "#0f9d58", "스토브 인디": "#ff6a2b", "스팀": "#1b2838" };
 const AVATAR_EXT = ["png", "jpg", "jpeg", "webp"];
-const TAB_NAMES = ["내 앱", "강의 · 서비스"];
 const TAB_IDS = ["works", "services"];
 const ICONS = {
 kakao: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.87 5.33 4.69 6.74l-.9 3.3a.4.4 0 0 0 .6.44L10.4 19c.53.07 1.07.1 1.6.1 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>',
@@ -869,6 +1907,85 @@ kmong: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 };
 const dlg = document.getElementById("dlg");
 const sheet = document.getElementById("sheet");
+
+function fmt(str, vars) {
+return str.replace(/\{(\w+)\}/g, function (m, k) {
+return vars[k] !== undefined ? vars[k] : m;
+});
+}
+
+function won(str) {
+if (LANG === "ko") return str;
+return str.replace(/([\d,]+)원/g, "₩$1");
+}
+
+function pickList(tr, base) {
+return tr && tr.length === base.length ? tr : base;
+}
+
+function localize(lang) {
+LANG = lang;
+const pack = I18N[lang] || I18N.ko;
+U = pack.ui;
+if (lang === "ko") {
+D = BASE;
+P = BASE.profile;
+return;
+}
+const profile = Object.assign({}, BASE.profile, { name: U.name, intro: U.intro });
+const about = BASE.about.map(function (a, i) {
+return Object.assign({}, a, { text: pack.about && pack.about[i] ? pack.about[i] : a.text });
+});
+const works = BASE.works.map(function (w, i) {
+const parts = w.genre.split(" · ").map(function (g) {
+return U.genres[g] || g;
+});
+const out = Object.assign({}, w, {
+genre: parts.join(" · "),
+desc: pack.descs && pack.descs[i] ? pack.descs[i] : w.desc
+});
+if (w.stores) {
+out.stores = w.stores.map(function (st) {
+return { key: st.label, label: U.stores[st.label] || st.label, url: st.url };
+});
+}
+return out;
+});
+const services = BASE.services.map(function (s, i) {
+const t = (pack.services && pack.services[i]) || {};
+const optList = pickList(t.options, s.options);
+const options = s.options.map(function (o, k) {
+const price = o.split(" · ").pop();
+const label = optList[k];
+if (label === o) return o;
+return label + " · " + (price === "협의" ? U.negotiable : won(price));
+});
+const packages = s.packages.map(function (p, k) {
+const d = t.packages && t.packages.length === s.packages.length ? t.packages[k] : p.desc;
+return { name: p.name, price: won(p.price), desc: d };
+});
+const faq = t.faq && t.faq.length === s.faq.length ? t.faq : s.faq;
+return Object.assign({}, s, {
+title: t.title || s.title,
+tagline: t.tagline || s.tagline,
+badge: s.badge ? (t.badge || s.badge) : s.badge,
+price: won(s.price),
+sales: s.sales ? s.sales.replace(/(\d+)건 판매/, function (m, n) { return fmt(U.sold, { n: n }); }) : s.sales,
+faq: faq,
+outcomes: pickList(t.outcomes, s.outcomes),
+forWhom: pickList(t.forWhom, s.forWhom),
+notFor: pickList(t.notFor, s.notFor),
+process: pickList(t.process, s.process),
+packages: packages,
+options: options,
+inquiry: pickList(t.inquiry, s.inquiry),
+prep: pickList(t.prep, s.prep),
+notes: pickList(t.notes, s.notes)
+});
+});
+D = Object.assign({}, BASE, { profile: profile, about: about, works: works, services: services, responseNote: U.responseNote });
+P = D.profile;
+}
 
 function el(tag, cls, text) {
 const n = document.createElement(tag);
@@ -920,14 +2037,18 @@ avatar.onerror = null;
 avatar.src = AVATAR_FALLBACK;
 };
 avatar.src = P.photo + "." + AVATAR_EXT[0];
+document.getElementById("avatar").alt = U.avatarAlt;
 document.getElementById("name").textContent = P.name;
 document.getElementById("intro").textContent = P.intro;
 
-const hook = document.getElementById("playHook");
+const hookOld = document.getElementById("playHook");
+const hook = hookOld.cloneNode(false);
+hook.hidden = false;
+hookOld.replaceWith(hook);
 let playable = 0;
 for (let i = 0; i < D.works.length; i++) if (D.works[i].url) playable++;
 if (playable) {
-hook.textContent = "설치 없이 바로 플레이 가능한 게임 " + playable + "개";
+hook.textContent = fmt(U.hook, { n: playable });
 hook.appendChild(el("span", null, "▶"));
 hook.addEventListener("click", function () {
 const chip = document.querySelector('#panel-works .chip[data-cat="바로 플레이"]');
@@ -939,6 +2060,7 @@ hook.hidden = true;
 }
 
 const bio = document.getElementById("bio");
+bio.textContent = "";
 const bf = document.createDocumentFragment();
 const moreItems = [];
 for (let i = 0; i < D.about.length; i++) {
@@ -953,22 +2075,25 @@ moreItems.push(li);
 bf.appendChild(li);
 }
 const moreLi = el("li", "bio-more");
-const moreBtn = el("button", "more-btn", "더보기");
+const moreBtn = el("button", "more-btn", U.more);
 moreBtn.type = "button";
 moreBtn.setAttribute("aria-expanded", "false");
 moreBtn.addEventListener("click", function () {
 const open = moreBtn.getAttribute("aria-expanded") !== "true";
 for (let i = 0; i < moreItems.length; i++) moreItems[i].hidden = !open;
 moreBtn.setAttribute("aria-expanded", open ? "true" : "false");
-moreBtn.textContent = open ? "접기" : "더보기";
+moreBtn.textContent = open ? U.less : U.more;
 });
 moreLi.appendChild(moreBtn);
 bf.appendChild(moreLi);
 bio.appendChild(bf);
 
 const actions = document.getElementById("actions");
-actions.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, "카카오톡 문의"));
-actions.appendChild(iconLink(P.kmong, "btn kmong", ICONS.kmong, "크몽 프로필"));
+actions.textContent = "";
+const oldNote = document.querySelector(".reply-note");
+if (oldNote) oldNote.remove();
+actions.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, U.kakao));
+actions.appendChild(iconLink(P.kmong, "btn kmong", ICONS.kmong, U.kmongProfile));
 actions.parentNode.insertBefore(el("p", "reply-note", D.responseNote), actions.nextSibling);
 document.getElementById("footer").textContent = "© " + new Date().getFullYear() + " " + P.name;
 }
@@ -981,7 +2106,7 @@ const a = el("a", "item");
 a.href = "#";
 a.setAttribute("role", "button");
 a.dataset.index = i;
-a.setAttribute("aria-label", s.title + " 상세 보기");
+a.setAttribute("aria-label", fmt(U.detail, { n: s.title }));
 a.appendChild(img(s.image, "thumb", s.title, 652, 488, BOX_FALLBACK));
 const info = el("div", "item-body");
 info.appendChild(el("h3", null, s.title));
@@ -1006,11 +2131,13 @@ return root;
 
 function renderReviews() {
 const root = document.getElementById("reviews");
+root.textContent = "";
+root.setAttribute("aria-label", U.reviewsAria);
 if (!D.reviews.length) {
 root.hidden = true;
 return;
 }
-root.appendChild(el("h2", null, "수강 후기"));
+root.appendChild(el("h2", null, U.reviewsTitle));
 const track = el("div", "review-track");
 track.tabIndex = 0;
 const frag = document.createDocumentFragment();
@@ -1027,15 +2154,18 @@ root.appendChild(track);
 
 function setupDock() {
 const dock = document.getElementById("dock");
+dock.textContent = "";
 const target = document.getElementById("actions");
 const inner = el("div", "dock-inner");
-inner.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, "카카오톡 문의"));
+inner.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, U.kakao));
 if (D.responseNote) inner.appendChild(el("small", null, D.responseNote));
 dock.appendChild(inner);
+if (dockObs) dockObs.disconnect();
 if (!("IntersectionObserver" in window)) return;
-new IntersectionObserver(function (entries) {
+dockObs = new IntersectionObserver(function (entries) {
 dock.hidden = entries[0].isIntersecting;
-}).observe(target);
+});
+dockObs.observe(target);
 }
 
 function textList(items, cls) {
@@ -1073,7 +2203,7 @@ if (extra) meta.appendChild(document.createTextNode(extra));
 head.appendChild(meta);
 const x = el("button", "sheet-x", "✕");
 x.type = "button";
-x.setAttribute("aria-label", "닫기");
+x.setAttribute("aria-label", U.close);
 x.addEventListener("click", function () {
 sheet.close();
 });
@@ -1082,9 +2212,9 @@ sheet.appendChild(head);
 
 const body = el("div", "sheet-body");
 body.appendChild(el("p", "lead", s.tagline));
-body.appendChild(section("🎯 받으면 이렇게 됩니다", textList(s.outcomes, "check"), "box"));
-body.appendChild(section("👍 이런 분께 추천해요", textList(s.forWhom, "check"), "box"));
-body.appendChild(section("진행 방식", textList(s.process, "dot")));
+body.appendChild(section(U.secOutcomes, textList(s.outcomes, "check"), "box"));
+body.appendChild(section(U.secForWhom, textList(s.forWhom, "check"), "box"));
+body.appendChild(section(U.secProcess, textList(s.process, "dot")));
 const pk = el("div", "pkgs");
 for (let i = 0; i < s.packages.length; i++) {
 const p = s.packages[i];
@@ -1096,18 +2226,18 @@ box.appendChild(top);
 box.appendChild(el("p", null, p.desc));
 pk.appendChild(box);
 }
-body.appendChild(section("패키지 · 가격", pk));
-if (s.options && s.options.length) body.appendChild(section("추가 옵션", textList(s.options, "dot")));
-if (s.notFor && s.notFor.length) body.appendChild(section("🚫 이런 분께는 권하지 않아요", textList(s.notFor, "dot no"), "box no"));
-if (s.prep.length) body.appendChild(section("준비물", textList(s.prep, "dot")));
-if (s.inquiry && s.inquiry.length) body.appendChild(section("문의하실 때 알려 주세요", textList(s.inquiry, "dot")));
-if (s.notes.length) body.appendChild(section("참고", textList(s.notes, "dot")));
-if (s.faq && s.faq.length) body.appendChild(section("자주 묻는 질문", faqList(s.faq)));
+body.appendChild(section(U.secPackages, pk));
+if (s.options && s.options.length) body.appendChild(section(U.secOptions, textList(s.options, "dot")));
+if (s.notFor && s.notFor.length) body.appendChild(section(U.secNotFor, textList(s.notFor, "dot no"), "box no"));
+if (s.prep.length) body.appendChild(section(U.secPrep, textList(s.prep, "dot")));
+if (s.inquiry && s.inquiry.length) body.appendChild(section(U.secInquiry, textList(s.inquiry, "dot")));
+if (s.notes.length) body.appendChild(section(U.secNotes, textList(s.notes, "dot")));
+if (s.faq && s.faq.length) body.appendChild(section(U.secFaq, faqList(s.faq)));
 sheet.appendChild(body);
 
 const cta = el("div", "sheet-cta");
-cta.appendChild(iconLink(s.url, "btn kmong", ICONS.kmong, "크몽에서 신청"));
-cta.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, "카카오톡 문의"));
+cta.appendChild(iconLink(s.url, "btn kmong", ICONS.kmong, U.kmongApply));
+cta.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, U.kakao));
 sheet.appendChild(cta);
 sheet.showModal();
 body.scrollTop = 0;
@@ -1120,14 +2250,14 @@ dlg.appendChild(el("h3", null, w.name));
 dlg.appendChild(el("span", "pill", w.genre));
 if (w.desc) dlg.appendChild(el("p", null, w.desc));
 const stores = el("div", "stores");
-if (w.url) stores.appendChild(link(w.url, "btn", "웹에서 바로 플레이"));
+if (w.url) stores.appendChild(link(w.url, "btn", U.playWeb));
 for (let i = 0; i < w.stores.length; i++) {
 const st = w.stores[i];
-const a = link(st.url, "btn", st.label + "에서 더보기");
-a.style.background = STORE_COLORS[st.label] || "";
+const a = link(st.url, "btn", fmt(U.storeMore, { s: st.label }));
+a.style.background = STORE_COLORS[st.key || st.label] || "";
 stores.appendChild(a);
 }
-const close = el("button", "btn ghost", "닫기");
+const close = el("button", "btn ghost", U.close);
 close.type = "button";
 close.addEventListener("click", function () {
 dlg.close();
@@ -1164,13 +2294,13 @@ const direct = w.url && !w.stores;
 const b = el("button", "game");
 b.type = "button";
 b.dataset.index = i;
-b.setAttribute("aria-label", direct ? w.name + " 바로 플레이 (새 탭)" : w.name + " 상세 보기");
+b.setAttribute("aria-label", direct ? fmt(U.playAria, { n: w.name }) : fmt(U.detail, { n: w.name }));
 b.appendChild(img(w.icon, null, w.name, 52, 52, BOX_FALLBACK));
 b.appendChild(el("strong", null, w.name));
 b.appendChild(el("span", "pill", w.genre));
 if (w.url) {
 b.classList.add("playable");
-b.appendChild(el("span", "play-badge", "▶ 바로 플레이"));
+b.appendChild(el("span", "play-badge", U.playBadge));
 }
 if (w.tag) {
 const k = w.tag.toLowerCase();
@@ -1185,10 +2315,10 @@ const wrap = el("div");
 
 const chips = el("div", "chips");
 chips.setAttribute("role", "group");
-chips.setAttribute("aria-label", "게임 필터");
+chips.setAttribute("aria-label", U.filterAria);
 const chipBtns = [];
 for (let i = 0; i < CATS.length; i++) {
-const c = el("button", "chip", CATS[i]);
+const c = el("button", "chip", U.cats[CATS[i]] || CATS[i]);
 c.type = "button";
 c.dataset.cat = CATS[i];
 c.setAttribute("aria-pressed", i === 0 ? "true" : "false");
@@ -1205,7 +2335,7 @@ games.push(g);
 grid.appendChild(g);
 }
 wrap.appendChild(grid);
-const empty = el("p", "empty", "해당하는 게임이 없습니다");
+const empty = el("p", "empty", U.empty);
 empty.hidden = true;
 wrap.appendChild(empty);
 
@@ -1216,7 +2346,7 @@ const cat = c.dataset.cat;
 for (let i = 0; i < chipBtns.length; i++) chipBtns[i].setAttribute("aria-pressed", chipBtns[i] === c ? "true" : "false");
 let shown = 0;
 for (let i = 0; i < games.length; i++) {
-const ok = workMatches(D.works[i], cat);
+const ok = workMatches(BASE.works[i], cat);
 games[i].hidden = !ok;
 if (ok) shown++;
 }
@@ -1232,8 +2362,8 @@ else openWork(w);
 });
 
 const more = el("div", "more-row");
-more.appendChild(link(P.playDeveloper, "more", "구글 플레이 전체 →"));
-more.appendChild(link(P.kmongPortfolios, "more", "크몽 포트폴리오 전체 →"));
+more.appendChild(link(P.playDeveloper, "more", U.moreGoogle));
+more.appendChild(link(P.kmongPortfolios, "more", U.moreKmong));
 wrap.appendChild(more);
 return wrap;
 }
@@ -1241,13 +2371,16 @@ return wrap;
 function setupTabs() {
 const tabRoot = document.getElementById("tabs");
 const panelRoot = document.getElementById("panels");
+panelRoot.textContent = "";
+tabRoot.textContent = "";
+tabRoot.setAttribute("aria-label", U.tabsAria);
 const builders = [buildWorks, buildServices];
 const tabs = new Array(TAB_IDS.length);
 const panels = new Array(TAB_IDS.length);
 const tf = document.createDocumentFragment();
 const pf = document.createDocumentFragment();
 for (let i = 0; i < TAB_IDS.length; i++) {
-const t = el("button", "tab", TAB_NAMES[i]);
+const t = el("button", "tab", U.tabs[i]);
 t.type = "button";
 t.id = "tab-" + TAB_IDS[i];
 t.setAttribute("role", "tab");
@@ -1280,6 +2413,7 @@ tabs[i].setAttribute("aria-selected", "true");
 tabs[i].tabIndex = 0;
 panels[i].hidden = false;
 current = i;
+lastTab = i;
 if (focus) tabs[i].focus();
 }
 
@@ -1293,7 +2427,7 @@ const step = e.key === "ArrowRight" ? 1 : -1;
 select((current + step + tabs.length) % tabs.length, true);
 });
 
-select(0, false);
+select(lastTab, false);
 }
 
 function setupDialog() {
@@ -1348,18 +2482,62 @@ if (navigator.share) {
 await navigator.share({ title: document.title, url: location.href });
 } else {
 await navigator.clipboard.writeText(location.href);
-show("링크가 복사되었습니다");
+show(U.copied);
 }
 } catch (e) {
-if (e && e.name !== "AbortError") show("복사에 실패했습니다");
+if (e && e.name !== "AbortError") show(U.copyFail);
 }
 });
 }
 
+function applyChrome() {
+document.documentElement.lang = LANG;
+document.title = U.title;
+const md = document.querySelector('meta[name="description"]');
+if (md) md.setAttribute("content", U.metaDesc);
+const ogt = document.querySelector('meta[property="og:title"]');
+if (ogt) ogt.setAttribute("content", U.title);
+const ogd = document.querySelector('meta[property="og:description"]');
+if (ogd) ogd.setAttribute("content", U.metaDesc);
+document.getElementById("themeBtn").setAttribute("aria-label", U.themeAria);
+document.getElementById("shareBtn").setAttribute("aria-label", U.shareAria);
+const sel = document.getElementById("langSel");
+sel.setAttribute("aria-label", U.langAria);
+sel.value = LANG;
+}
+
+function renderAll() {
+if (dlg.open) dlg.close();
+if (sheet.open) sheet.close();
+applyChrome();
 renderTop();
 renderReviews();
 setupTabs();
 setupDock();
+}
+
+function detectLang() {
+try {
+const q = new URLSearchParams(location.search).get("lang");
+if (LANGS.indexOf(q) >= 0) return q;
+} catch (e) {}
+try {
+const saved = localStorage.getItem("lang");
+if (LANGS.indexOf(saved) >= 0) return saved;
+} catch (e) {}
+const nav = (navigator.language || "ko").slice(0, 2).toLowerCase();
+return LANGS.indexOf(nav) >= 0 ? nav : "en";
+}
+
+document.getElementById("langSel").addEventListener("change", function (e) {
+const next = e.target.value;
+try { localStorage.setItem("lang", next); } catch (err) {}
+localize(next);
+renderAll();
+});
+
+localize(detectLang());
+renderAll();
 setupDialog();
 setupShare();
 })();
