@@ -84,6 +84,20 @@ font: inherit; font-size: 0.82rem; font-weight: 700; appearance: none; -webkit-a
 backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 }
 .lang-sel option { color: #12151b; background: #fff; }
+.hint { margin: 0 0 10px; color: var(--sub); font-size: 0.82rem; font-weight: 700; }
+.meta .go { margin-left: auto; color: var(--accent); font-weight: 800; white-space: nowrap; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 14px; }
+.stat { padding: 9px 4px 8px; border-radius: 12px; background: var(--accent-soft); text-align: center; }
+.stat b { display: block; color: var(--accent); font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.stat span { display: block; margin-top: 2px; color: var(--sub); font-size: 0.68rem; font-weight: 700; }
+.fold { margin-top: 8px; border: 1px solid var(--line); border-radius: 12px; padding: 0 12px; }
+.fold summary { padding: 11px 0; font-size: 0.86rem; font-weight: 700; cursor: pointer; }
+.fold[open] summary { color: var(--accent); }
+.fold > :not(summary) { margin-bottom: 12px; }
+.pkg-title { margin: 6px 0 0; font-size: 0.86rem; font-weight: 800; line-height: 1.4; }
+.pkg-top b { white-space: nowrap; }
+.meta { flex-wrap: wrap; }
+.meta b { white-space: nowrap; }
 .theme-btn svg { width: 18px; height: 18px; }
 .theme-btn .i-sun { display: none; }
 :root[data-theme="dark"] .theme-btn .i-sun { display: block; }
@@ -204,7 +218,7 @@ background: var(--card); color: var(--text); text-align: left; overflow: hidden;
 .pkg { padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; }
 .pkg-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .pkg-top strong { font-size: 0.86rem; }
-.pkg-top b { color: var(--accent); font-size: 0.88rem; font-weight: 800; }
+.pkg-top b { color: var(--accent); font-size: 1rem; font-weight: 800; }
 .pkg p { margin: 4px 0 0; color: var(--sub); font-size: 0.8rem; line-height: 1.45; }
 .sheet-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 18px calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--card); }
 .reply-note { margin: 8px 0 0; text-align: center; color: var(--sub); font-size: 0.76rem; }
@@ -337,6 +351,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 <p class="intro" id="intro"></p>
 </div>
 </div>
+<div class="stats" id="stats"></div>
 <button class="play-hook" id="playHook" type="button"></button>
 <ul class="bio" id="bio"></ul>
 <div class="actions" id="actions"></div>
@@ -865,6 +880,7 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 const I18N = {
 ko: {
 ui: {
+stats: [["45+", "스토어 출시"], ["100+", "크몽 의뢰"], ["4.9", "평점"], ["7년", "개발 경력"]],
 title: "박성현 | 게임 개발자",
 name: "박성현 | 게임 개발자",
 intro: "유니티 게임 개발 · 출시 · 최적화 전문",
@@ -875,7 +891,10 @@ shareAria: "링크 복사",
 avatarAlt: "프로필 사진",
 tabsAria: "포트폴리오 메뉴",
 langAria: "언어",
-tabs: ["내 앱", "강의 · 서비스"],
+tabs: ["🎮 내 게임", "💼 의뢰 · 강의"],
+hintWorks: "게임을 누르면 바로 플레이하거나 스토어로 이동해요",
+hintServices: "카드를 눌러 가격과 상세 내용을 확인하세요",
+view: "가격·상세 보기 ›",
 hook: "설치 없이 바로 플레이 가능한 게임 {n}개",
 more: "더보기",
 less: "접기",
@@ -915,6 +934,7 @@ genres: {}
 },
 en: {
 ui: {
+stats: [["45+", "Releases"], ["100+", "Kmong orders"], ["4.9", "Rating"], ["7 yrs", "Experience"]],
 title: "Sunghyun Park | Game Developer",
 name: "Sunghyun Park | Game Developer",
 intro: "Unity game development · release · optimization specialist",
@@ -925,7 +945,10 @@ shareAria: "Copy link",
 avatarAlt: "Profile photo",
 tabsAria: "Portfolio menu",
 langAria: "Language",
-tabs: ["My Apps", "Lessons · Services"],
+tabs: ["🎮 My Games", "💼 Hire me · Lessons"],
+hintWorks: "Tap a game to play it or open its store page",
+hintServices: "Tap a card to see pricing and details",
+view: "View price & details ›",
 hook: "{n} games you can play instantly, no install",
 more: "Show more",
 less: "Show less",
@@ -1239,6 +1262,7 @@ notes: [
 },
 ja: {
 ui: {
+stats: [["45+", "リリース"], ["100+", "Kmong依頼"], ["4.9", "評価"], ["7年", "開発経験"]],
 title: "パク・ソンヒョン | ゲーム開発者",
 name: "パク・ソンヒョン | ゲーム開発者",
 intro: "Unityゲーム開発・リリース・最適化の専門家",
@@ -1249,7 +1273,10 @@ shareAria: "リンクをコピー",
 avatarAlt: "プロフィール写真",
 tabsAria: "ポートフォリオメニュー",
 langAria: "言語",
-tabs: ["マイアプリ", "レッスン・サービス"],
+tabs: ["🎮 ゲーム", "💼 依頼・レッスン"],
+hintWorks: "ゲームをタップすると、すぐ遊べる・またはストアへ移動します",
+hintServices: "カードをタップして料金と詳細を確認",
+view: "料金・詳細を見る ›",
 hook: "インストール不要ですぐ遊べるゲーム{n}本",
 more: "もっと見る",
 less: "閉じる",
@@ -1563,6 +1590,7 @@ notes: [
 },
 zh: {
 ui: {
+stats: [["45+", "上架项目"], ["100+", "Kmong委托"], ["4.9", "评分"], ["7年", "开发经验"]],
 title: "朴成贤 | 游戏开发者",
 name: "朴成贤 | 游戏开发者",
 intro: "Unity游戏开发 · 上架 · 优化专家",
@@ -1573,7 +1601,10 @@ shareAria: "复制链接",
 avatarAlt: "头像",
 tabsAria: "作品集菜单",
 langAria: "语言",
-tabs: ["我的应用", "教学 · 服务"],
+tabs: ["🎮 我的游戏", "💼 委托 · 教学"],
+hintWorks: "点击游戏即可直接游玩或前往商店",
+hintServices: "点击卡片查看价格和详情",
+view: "查看价格与详情 ›",
 hook: "无需安装即可畅玩的游戏 {n} 款",
 more: "展开更多",
 less: "收起",
@@ -2041,6 +2072,14 @@ document.getElementById("avatar").alt = U.avatarAlt;
 document.getElementById("name").textContent = P.name;
 document.getElementById("intro").textContent = P.intro;
 
+const statsEl = document.getElementById("stats");
+statsEl.textContent = "";
+for (let i = 0; i < U.stats.length; i++) {
+const c = el("div", "stat");
+c.appendChild(el("b", null, U.stats[i][0]));
+c.appendChild(el("span", null, U.stats[i][1]));
+statsEl.appendChild(c);
+}
 const hookOld = document.getElementById("playHook");
 const hook = hookOld.cloneNode(false);
 hook.hidden = false;
@@ -2099,7 +2138,10 @@ document.getElementById("footer").textContent = "© " + new Date().getFullYear()
 }
 
 function buildServices() {
+const outer = el("div");
+outer.appendChild(el("p", "hint", U.hintServices));
 const root = el("div", "list");
+outer.appendChild(root);
 for (let i = 0; i < D.services.length; i++) {
 const s = D.services[i];
 const a = el("a", "item");
@@ -2115,6 +2157,7 @@ const meta = el("div", "meta");
 meta.appendChild(el("b", null, s.price));
 if (s.rating) meta.appendChild(el("span", null, s.rating));
 if (s.badge) meta.appendChild(el("span", "pill", s.badge));
+meta.appendChild(el("span", "go", U.view));
 info.appendChild(meta);
 a.appendChild(info);
 a.appendChild(el("span", "chev", "›"));
@@ -2126,7 +2169,7 @@ if (!a) return;
 e.preventDefault();
 openService(D.services[a.dataset.index]);
 });
-return root;
+return outer;
 }
 
 function renderReviews() {
@@ -2192,6 +2235,13 @@ root.appendChild(d);
 return root;
 }
 
+function fold(title, node) {
+const d = el("details", "fold");
+d.appendChild(el("summary", null, title));
+d.appendChild(node);
+return d;
+}
+
 function openService(s) {
 sheet.textContent = "";
 const head = el("div", "sheet-head");
@@ -2212,9 +2262,6 @@ sheet.appendChild(head);
 
 const body = el("div", "sheet-body");
 body.appendChild(el("p", "lead", s.tagline));
-body.appendChild(section(U.secOutcomes, textList(s.outcomes, "check"), "box"));
-body.appendChild(section(U.secForWhom, textList(s.forWhom, "check"), "box"));
-body.appendChild(section(U.secProcess, textList(s.process, "dot")));
 const pk = el("div", "pkgs");
 for (let i = 0; i < s.packages.length; i++) {
 const p = s.packages[i];
@@ -2223,15 +2270,26 @@ const top = el("div", "pkg-top");
 top.appendChild(el("strong", null, p.name));
 top.appendChild(el("b", null, p.price));
 box.appendChild(top);
+const cut = p.desc.indexOf(" · ");
+if (cut > 0) {
+box.appendChild(el("p", "pkg-title", p.desc.slice(0, cut)));
+box.appendChild(el("p", null, p.desc.slice(cut + 3)));
+} else {
 box.appendChild(el("p", null, p.desc));
+}
 pk.appendChild(box);
 }
 body.appendChild(section(U.secPackages, pk));
-if (s.options && s.options.length) body.appendChild(section(U.secOptions, textList(s.options, "dot")));
-if (s.notFor && s.notFor.length) body.appendChild(section(U.secNotFor, textList(s.notFor, "dot no"), "box no"));
-if (s.prep.length) body.appendChild(section(U.secPrep, textList(s.prep, "dot")));
-if (s.inquiry && s.inquiry.length) body.appendChild(section(U.secInquiry, textList(s.inquiry, "dot")));
-if (s.notes.length) body.appendChild(section(U.secNotes, textList(s.notes, "dot")));
+body.appendChild(section(U.secOutcomes, textList(s.outcomes, "check"), "box"));
+body.appendChild(section(U.secForWhom, textList(s.forWhom, "check"), "box"));
+const folds = el("div", "folds");
+folds.appendChild(fold(U.secProcess, textList(s.process, "dot")));
+if (s.options && s.options.length) folds.appendChild(fold(U.secOptions, textList(s.options, "dot")));
+if (s.notFor && s.notFor.length) folds.appendChild(fold(U.secNotFor, textList(s.notFor, "dot no")));
+if (s.prep.length) folds.appendChild(fold(U.secPrep, textList(s.prep, "dot")));
+if (s.inquiry && s.inquiry.length) folds.appendChild(fold(U.secInquiry, textList(s.inquiry, "dot")));
+if (s.notes.length) folds.appendChild(fold(U.secNotes, textList(s.notes, "dot")));
+body.appendChild(el("div", "sec")).appendChild(folds);
 if (s.faq && s.faq.length) body.appendChild(section(U.secFaq, faqList(s.faq)));
 sheet.appendChild(body);
 
@@ -2312,6 +2370,7 @@ return b;
 
 function buildWorks() {
 const wrap = el("div");
+wrap.appendChild(el("p", "hint", U.hintWorks));
 
 const chips = el("div", "chips");
 chips.setAttribute("role", "group");
