@@ -88,7 +88,7 @@ backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 .sec-head:first-of-type { margin-top: 4px; }
 .hint { margin: 0 0 10px; color: var(--sub); font-size: 0.82rem; font-weight: 700; }
 .meta .go { margin-left: auto; color: var(--accent); font-weight: 800; white-space: nowrap; }
-.channels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 12px; }
+.channels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 12px; }
 .ch { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 6px 0; border-radius: 12px; color: var(--text); text-decoration: none; }
 .ch:active { background: var(--chip); }
 .ch-dot { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); }
@@ -272,7 +272,14 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .tag { position: absolute; top: -8px; left: 8px; padding: 1px 8px; border-radius: 999px; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; }
 .tag.new { background: var(--accent); }
 .tag.hot { background: #ff4d4f; }
-.item .tag { position: static; display: inline-block; margin-right: 6px; vertical-align: 2px; }
+.item[hidden] { display: none; }
+#panel-services .list { gap: 16px; }
+#panel-services .chips { overflow-x: visible; }
+#panel-services .chip { flex: 1 1 auto; padding: 0 6px; font-size: 0.76rem; }
+.item { position: relative; padding-top: 16px; padding-bottom: 16px; margin-bottom: 4px; }
+.item.new, .item.new:hover { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.item.hot, .item.hot:hover { border-color: #ff4d4f; box-shadow: 0 0 0 1px #ff4d4f; }
+.item > .tag { top: -9px; left: 12px; padding: 2px 9px; font-size: 0.68rem; }
 .chips { display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .chips::-webkit-scrollbar { display: none; }
 .chip { flex: 0 0 auto; min-height: 34px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--sub); font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
@@ -394,6 +401,7 @@ kmong: "https://kmong.com/@DevPark",
 kmongPortfolios: "https://kmong.com/@DevPark/portfolios",
 playDeveloper: "https://play.google.com/store/apps/dev?id=8493220400768769623",
 channels: [
+{ key: "instagram", label: "Instagram", url: "https://www.instagram.com/dev_game_psh" },
 { key: "itch", label: "itch.io", url: "https://spnk-games.itch.io/" },
 { key: "youtube", label: "YouTube", url: "https://www.youtube.com/@spnkgames" },
 { key: "tiktok", label: "TikTok", url: "https://www.tiktok.com/@spnkgames" },
@@ -1689,6 +1697,7 @@ langAria: "언어",
 tabs: ["🎮 내 게임", "💼 의뢰 · 강의"],
 hintWorks: "게임을 누르면 바로 플레이하거나 스토어로 이동해요",
 hintServices: "카드를 눌러 가격과 상세 내용을 확인하세요",
+svcCats: ["전체", "강의·상담", "개발", "출시·QA", "홍보"],
 view: "가격·상세 보기 ›",
 hook: "설치 없이 바로 플레이 가능한 게임 {n}개",
 more: "더보기",
@@ -1745,6 +1754,7 @@ langAria: "Language",
 tabs: ["🎮 My Games", "💼 Hire me · Lessons"],
 hintWorks: "Tap a game to play it or open its store page",
 hintServices: "Tap a card to see pricing and details",
+svcCats: ["All", "Lessons", "Development", "Release & QA", "Promotion"],
 view: "View price & details ›",
 hook: "{n} games you can play instantly, no install",
 more: "Show more",
@@ -2482,6 +2492,7 @@ langAria: "言語",
 tabs: ["🎮 ゲーム", "💼 依頼・レッスン"],
 hintWorks: "ゲームをタップすると、すぐ遊べる・またはストアへ移動します",
 hintServices: "カードをタップして料金と詳細を確認",
+svcCats: ["すべて", "講座・相談", "開発", "リリース・QA", "宣伝"],
 view: "料金・詳細を見る ›",
 hook: "インストール不要ですぐ遊べるゲーム{n}本",
 more: "もっと見る",
@@ -3219,6 +3230,7 @@ langAria: "语言",
 tabs: ["🎮 我的游戏", "💼 委托 · 教学"],
 hintWorks: "点击游戏即可直接游玩或前往商店",
 hintServices: "点击卡片查看价格和详情",
+svcCats: ["全部", "教学·咨询", "开发", "上架·QA", "推广"],
 view: "查看价格与详情 ›",
 hook: "无需安装即可畅玩的游戏 {n} 款",
 more: "展开更多",
@@ -3955,6 +3967,7 @@ const STORE_COLORS = { "구글 플레이": "#0f9d58", "스토브 인디": "#ff6a
 const AVATAR_EXT = ["png", "jpg", "jpeg", "webp"];
 const TAB_IDS = ["works", "services"];
 const CH_ICONS = {
+instagram: { bg: "linear-gradient(45deg, #f9ce34, #ee2a7b 55%, #6228d7)", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="#fff" stroke="none"/></svg>' },
 itch: { bg: "#fa5c5c", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14l2.5 4.5a3 3 0 0 1-5.5 1.5 3 3 0 0 1-4 0 3 3 0 0 1-4 0 3 3 0 0 1-5.5-1.5z"/><path d="M5.5 12.5V20h13v-7.5"/><path d="M10 20v-4h4v4"/></svg>' },
 youtube: { bg: "#ff0000", svg: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5" fill="#fff"/><path d="M10 9l5.5 3-5.5 3z" fill="#ff0000"/></svg>' },
 tiktok: { bg: "#111111", svg: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v10.2a3.7 3.7 0 1 1-3.7-3.7"/><path d="M14 4c.3 2.4 1.9 4 4.5 4.2"/></svg>' },
@@ -4179,6 +4192,8 @@ chRoot.appendChild(a);
 document.getElementById("footer").textContent = "© " + new Date().getFullYear() + " " + P.name;
 }
 
+const SVC_CAT = [1, 3, 2, 2, 3, 2, 2, 1, 3, 4, 4];
+
 function ratingKey(s) {
 const m = /([\d.]+)\s*\((\d+)\)/.exec(s.rating || "");
 return m ? [parseFloat(m[1]), parseInt(m[2], 10)] : [0, 0];
@@ -4187,6 +4202,17 @@ return m ? [parseFloat(m[1]), parseInt(m[2], 10)] : [0, 0];
 function buildServices() {
 const outer = el("div");
 outer.appendChild(el("p", "hint", U.hintServices));
+const chips = el("div", "chips");
+const chipBtns = [];
+for (let c = 0; c < U.svcCats.length; c++) {
+const b = el("button", "chip", U.svcCats[c]);
+b.type = "button";
+b.dataset.sc = c;
+b.setAttribute("aria-pressed", c === 0 ? "true" : "false");
+chips.appendChild(b);
+chipBtns.push(b);
+}
+outer.appendChild(chips);
 const root = el("div", "list");
 outer.appendChild(root);
 const order = [];
@@ -4203,11 +4229,16 @@ const a = el("a", "item");
 a.href = "#";
 a.setAttribute("role", "button");
 a.dataset.index = i;
+a.dataset.sc = SVC_CAT[i] || 0;
+if (s.tag) {
+a.classList.add(s.tag.toLowerCase());
+a.appendChild(el("span", "tag " + s.tag.toLowerCase(), s.tag));
+}
 a.setAttribute("aria-label", fmt(U.detail, { n: s.title }));
 a.appendChild(img(s.image, "thumb", s.title, 652, 488, BOX_FALLBACK));
 const info = el("div", "item-body");
 const h3 = el("h3", null, s.title);
-if (s.tag) h3.insertBefore(el("span", "tag " + s.tag.toLowerCase(), s.tag), h3.firstChild);
+
 info.appendChild(h3);
 info.appendChild(el("p", "tagline", s.tagline));
 const meta = el("div", "meta");
@@ -4220,6 +4251,14 @@ a.appendChild(info);
 a.appendChild(el("span", "chev", "›"));
 root.appendChild(a);
 }
+chips.addEventListener("click", function (e) {
+const b = e.target.closest("button.chip");
+if (!b) return;
+const sel = b.dataset.sc;
+for (let c = 0; c < chipBtns.length; c++) chipBtns[c].setAttribute("aria-pressed", chipBtns[c] === b ? "true" : "false");
+const items = root.children;
+for (let k = 0; k < items.length; k++) items[k].hidden = sel !== "0" && items[k].dataset.sc !== sel;
+});
 root.addEventListener("click", function (e) {
 const a = e.target.closest("a.item");
 if (!a) return;
