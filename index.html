@@ -84,6 +84,8 @@ font: inherit; font-size: 0.82rem; font-weight: 700; appearance: none; -webkit-a
 backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 }
 .lang-sel option { color: #12151b; background: #fff; }
+.sec-head { margin: 14px 0 8px; font-size: 0.98rem; font-weight: 800; }
+.sec-head:first-of-type { margin-top: 4px; }
 .hint { margin: 0 0 10px; color: var(--sub); font-size: 0.82rem; font-weight: 700; }
 .meta .go { margin-left: auto; color: var(--accent); font-weight: 800; white-space: nowrap; }
 .channels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 12px; }
@@ -270,6 +272,7 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .tag { position: absolute; top: -8px; left: 8px; padding: 1px 8px; border-radius: 999px; color: #fff; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; }
 .tag.new { background: var(--accent); }
 .tag.hot { background: #ff4d4f; }
+.item .tag { position: static; display: inline-block; margin-right: 6px; vertical-align: 2px; }
 .chips { display: flex; gap: 6px; margin-bottom: 10px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .chips::-webkit-scrollbar { display: none; }
 .chip { flex: 0 0 auto; min-height: 34px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--sub); font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
@@ -397,7 +400,7 @@ channels: [
 { key: "x", label: "X", url: "https://x.com/3baf1a" }
 ]
 },
-responseNote: "평균 2시간 이내 답변",
+responseNote: "",
 reviews: [
 { text: "너무 만족스럽습니다! 아예 유니티에 대해 무지했는데 쉽게 설명해주시네요 감사합니다 ㅎㅎ 또 듣고 싶어요", author: "마감***" },
 { text: "시간 넘었는데 늦게까지 친절하게 해주시고 감사합니다. 많이 배웠습니다 :)", author: "쉽게*****" },
@@ -418,6 +421,7 @@ about: [
 services: [
 {
 title: "유니티 AI 바이브코딩 1:1 강의",
+tag: "HOT",
 tagline: "AI 바이브코딩으로 내 첫 유니티 게임을 직접 완성",
 price: "29,000원~",
 badge: "대표 강의",
@@ -679,6 +683,715 @@ notes: [
 "새 기능 개발은 별도 옵션이며, 신규 게임 제작은 포함되지 않습니다"
 ]
 }
+,
+{
+"title": "앱인토스 미니앱 게임 변환·입점 대행",
+"tag": "NEW",
+"tagline": "웹·Flutter 게임을 앱인토스 미니앱으로 변환하고 검수 제출까지 도와드립니다",
+"price": "39,000원~",
+"rating": "",
+"sales": "",
+"image": "https://static.cdn.kmong.com/gigs/oMY5r1793440065.jpg",
+"url": "https://kmong.com/gig/851855",
+"partial": true,
+"faq": [
+[
+"어떤 게임이든 변환할 수 있나요?",
+"웹, Flutter, 유니티 게임을 주로 다룹니다. 게임 종류와 사용 기능에 따라 변환 가능 여부가 달라서 STANDARD 사전 진단으로 먼저 확인하실 수 있습니다."
+],
+[
+"입점 승인이 보장되나요?",
+"보장하지 않습니다. 검수와 승인은 토스의 심사로 결정됩니다. 반려가 나면 사유를 확인해 수정하고 다시 제출하는 대응은 도와드립니다."
+],
+[
+"앱인토스 출시 경험이 있나요?",
+"앱인토스 출시 사례는 아직 없습니다. 게임 개발과 구글·애플 스토어 출시 45종 이상의 경험으로 개발 문서를 기준으로 작업하며, 가능 범위를 사전 진단에서 먼저 안내합니다."
+],
+[
+"서버나 도메인이 필요한가요?",
+"게임 구조에 따라 다릅니다. 서버가 필요 없는 구조라면 추가 비용 없이 진행할 수 있으며, 필요한 경우 사전 진단에서 안내합니다."
+],
+[
+"작업 기간은 얼마나 걸리나요?",
+"STANDARD 2일, DELUXE 7일, PREMIUM 14일입니다. 검수 기간은 작업 기간에 포함되지 않습니다."
+],
+[
+"정책이 바뀌면 어떻게 되나요?",
+"앱인토스 정책과 개발 방식은 바뀔 수 있습니다. 작업은 작업 시점의 개발 문서를 기준으로 하며, 사전 진단에서 확인한 내용을 안내해 드립니다."
+]
+],
+"outcomes": [
+"앱인토스에서 실행되는 미니앱 형태의 게임",
+"검수 제출 자료와 제출 완료 상태",
+"변경 내용과 빌드 방법이 정리된 인수인계 자료"
+],
+"forWhom": [
+"웹 게임이나 Flutter 게임을 이미 만들어 둔 개발자",
+"새로운 유통 채널로 게임을 알리고 싶은 분",
+"미니앱 개발 방식이 낯선 1인 개발자"
+],
+"notFor": [
+"아이디어만 있고 게임이 전혀 없는 분 (신규 제작은 게임 개발 서비스를 이용해 주세요)",
+"입점 승인과 수익을 보장받길 원하는 분",
+"앱인토스 정책에 맞지 않는 콘텐츠의 게임"
+],
+"process": [
+"구매 전 문의에서 게임 종류와 개발 환경 확인",
+"사전 진단으로 변환 가능 여부와 필요한 작업 안내",
+"견적 및 일정 확정",
+"미니앱 변환 및 테스트",
+"광고·결제 연동 (PREMIUM)",
+"검수 제출과 반려 시 대응",
+"소스와 변경 내용 인수인계"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "39,000원",
+"desc": "입점 사전 진단 · 앱인토스 등록 가능 여부 점검, 필요한 작업·견적 리포트"
+},
+{
+"name": "DELUXE",
+"price": "290,000원",
+"desc": "변환·검수 제출 · 웹·Flutter 게임을 미니앱으로 변환, 테스트, 검수 제출"
+},
+{
+"name": "PREMIUM",
+"price": "790,000원",
+"desc": "광고·결제 연동 출시 · 변환 + 광고·결제 연동 + 검수 대응 + 출시, 사후 지원 2주"
+}
+],
+"options": [
+"검수 반려 추가 대응 (1회) · 50,000원",
+"리더보드·랭킹 기능 추가 · 100,000원",
+"게임 UI 모바일 최적화 · 80,000원",
+"출시 후 오류 수정 (1주 추가) · 50,000원",
+"소스 구조 정리·인수인계 문서 · 30,000원",
+"급행 작업 (작업 기간 절반) · 협의"
+],
+"inquiry": [
+"게임 종류와 개발 환경 (웹 / Flutter / 유니티)",
+"현재 상태 (완성 / 개발 중)",
+"광고·결제 연동 여부",
+"희망 일정"
+],
+"prep": [
+"게임 소스 (웹 빌드, Flutter 프로젝트 또는 유니티 프로젝트)",
+"현재 게임 실행 방법과 사용 기능 설명",
+"앱인토스 개발자 등록 정보 (진행 상황)",
+"광고·결제 연동이 필요한 경우 원하는 방식"
+],
+"notes": [
+"미포함: 신규 게임 제작, 디자인 제작, 토스 개발자 등록 비용(있는 경우), 검수 통과·입점 승인·수익 보장"
+]
+},
+{
+"title": "Flutter 앱 제작, 안드로이드·iOS 동시 출시",
+"tag": "NEW",
+"tagline": "하나의 코드로 안드로이드·iOS 앱을 만들고 스토어 출시까지 도와드립니다",
+"price": "39,000원~",
+"rating": "",
+"sales": "",
+"image": "https://static.cdn.kmong.com/gigs/FsQj41793439622.jpg",
+"url": "https://kmong.com/gig/851850",
+"partial": true,
+"faq": [
+[
+"안드로이드와 iOS를 정말 한 번에 만드나요?",
+"네. Flutter는 하나의 코드로 두 플랫폼 앱을 만듭니다. 일부 기능은 플랫폼별 설정이 필요하지만 별도 개발 비용은 들지 않습니다."
+],
+[
+"디자인도 해 주나요?",
+"디자인 시안이 있으면 그대로 반영합니다. 시안이 없으면 기본 UI로 제작하며, 별도 디자인이 필요하면 협의합니다."
+],
+[
+"서버도 만들어 주나요?",
+"PREMIUM에서 서버와 API를 함께 제작합니다. 서버 이용료는 별도입니다."
+],
+[
+"애플 앱스토어 출시도 가능한가요?",
+"가능합니다. 애플 개발자 계정이 필요하며, 심사 반려 시 대응도 진행합니다. 심사 통과 자체는 보장할 수 없습니다."
+],
+[
+"작업 기간은 얼마나 걸리나요?",
+"STANDARD 2일, DELUXE 10일, PREMIUM 25일입니다. 기능 범위에 따라 달라질 수 있어 문의 시 확정해 드립니다."
+],
+[
+"완성 후 수정이 가능한가요?",
+"패키지에 포함된 횟수 안에서 수정해 드립니다. 이후 유지보수는 별도로 협의합니다."
+]
+],
+"outcomes": [
+"안드로이드·iOS에서 실행되는 앱 (소스코드 포함)",
+"스토어에 올라간 앱 (PREMIUM)",
+"소스코드와 빌드 방법이 정리된 인수인계 자료"
+],
+"forWhom": [
+"앱 서비스를 처음 만드는 창업자, 소상공인",
+"사내 도구나 행사용 앱이 필요한 담당자",
+"기존 Flutter 앱의 유지보수를 맡길 개발자를 찾는 분"
+],
+"notFor": [
+"3D 게임, 고사양 그래픽 앱 (게임 개발 서비스를 이용해 주세요)",
+"범위를 정하지 않고 계속 기능을 추가하길 원하는 분",
+"다운로드나 매출을 보장받길 원하는 분"
+],
+"process": [
+"구매 전 문의에서 앱 종류와 필요한 기능 확인",
+"화면 목록과 기능 범위, 일정, 견적 확정",
+"화면 개발 및 중간 테스트 빌드 전달",
+"서버·API 연동 (PREMIUM)",
+"수정 반영 및 최종 테스트",
+"스토어 출시 (PREMIUM) 및 소스 인수인계"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "39,000원",
+"desc": "앱 수정·기능 추가 · 기존 Flutter 앱 수정 또는 간단 기능 1개 추가, 수정 2회"
+},
+{
+"name": "DELUXE",
+"price": "490,000원",
+"desc": "앱 제작 5화면 · 안드로이드·iOS 동시 앱 5화면 + 로그인 또는 푸시 1개"
+},
+{
+"name": "PREMIUM",
+"price": "1,490,000원",
+"desc": "앱 제작+서버+출시 · 10화면 앱 + 서버·API + 구글·애플 스토어 출시"
+}
+],
+"options": [
+"화면 1개 추가 · 50,000원",
+"소셜 로그인 추가 (구글·애플·카카오) · 80,000원",
+"푸시 알림 연동 · 60,000원",
+"인앱결제·구독 연동 · 150,000원",
+"광고(AdMob) 연동 · 50,000원",
+"구글 플레이 출시 대행 · 100,000원",
+"애플 앱스토어 출시 대행 · 150,000원",
+"급행 작업 (작업 기간 절반) · 협의"
+],
+"inquiry": [
+"앱 종류와 한 줄 설명",
+"필요한 기능과 대략적인 화면 수",
+"디자인 시안 유무",
+"출시 여부와 희망 일정"
+],
+"prep": [
+"만들려는 앱 설명과 필요한 기능 목록",
+"디자인 시안 또는 참고 앱",
+"기존 앱 수정인 경우 소스코드",
+"출시가 필요한 경우 구글·애플 개발자 계정"
+],
+"notes": [
+"미포함: 디자인 시안 제작(시안이 있으면 반영), 외부 서비스 이용료(서버, 도메인, 개발자 계정 등), 다운로드·매출 보장"
+]
+},
+{
+"title": "바이브코딩 앱·웹 오류 수정, 완성·배포 대행",
+"tag": "NEW",
+"tagline": "AI로 만들다 막힌 앱·웹을 오류 수정부터 배포까지 마무리해 드립니다",
+"price": "19,000원~",
+"rating": "",
+"sales": "",
+"image": "https://static.cdn.kmong.com/gigs/KutMq1793437868.jpg",
+"url": "https://kmong.com/gig/851825",
+"partial": true,
+"faq": [
+[
+"어떤 프로젝트까지 가능한가요?",
+"웹과 모바일 앱을 주로 다룹니다. 프로젝트 종류와 사용한 언어를 알려 주시면 가능 여부를 먼저 안내해 드립니다. 진단 리포트로 확인하셔도 됩니다."
+],
+[
+"진단 리포트만 받아도 되나요?",
+"가능합니다. 원인, 남은 작업, 예상 견적을 정리해 드립니다. 이후 직접 진행하시거나 다른 패키지로 이어서 맡기실 수 있습니다."
+],
+[
+"AI가 만든 코드라 품질이 걱정됩니다.",
+"코드를 읽고 구조부터 확인합니다. 고칠 수 있는 범위와 다시 짜는 편이 나은 부분을 구분해서 말씀드립니다."
+],
+[
+"배포까지 해 주나요?",
+"PREMIUM에서 웹 배포 또는 스토어 출시를 진행합니다. 서버, 도메인, 개발자 계정 비용은 별도입니다."
+],
+[
+"작업 기간은 얼마나 걸리나요?",
+"STANDARD 1일, DELUXE 3일, PREMIUM 7일입니다. 구글 플레이 첫 출시는 비공개 테스트 때문에 최소 14일이 걸립니다."
+],
+[
+"성공을 보장하나요?",
+"서비스의 성공, 다운로드, 매출은 보장하지 않습니다. 코드 수정과 배포까지의 작업을 책임집니다."
+]
+],
+"outcomes": [
+"에러 원인과 해결 내용이 정리된 프로젝트",
+"미완성이던 기능이 동작하는 상태",
+"웹 주소 또는 스토어에 올라간 결과물 (PREMIUM)",
+"변경 내용과 사용법이 정리된 인수인계 자료"
+],
+"forWhom": [
+"AI로 앱·웹 서비스를 만들었지만 완성하지 못한 비개발자",
+"개발 지식 없이 만든 결과물을 실제로 쓸 수 있게 만들고 싶은 분",
+"외주 전에 현재 상태를 개발자에게 먼저 점검받고 싶은 분"
+],
+"notFor": [
+"아이디어만 있고 코드가 전혀 없는 분 (게임이라면 게임 개발 서비스를 이용해 주세요)",
+"범위를 정하지 않고 모든 기능 개발을 원하는 분",
+"서비스의 성공이나 매출을 보장받길 원하는 분"
+],
+"process": [
+"구매 전 문의에서 프로젝트 종류와 증상 확인",
+"프로젝트 전달 및 실행 환경 재현",
+"원인 분석 후 수정 범위, 일정, 견적 안내",
+"수정, 기능 구현, 테스트",
+"배포 (PREMIUM)",
+"변경 내용과 사용법 정리 후 전달"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "19,000원",
+"desc": "오류 진단 리포트 · 프로젝트를 확인해 오류 원인, 남은 작업, 견적을 리포트로 정리"
+},
+{
+"name": "DELUXE",
+"price": "149,000원",
+"desc": "오류 수정+기능 완성 · 막힌 오류 3건 해결 + 미완성 기능 1개 완성, 수정 2회"
+},
+{
+"name": "PREMIUM",
+"price": "399,000원",
+"desc": "출시까지 완성 · 오류 수정, 기능 완성, 배포(웹 또는 스토어), 인수인계, 수정 2회"
+}
+],
+"options": [
+"오류 1건 추가 수정 · 20,000원",
+"기능 1개 추가 · 50,000원",
+"웹 배포·도메인 연결 · 40,000원",
+"구글 플레이 출시 대행 · 100,000원",
+"API 키·보안 점검 · 30,000원",
+"사용 설명서·인수인계 영상 · 30,000원",
+"급행 작업 (작업 기간 절반) · 협의"
+],
+"inquiry": [
+"프로젝트 종류 (웹 / 모바일 앱 / 기타)와 사용한 언어·도구",
+"증상 한 줄과 에러 메시지",
+"원하는 결과 (오류만 해결 / 기능 완성 / 배포까지)",
+"희망 일정"
+],
+"prep": [
+"프로젝트 소스 (압축 파일 또는 저장소 주소)",
+"에러 메시지 또는 화면 캡처",
+"사용한 AI 도구와 만들려던 기능 설명",
+"배포가 필요한 경우 호스팅·도메인·개발자 계정 정보"
+],
+"notes": [
+"미포함: 신규 서비스 전체 개발, 외부 서비스 이용료(서버, 도메인, 개발자 계정 등), 서비스 성공·매출 보장"
+]
+},
+{
+"title": "유니티·Flutter 개발 1:1 상담, 코드 리뷰",
+"tag": "NEW",
+"tagline": "막힌 개발 문제를 화면 공유로 함께 풀고, 코드 구조까지 리뷰해 드립니다",
+"price": "19,000원~",
+"rating": "",
+"sales": "",
+"image": "https://static.cdn.kmong.com/gigs/eVIWf1793439805.jpg",
+"url": "https://kmong.com/gig/851852",
+"partial": true,
+"faq": [
+[
+"상담 방식은 어떻게 되나요?",
+"화상 통화나 화면 공유로 진행합니다. 구매 후 일정을 조율해 사용할 도구를 안내해 드립니다."
+],
+[
+"30분이면 해결할 수 있나요?",
+"단순한 오류는 대부분 가능합니다. 시간이 부족하면 해결 방향까지 안내하며, 상담 시간 추가나 작업 서비스로 이어서 진행하실 수 있습니다."
+],
+[
+"문제를 직접 고쳐 주나요?",
+"상담은 원인을 찾고 방법을 안내하는 서비스입니다. 직접 수정이 필요하면 코드 최적화 서비스를 이용해 주세요."
+],
+[
+"어떤 분야를 상담할 수 있나요?",
+"유니티 게임 개발, Flutter 앱 개발, 성능 최적화, 구조 설계, 출시 준비를 다룹니다."
+],
+[
+"코드를 보내도 안전한가요?",
+"상담 목적으로만 사용하고 상담 후 삭제합니다. 보안이 민감하면 코드 전달 없이 화면 공유로만 진행하셔도 됩니다."
+],
+[
+"환불은 가능한가요?",
+"상담 일정 확정 전에는 크몽 규정에 따라 환불할 수 있습니다. 상담 진행 후에는 크몽 규정을 따릅니다."
+]
+],
+"outcomes": [
+"막힌 문제의 원인과 해결 방향",
+"코드 구조의 문제점과 개선 우선순위 (DELUXE, PREMIUM)",
+"성능과 출시 준비 상태 점검 리포트 (PREMIUM)"
+],
+"forWhom": [
+"혼자 개발하는 인디 개발자, 개발 입문자",
+"외주 개발물의 품질을 확인하고 싶은 기획자·대표님",
+"AI 코딩 결과물을 개발자에게 점검받고 싶은 분"
+],
+"notFor": [
+"코드를 대신 작성해 주길 원하는 분 (작업은 별도 서비스를 이용해 주세요)",
+"취업·이직 상담을 원하는 분",
+"유니티·Flutter 외 언어의 심층 상담을 원하는 분"
+],
+"process": [
+"구매 전 문의에서 상담 주제와 사용 환경 확인",
+"상담 일정 확정 (화상 또는 화면 공유)",
+"상담 진행",
+"코드 리뷰 리포트 작성 (DELUXE, PREMIUM)",
+"리포트 전달 및 질의응답"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "19,000원",
+"desc": "30분 개발 상담 · 막힌 문제 1건을 화면 공유로 30분 상담"
+},
+{
+"name": "DELUXE",
+"price": "49,000원",
+"desc": "1시간 상담+코드 리뷰 · 60분 상담 + 핵심 코드 구조 리뷰 리포트"
+},
+{
+"name": "PREMIUM",
+"price": "149,000원",
+"desc": "프로젝트 종합 리뷰 · 전체 구조·성능·출시 준비 리뷰 + 60분 상담 + 개선 순서"
+}
+],
+"options": [
+"상담 30분 추가 · 15,000원",
+"코드 리뷰 파일 5개 추가 · 20,000원",
+"성능 프로파일링 분석 · 50,000원",
+"출시 전 체크리스트 점검 · 30,000원",
+"상담 내용 녹화본 제공 · 10,000원",
+"급행 일정 (24시간 이내) · 협의"
+],
+"inquiry": [
+"사용 엔진·언어와 버전",
+"상담받고 싶은 문제 한 줄",
+"희망 상담 시간대",
+"코드를 공유하실 수 있는 범위"
+],
+"prep": [
+"문제 상황 설명과 에러 메시지",
+"코드 또는 프로젝트 (화면 공유 또는 압축 파일)",
+"유니티·Flutter 등 사용 버전",
+"상담에서 알고 싶은 질문 목록"
+],
+"notes": [
+"미포함: 코드 직접 수정·구현, 대신 개발, 실제 출시 진행"
+]
+},
+{
+"title": "모바일 게임 출시 전 QA·성능 테스트 리포트",
+"tag": "NEW",
+"tagline": "출시 전에 버그, 크래시, 렉을 개발자가 직접 찾아 리포트로 드립니다",
+"price": "59,000원~",
+"rating": "",
+"sales": "",
+"image": "https://static.cdn.kmong.com/gigs/2Pi1y1793438772.jpg",
+"url": "https://kmong.com/gig/851839",
+"partial": true,
+"faq": [
+[
+"버그를 고쳐 주기도 하나요?",
+"이 서비스는 문제를 찾아 리포트로 드리는 서비스입니다. 수정이 필요하면 코드 최적화 서비스를 이어서 이용해 주세요."
+],
+[
+"리포트는 어떤 형태인가요?",
+"문제별 재현 절차, 화면 캡처, 심각도를 정리한 문서로 드립니다. 구글 시트 또는 문서 형태를 선택하실 수 있습니다."
+],
+[
+"소스코드를 보내야 하나요?",
+"아니요. 실행 가능한 빌드만 있으면 됩니다."
+],
+[
+"출시 승인을 보장하나요?",
+"스토어 심사 통과, 다운로드, 매출은 보장하지 않습니다. 발견된 문제를 미리 정리해 드리는 서비스입니다."
+],
+[
+"어떤 장르가 가능한가요?",
+"캐주얼, 액션, RPG, 퍼즐 등 대부분 가능합니다. 대규모 실시간 멀티플레이는 문의해 주세요."
+]
+],
+"outcomes": [
+"버그·크래시 목록 (재현 절차, 화면 캡처 포함)",
+"심각도별 우선순위 정리",
+"프레임, 메모리 등 성능 점검 결과 (DELUXE부터)",
+"스토어 정책 점검 결과와 개선 의견 (PREMIUM)"
+],
+"forWhom": [
+"출시 직전이라 마지막 점검이 필요한 개발자",
+"테스트할 사람이 없는 1인·소규모 개발팀",
+"비공개 테스트 전에 문제를 먼저 정리하고 싶은 분",
+"AI로 만든 게임·앱이라 어디가 불안한지 모르는 분"
+],
+"notFor": [
+"코드 수정까지 한 번에 맡기길 원하는 분 (코드 최적화 서비스를 함께 이용해 주세요)",
+"대규모 동시 접속, 서버 부하 테스트가 필요한 분",
+"보안 취약점 진단이 필요한 분"
+],
+"process": [
+"구매 전 문의에서 게임 종류, 플랫폼, 테스트 범위 확인",
+"빌드(APK/AAB 또는 웹 링크)와 테스트 계정 전달",
+"플레이 점검 및 기능별 확인",
+"성능 점검 (DELUXE부터)",
+"리포트 정리 및 전달",
+"수정 후 재검수 (PREMIUM 1회 포함)"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "59,000원",
+"desc": "빠른 플레이 점검 · 핵심 플레이 1회전 점검, 버그·크래시 요약 리포트"
+},
+{
+"name": "DELUXE",
+"price": "179,000원",
+"desc": "기능·성능 점검 · 전 기능 점검, 프레임·메모리 확인, 재현 절차 포함 리포트"
+},
+{
+"name": "PREMIUM",
+"price": "449,000원",
+"desc": "출시 전 종합 QA · 종합 QA + 스토어 정책 점검 + 재검수 1회, 재현 절차 리포트"
+}
+],
+"options": [
+"재검수 1회 추가 · 40,000원",
+"테스트 시나리오 문서 작성 · 50,000원",
+"발견된 버그 수정 (코드 최적화 서비스 연계) · 협의",
+"광고·결제 동작 점검 · 40,000원",
+"급행 작업 (작업 기간 절반) · 협의"
+],
+"inquiry": [
+"게임 종류와 플랫폼 (안드로이드 / iOS / 웹)",
+"빌드 형태 (APK, AAB, 웹 링크 등)",
+"집중해서 점검할 부분",
+"희망 일정"
+],
+"prep": [
+"테스트용 빌드 또는 접속 링크",
+"로그인이 필요하면 테스트 계정",
+"알고 있는 문제나 집중해서 보고 싶은 부분 (있다면)"
+],
+"notes": [
+"미포함: 코드 수정, 서버 부하·보안 테스트, 개발자 계정 관련 작업"
+]
+},
+{
+"title": "게임·앱 홍보 숏폼 제작, 쇼츠·릴스·틱톡",
+"tag": "NEW",
+"tagline": "게임·앱 플레이 화면으로 15초 세로 홍보 영상을 만들어 드립니다",
+"price": "59,000원~",
+"rating": "",
+"sales": "",
+"image": "https://static.cdn.kmong.com/gigs/nOCUf1793438986.jpg",
+"url": "https://kmong.com/gig/851840",
+"partial": true,
+"faq": [
+[
+"플레이 영상이 없어도 되나요?",
+"웹 링크나 테스트 빌드를 주시면 화면 녹화가 가능한지 먼저 확인해 안내해 드립니다."
+],
+[
+"영상 길이는 얼마나 되나요?",
+"기본은 15초입니다. 30초가 필요하면 추가 옵션을 이용해 주세요."
+],
+[
+"업로드 문구는 어떤 톤으로 쓰나요?",
+"광고 문구형과 담백한 개발 일지형 중 선택하실 수 있습니다."
+],
+[
+"영상을 직접 올려 주나요?",
+"업로드 대행은 포함되지 않습니다. 최종 파일과 문구, 해시태그를 전달해 드립니다."
+],
+[
+"조회수나 설치 수를 보장하나요?",
+"보장하지 않습니다. 홍보에 쓸 영상과 문구를 제작해 드리는 서비스입니다."
+]
+],
+"outcomes": [
+"쇼츠, 릴스, 틱톡에 바로 올릴 수 있는 9:16 세로 영상",
+"첫 3초에 시선을 끄는 구성의 자막과 편집",
+"영상에 맞춘 업로드 문구와 해시태그 (DELUXE부터)",
+"인스타그램 1:1 게시물 이미지 (PREMIUM)"
+],
+"forWhom": [
+"게임·앱을 출시했는데 홍보 영상을 만들 시간이 없는 개발자",
+"스토어 출시 전후로 SNS 홍보를 시작하려는 인디 팀",
+"영상 편집은 어렵지만 플레이 화면은 가지고 있는 분",
+"여러 소재의 숏폼을 꾸준히 올리고 싶은 분"
+],
+"notFor": [
+"실사 촬영, 모델 출연, 성우 녹음이 필요한 분",
+"3D 애니메이션이나 광고 영화 수준의 영상을 원하는 분",
+"조회수·설치 수를 보장받길 원하는 분"
+],
+"process": [
+"구매 전 문의에서 게임·앱 종류와 홍보 목적 확인",
+"플레이 영상 또는 빌드·링크 전달",
+"영상 구성 안내 (보여 줄 장면, 자막 문구)",
+"편집 후 1차 전달",
+"수정 반영 (패키지별 2회)",
+"최종 파일과 업로드 문구 전달"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "59,000원",
+"desc": "15초 숏폼 1편 · 게임·앱 화면 기반 세로 영상 1편, 자막·음악 포함, 수정 2회"
+},
+{
+"name": "DELUXE",
+"price": "169,000원",
+"desc": "숏폼 3편+문구 · 15초 영상 3편(소재 다르게) + 업로드 문구·해시태그"
+},
+{
+"name": "PREMIUM",
+"price": "329,000원",
+"desc": "숏폼 6편+SNS 세트 · 영상 6편 + 인스타 1:1 이미지 3종 + 문구·해시태그"
+}
+],
+"options": [
+"영상 1편 추가 · 40,000원",
+"영상 길이 연장 (30초) · 20,000원",
+"인스타 1:1 게시물 이미지 1종 추가 · 15,000원",
+"영문 자막 추가 · 20,000원",
+"원본 프로젝트 파일 제공 · 30,000원",
+"급행 작업 (작업 기간 절반) · 협의"
+],
+"inquiry": [
+"게임·앱 종류와 스토어 링크",
+"플레이 영상 보유 여부",
+"올릴 채널 (쇼츠 / 릴스 / 틱톡)",
+"원하는 분위기 (개발 일지형 / 홍보형)"
+],
+"prep": [
+"게임·앱 플레이 영상 (없다면 웹 링크나 테스트 빌드)",
+"강조하고 싶은 기능 한두 가지",
+"로고나 스토어 링크 (있다면)"
+],
+"notes": [
+"미포함: 실사 촬영, 성우 녹음, 유료 음원·폰트 구매비, 광고 집행과 업로드 대행"
+]
+},
+{
+"title": "일 4천 방문 게임·IT 블로그 배너 광고",
+"tag": "NEW",
+"tagline": "게임·앱·IT 서비스를 게임·IT 전문 블로그에서 홍보해 드립니다",
+"price": "10,000원~",
+"rating": "★ 5.0 (3)",
+"sales": "6건 판매",
+"image": "https://static.cdn.kmong.com/gigs/efJJG1793436050.jpg",
+"url": "https://kmong.com/gig/637892",
+"partial": true,
+"faq": [
+[
+"무료 체험이 가능한가요?",
+"1일 체험 광고가 가능합니다. 상담 후 배너와 URL을 받아 체험 기간 동안 실제로 노출합니다."
+],
+[
+"비용과 기간은 어떻게 되나요?",
+"패키지별로 2일, 7일, 30일이며 상담 후 필요한 기간을 안내해 드립니다."
+],
+[
+"배너는 어디에 노출되나요?",
+"블로그 본문 상단과 하단에 노출됩니다. PC와 모바일 모두 확인한 뒤 위치를 안내합니다."
+],
+[
+"효과는 어떻게 측정하나요?",
+"단축 URL이나 UTM 링크 사용을 권장하며 설정 방법도 안내해 드립니다."
+],
+[
+"배너를 제작해 주나요?",
+"기본은 직접 준비해 주셔야 하고, 제작이 필요하면 추가 옵션(배너 이미지 제작)을 이용해 주세요."
+],
+[
+"진행 중에 배너를 바꿀 수 있나요?",
+"이벤트나 프로모션에 맞춰 교체할 수 있습니다. PREMIUM은 1회 포함이고 이후는 추가 옵션입니다."
+],
+[
+"어떤 업종에 효과가 좋은가요?",
+"게임, IT 기기, 앱, 소프트웨어가 잘 맞습니다."
+],
+[
+"게임 출시 홍보도 가능한가요?",
+"가능합니다. 사전 예약 페이지나 스토어 페이지로 연결할 수 있습니다."
+],
+[
+"리뷰 글도 써 주나요?",
+"직접 플레이해 보고 작성하는 리뷰 포스팅은 추가 옵션으로 진행합니다."
+]
+],
+"outcomes": [
+"게임·IT 블로그(일 방문자 약 4,000명)에 내 배너 노출",
+"클릭하면 웹사이트·구글 플레이·앱스토어·상품 페이지로 연결",
+"서비스를 소개하는 홍보글 게시 (DELUXE부터)"
+],
+"forWhom": [
+"모바일·PC 게임, 앱, IT 서비스를 홍보하려는 분",
+"인디 개발자나 소규모 팀처럼 적은 예산으로 반응을 먼저 보고 싶은 분",
+"10대 후반~30대 게임·IT 관심층을 겨냥하는 분",
+"설치, 유입, 인지도 상승 중 뚜렷한 목표가 있는 분",
+"배너만으로 설명이 부족해 소개 글이 필요한 분"
+],
+"notFor": [
+"도박·사행성, 성인·폭력적 콘텐츠, 불법 의약품 등 광고 불가 업종",
+"클릭 수·설치 수 보장을 원하는 분"
+],
+"process": [
+"사전 상담으로 목표와 방향 확인",
+"배너 이미지와 이동할 URL 전달",
+"배너 등록 및 노출 확인 (PC·모바일)",
+"노출 기간 진행",
+"종료 후 결과 안내"
+],
+"packages": [
+{
+"name": "STANDARD",
+"price": "10,000원",
+"desc": "2일 체험 배너 · 블로그 전 게시글 상하단 배너 2일 노출, 수정 2회"
+},
+{
+"name": "DELUXE",
+"price": "39,000원",
+"desc": "7일 배너+홍보글 · 배너 7일 노출 + 홍보글 1편 게시, 수정 2회"
+},
+{
+"name": "PREMIUM",
+"price": "79,000원",
+"desc": "30일 배너+홍보글 · 배너 30일 노출 + 홍보글 1편 + 배너 교체 1회"
+}
+],
+"options": [
+"홍보글 1편 추가 · 30,000원",
+"직접 플레이 후 작성하는 리뷰 포스팅 · 90,000원",
+"배너 이미지 제작 · 20,000원",
+"배너 교체 1회 추가 · 10,000원",
+"노출 기간 1주 연장 · 25,000원"
+],
+"inquiry": [
+"홍보할 서비스 종류 (게임 / 앱 / IT 서비스)",
+"클릭 시 이동할 주소 (웹사이트 / 구글 플레이 / 앱스토어)",
+"목표 (설치, 유입, 인지도)",
+"희망 노출 기간과 시작일"
+],
+"prep": [
+"배너 이미지 (JPG 또는 PNG, 가로 2,000px, 세로 400~600px)",
+"클릭 시 이동할 URL"
+],
+"notes": [
+"노출 누락이나 오류 등 판매자 사유로 게시되지 않은 경우, 해당 일수만큼 추가로 게재합니다.",
+"환불은 용역 제공 개시 전에는 가능하며, 개시 후에는 제공 범위에 따라 달라집니다. 세부 기준은 크몽 규정을 따릅니다.",
+"성과(클릭 수, 설치 수)는 보장하지 않습니다."
+]
+}
 ],
 works: [
 {
@@ -810,13 +1523,23 @@ url: "https://devparktools.github.io/Mini_EliteBeatAgents/"
 },
 {
 name: "Mini Dating App",
+kind: "util",
 genre: "웹 · 앱",
 desc: "브라우저에서 바로 즐기는 스와이프 데이팅 앱 체험.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ff7a9a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a55cff%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2226%22%20y%3D%2226%22%20width%3D%2266%22%20height%3D%2284%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%20opacity%3D%22.5%22%20transform%3D%22rotate%28-10%2059%2068%29%22%2F%3E%3Crect%20x%3D%2236%22%20y%3D%2218%22%20width%3D%2266%22%20height%3D%2284%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M69%2080c-18-12-24-21-24-29a12%2012%200%200%201%2024-4%2012%2012%200%200%201%2024%204c0%208-6%2017-24%2029z%22%20fill%3D%22%23ff4d7d%22%2F%3E%3Ccircle%20cx%3D%2226%22%20cy%3D%22104%22%20r%3D%2212%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M21%2099l10%2010M31%2099L21%20109%22%20stroke%3D%22%23ff4d7d%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22108%22%20cy%3D%22104%22%20r%3D%2212%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M103%20104l4%204%207-8%22%20fill%3D%22none%22%20stroke%3D%22%232ec27e%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
 url: "https://devparktools.github.io/Mini_DatingApp/"
 },
 {
+name: "Mini Date Course",
+kind: "util",
+genre: "웹 · 앱",
+desc: "브라우저에서 바로 쓰는 데이트 코스 추천 룰렛 앱.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232b1a5e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237a3cc8%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23fff%22%20opacity%3D%22.85%22%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%2228%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%22108%22%20cy%3D%2222%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%2260%22%20r%3D%221.5%22%2F%3E%3Ccircle%20cx%3D%2226%22%20cy%3D%2264%22%20r%3D%221.5%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M80%2016a46%2046%200%201%200%2028%2076A38%2038%200%200%201%2080%2016z%22%20fill%3D%22%23ffe9a8%22%2F%3E%3Cpath%20d%3D%22M52%2066c-14-9-18-16-18-22a9%209%200%200%201%2018-3%209%209%200%200%201%2018%203c0%206-4%2013-18%2022z%22%20fill%3D%22%23ff5d8f%22%2F%3E%3Ccircle%20cx%3D%2298%22%20cy%3D%2294%22%20r%3D%2218%22%20fill%3D%22%23fff%22%20stroke%3D%22%232b1a5e%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M98%2094V80M98%2094l10%206M98%2094l-10%206%22%20stroke%3D%22%232b1a5e%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2298%22%20cy%3D%2294%22%20r%3D%223%22%20fill%3D%22%23ff5d8f%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/MoonDate/"
+},
+{
 name: "Mini Voca",
+kind: "util",
 genre: "웹 · 학습",
 desc: "브라우저에서 바로 쓰는 영단어 암기 앱. 플래시카드와 디펜스 게임으로 외웁니다.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232ec4b6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231d6f8f%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2230%22%20y%3D%2236%22%20width%3D%2264%22%20height%3D%2252%22%20rx%3D%2210%22%20fill%3D%22%23fff%22%20opacity%3D%22.45%22%20transform%3D%22rotate%28-8%2062%2062%29%22%2F%3E%3Crect%20x%3D%2234%22%20y%3D%2230%22%20width%3D%2264%22%20height%3D%2252%22%20rx%3D%2210%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M52%2062l10%2010%2020-24%22%20fill%3D%22none%22%20stroke%3D%22%232a9d8f%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M30%20100a28%2028%200%200%200%2052%208%22%20fill%3D%22none%22%20stroke%3D%22%23ffd23f%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M84%2096l2%2014-14-2%22%20fill%3D%22none%22%20stroke%3D%22%23ffd23f%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
@@ -824,6 +1547,7 @@ url: "https://devparktools.github.io/Mini_Voca/"
 },
 {
 name: "Mini Study App",
+kind: "util",
 genre: "웹 · 앱",
 desc: "브라우저에서 바로 쓰는 공부 타이머·기록 앱.",
 icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%233a7bd5%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2310285a%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2222%22%20y%3D%2284%22%20width%3D%2284%22%20height%3D%2222%22%20rx%3D%225%22%20fill%3D%22%23fff%22%20stroke%3D%22%2310285a%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M64%2084v22%22%20stroke%3D%22%2310285a%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2250%22%20r%3D%2230%22%20fill%3D%22%23fff%22%20stroke%3D%22%2310285a%22%20stroke-width%3D%225%22%2F%3E%3Cpath%20d%3D%22M64%2028v22l14%209%22%20fill%3D%22none%22%20stroke%3D%22%2310285a%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M64%2014a36%2036%200%200%201%2036%2036%22%20fill%3D%22none%22%20stroke%3D%22%233ddc97%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Crect%20x%3D%2256%22%20y%3D%226%22%20width%3D%2216%22%20height%3D%227%22%20rx%3D%223%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
@@ -949,12 +1673,14 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 const I18N = {
 ko: {
 ui: {
+secGames: "🎮 게임",
+secUtils: "🧰 유틸리티",
 stats: [["45+", "스토어 출시"], ["100+", "크몽 의뢰"], ["4.9", "평점"], ["7년", "개발 경력"]],
 title: "박성현 | 게임 개발자",
 name: "박성현 | 게임 개발자",
 intro: "유니티 게임 개발 · 출시 · 최적화 전문",
 metaDesc: "유니티 게임 개발, 구글·애플 출시 대행, 코드 최적화, 1:1 강의. 게임 개발자 박성현의 포트폴리오",
-responseNote: "평균 2시간 이내 답변",
+responseNote: "",
 themeAria: "다크 모드 전환",
 shareAria: "링크 복사",
 avatarAlt: "프로필 사진",
@@ -1003,12 +1729,14 @@ genres: {}
 },
 en: {
 ui: {
+secGames: "🎮 Games",
+secUtils: "🧰 Utilities",
 stats: [["45+", "Releases"], ["100+", "Kmong orders"], ["4.9", "Rating"], ["7 yrs", "Experience"]],
 title: "Sunghyun Park | Game Developer",
 name: "Sunghyun Park | Game Developer",
 intro: "Unity game development · release · optimization specialist",
 metaDesc: "Unity game development, Google Play & App Store release support, code optimization, 1:1 lessons. Portfolio of game developer Sunghyun Park.",
-responseNote: "Replies within 2 hours on average",
+responseNote: "",
 themeAria: "Toggle dark mode",
 shareAria: "Copy link",
 avatarAlt: "Profile photo",
@@ -1084,6 +1812,7 @@ descs: [
 "A side-scrolling action game you can play right in your browser.",
 "A cheer-squad rhythm game you can play right in your browser.",
 "A swipe-style dating app experience you can try right in your browser.",
+"A date-course recommendation roulette app you can use right in your browser.",
 "An English vocabulary app you can use right in your browser. Memorize with flashcards and a defense game.",
 "A study timer and tracking app you can use right in your browser.",
 "A pixel shop-management game where you grow a small dungeon stall into a legendary shop.",
@@ -1335,16 +2064,416 @@ notes: [
 "New feature development is a separate option, and new game production is not included"
 ]
 }
+,
+{
+"title": "Apps in Toss Mini-App Game Conversion & Listing",
+"tagline": "I convert your web or Flutter game into an Apps in Toss mini-app and submit it for review",
+"packages": [
+"Listing pre-check · Check Apps in Toss eligibility, report on required work and a quote",
+"Convert & submit · Convert a web or Flutter game into a mini-app, test it, submit for review",
+"Ads/payment & release · Conversion + ads/payment integration + review handling + release, 2 weeks of support"
+],
+"options": [
+"Extra review-rejection handling (1 round)",
+"Leaderboard / ranking feature",
+"Mobile UI optimization for the game",
+"Post-release bug fixes (1 extra week)",
+"Source cleanup & handover document",
+"Rush work (half the working time)"
+],
+"outcomes": [
+"A game running as a mini-app on Apps in Toss",
+"Review submission materials and a completed submission",
+"Handover notes covering changes and build steps"
+],
+"forWhom": [
+"Developers who already have a web or Flutter game",
+"Anyone who wants a new distribution channel for their game",
+"Solo developers unfamiliar with mini-app development"
+],
+"notFor": [
+"Anyone with only an idea and no game (use the game development service)",
+"Anyone who wants guaranteed approval or revenue",
+"Games with content that violates Apps in Toss policy"
+],
+"inquiry": [
+"Game type and dev environment (Web / Flutter / Unity)",
+"Current status (finished / in development)",
+"Whether you need ads or payment integration",
+"Preferred schedule"
+],
+"faq": [
+[
+"Can you convert any game?",
+"I mainly handle web, Flutter and Unity games. Feasibility depends on the game and the features it uses, so you can check first with the STANDARD pre-check."
+],
+[
+"Is approval guaranteed?",
+"No. Review and approval are decided by Toss. If a game is rejected, I help check the reason, fix it and resubmit."
+],
+[
+"Do you have Apps in Toss release experience?",
+"I don't have an Apps in Toss release yet. I work from the official developer documentation, backed by game development and 45+ Google Play / App Store releases, and I tell you what's feasible in the pre-check."
+],
+[
+"How long does it take?",
+"STANDARD 2 days, DELUXE 7 days, PREMIUM 14 days. Review time is not included."
+]
+]
+},
+{
+"title": "Flutter App Development, Android & iOS Together",
+"tagline": "One codebase for Android and iOS apps, through to store release",
+"packages": [
+"App fix / feature · Fix an existing Flutter app or add one simple feature, 2 revisions",
+"5-screen app · Android & iOS app with 5 screens + login or push (one)",
+"App + server + release · 10-screen app + server/API + Google Play & App Store release"
+],
+"options": [
+"Extra screen",
+"Social login (Google / Apple / Kakao)",
+"Push notifications",
+"In-app purchases / subscriptions",
+"AdMob integration",
+"Google Play release service",
+"App Store release service",
+"Rush work (half the working time)"
+],
+"outcomes": [
+"An app running on Android and iOS (source code included)",
+"An app live on the stores (PREMIUM)",
+"Handover notes covering source code and build steps"
+],
+"forWhom": [
+"Founders and small business owners building their first app",
+"Staff who need an internal tool or event app",
+"Anyone looking for a developer to maintain an existing Flutter app"
+],
+"notFor": [
+"3D games or high-end graphics apps (use the game development service)",
+"Anyone who wants endless feature additions with no defined scope",
+"Anyone who wants guaranteed downloads or revenue"
+],
+"inquiry": [
+"App type and a one-line description",
+"Required features and approximate number of screens",
+"Whether you have a design mockup",
+"Release needs and preferred schedule"
+],
+"faq": [
+[
+"Do you really build Android and iOS at once?",
+"Yes. Flutter builds both platform apps from one codebase. Some features need platform-specific setup, but it doesn't cost extra development."
+],
+[
+"Do you also do the design?",
+"If you have a mockup I reflect it as-is. Without one I use a basic UI, and separate design work is negotiated."
+],
+[
+"Can you release to the App Store?",
+"Yes. An Apple developer account is required, and I also handle review rejections. Approval itself can't be guaranteed."
+],
+[
+"How long does it take?",
+"STANDARD 2 days, DELUXE 10 days, PREMIUM 25 days. It depends on scope and is confirmed when you inquire."
+]
+]
+},
+{
+"title": "Vibe-Coded App/Web Bug Fixes, Completion & Deployment",
+"tagline": "I finish apps and websites you got stuck on with AI, from bug fixes to deployment",
+"packages": [
+"Error diagnosis report · I review the project and report causes, remaining work and a quote",
+"Fix errors + finish feature · Fix 3 blocking errors + complete 1 unfinished feature, 2 revisions",
+"Finish through release · Error fixes, feature completion, deployment (web or store), handover, 2 revisions"
+],
+"options": [
+"1 additional error fix",
+"1 additional feature",
+"Web deployment & domain setup",
+"Google Play release service",
+"API key & security check",
+"User guide & handover video",
+"Rush work (half the working time)"
+],
+"outcomes": [
+"A project with error causes and fixes documented",
+"Previously unfinished features working",
+"A live web address or store listing (PREMIUM)",
+"Handover notes covering changes and usage"
+],
+"forWhom": [
+"Non-developers who built an app or site with AI but couldn't finish it",
+"Anyone who wants to turn something built without dev knowledge into something usable",
+"Anyone who wants a developer to review the current state before outsourcing"
+],
+"notFor": [
+"Anyone with only an idea and no code (for games, use the game development service)",
+"Anyone who wants every feature built with no defined scope",
+"Anyone who wants guaranteed success or revenue"
+],
+"inquiry": [
+"Project type (web / mobile app / other) and languages or tools used",
+"One-line symptom and the error message",
+"Desired result (fix only / finish features / through deployment)",
+"Preferred schedule"
+],
+"faq": [
+[
+"Which projects can you take?",
+"Mostly web and mobile apps. Tell me the project type and language and I'll confirm feasibility first, or you can check with the diagnosis report."
+],
+[
+"Can I get just the diagnosis report?",
+"Yes. I report the causes, remaining work and an estimated quote. You can then continue yourself or move on to another package."
+],
+[
+"I'm worried about AI-generated code quality.",
+"I read the code and check the structure first, and tell you what can be fixed and what is better rewritten."
+],
+[
+"How long does it take?",
+"STANDARD 1 day, DELUXE 3 days, PREMIUM 7 days. A first Google Play release takes at least 14 days because of closed testing."
+]
+]
+},
+{
+"title": "Unity & Flutter 1:1 Consultation, Code Review",
+"tagline": "We solve your stuck development problem together over screen sharing, and I review your code structure",
+"packages": [
+"30-minute dev consultation · One stuck problem, 30 minutes over screen sharing",
+"1-hour consult + code review · 60-minute consultation + report on core code structure",
+"Full project review · Review of structure, performance and release readiness + 60-minute consultation + improvement order"
+],
+"options": [
+"Extra 30 minutes of consultation",
+"5 additional files for code review",
+"Performance profiling analysis",
+"Pre-release checklist review",
+"Recording of the consultation",
+"Rush schedule (within 24 hours)"
+],
+"outcomes": [
+"The cause of your stuck problem and a direction to solve it",
+"Code structure issues and improvement priorities (DELUXE, PREMIUM)",
+"A report on performance and release readiness (PREMIUM)"
+],
+"forWhom": [
+"Solo indie developers and development beginners",
+"Planners and owners who want to check the quality of outsourced work",
+"Anyone who wants a developer to review AI-coded results"
+],
+"notFor": [
+"Anyone who wants me to write the code for them (use a separate work service)",
+"Anyone looking for job-hunting or career advice",
+"Anyone who needs in-depth consulting on languages other than Unity and Flutter"
+],
+"inquiry": [
+"Engine / language and version",
+"Your problem in one line",
+"Preferred consultation times",
+"How much of your code you can share"
+],
+"faq": [
+[
+"How is the consultation held?",
+"By video call or screen sharing. After purchase we arrange a schedule and I tell you which tool to use."
+],
+[
+"Can 30 minutes solve it?",
+"Simple errors usually can be. If time runs short I still show you the direction, and you can add time or move on to a work service."
+],
+[
+"Will you fix the problem for me?",
+"The consultation finds the cause and shows how to fix it. If you need the fix itself, please use the code optimization service."
+],
+[
+"Is it safe to send my code?",
+"I use it only for the consultation and delete it afterward. If security is sensitive, screen sharing without sending code also works."
+]
+]
+},
+{
+"title": "Mobile Game Pre-Release QA & Performance Test Report",
+"tagline": "I find bugs, crashes and lag before release as a developer and deliver a report",
+"packages": [
+"Quick playtest · One core play-through check, summary report on bugs and crashes",
+"Feature & performance test · Check all features, frame rate and memory, report with reproduction steps",
+"Full pre-release QA · Full QA + store policy check + 1 re-test, report with reproduction steps"
+],
+"options": [
+"1 additional re-test",
+"Test scenario document",
+"Fixing found bugs (linked with the code optimization service)",
+"Ads and payment behavior check",
+"Rush work (half the working time)"
+],
+"outcomes": [
+"A list of bugs and crashes (with reproduction steps and screenshots)",
+"Priorities organized by severity",
+"Performance check results for frame rate and memory (from DELUXE)",
+"Store policy check results and improvement notes (PREMIUM)"
+],
+"forWhom": [
+"Developers who need a last check right before release",
+"Solo or small teams with nobody to test",
+"Anyone who wants to sort out problems before closed testing",
+"Anyone with an AI-made game or app who doesn't know what's risky"
+],
+"notFor": [
+"Anyone who wants code fixes handled in the same go (please also use the code optimization service)",
+"Anyone who needs large-scale concurrent-user or server load tests",
+"Anyone who needs security vulnerability assessment"
+],
+"inquiry": [
+"Game type and platform (Android / iOS / Web)",
+"Build form (APK, AAB, web link, etc.)",
+"Areas to check closely",
+"Preferred schedule"
+],
+"faq": [
+[
+"Do you also fix the bugs?",
+"This service finds problems and delivers a report. If fixes are needed, please continue with the code optimization service."
+],
+[
+"What does the report look like?",
+"A document listing each problem with reproduction steps, screenshots and severity. You can choose Google Sheets or a document."
+],
+[
+"Do I need to send my source code?",
+"No. A runnable build is enough."
+],
+[
+"Do you guarantee approval?",
+"Store approval, downloads and revenue are not guaranteed. This service sorts out found problems in advance."
+]
+]
+},
+{
+"title": "Game & App Promo Shorts: Shorts, Reels, TikTok",
+"tagline": "I make 15-second vertical promo videos from your gameplay footage",
+"packages": [
+"One 15-second short · One vertical video from game or app footage, subtitles and music included, 2 revisions",
+"3 shorts + captions · Three 15-second videos with different angles + upload captions and hashtags",
+"6 shorts + SNS set · Six videos + 3 Instagram 1:1 images + captions and hashtags"
+],
+"options": [
+"1 additional video",
+"Longer video (30 seconds)",
+"1 additional Instagram 1:1 post image",
+"English subtitles",
+"Original project files",
+"Rush work (half the working time)"
+],
+"outcomes": [
+"9:16 vertical videos ready to post on Shorts, Reels and TikTok",
+"Subtitles and editing built to catch attention in the first 3 seconds",
+"Upload captions and hashtags matched to each video (from DELUXE)",
+"Instagram 1:1 post images (PREMIUM)"
+],
+"forWhom": [
+"Developers who released a game or app but have no time to make promo videos",
+"Indie teams starting social promotion around their store release",
+"Anyone who has gameplay footage but finds editing hard",
+"Anyone who wants to post shorts with different angles consistently"
+],
+"notFor": [
+"Anyone who needs live-action shooting, on-camera models or voice actors",
+"Anyone who wants 3D animation or commercial-film quality",
+"Anyone who wants guaranteed views or installs"
+],
+"inquiry": [
+"Game or app type and store link",
+"Whether you have gameplay footage",
+"Channels you will post to (Shorts / Reels / TikTok)",
+"Desired tone (dev log style / promo style)"
+],
+"faq": [
+[
+"What if I have no gameplay footage?",
+"Send me a web link or test build and I'll check whether screen recording is possible, then let you know."
+],
+[
+"How long are the videos?",
+"15 seconds by default. For 30 seconds, use the add-on option."
+],
+[
+"What tone do you use for upload captions?",
+"You can choose between promotional copy and a plain dev-log style."
+],
+[
+"Do you guarantee views or installs?",
+"No. This service produces the videos and captions you use for promotion."
+]
+]
+},
+{
+"title": "Banner Ads on a 4K-Daily-Visitor Game/IT Blog",
+"tagline": "I promote your game, app or IT service on my game and IT blog",
+"packages": [
+"2-day trial banner · Banner at the top and bottom of every post for 2 days, 2 revisions",
+"7-day banner + post · Banner for 7 days + 1 promo post, 2 revisions",
+"30-day banner + post · Banner for 30 days + 1 promo post + 1 banner swap"
+],
+"options": [
+"1 additional promo post",
+"Review post written after playing it myself",
+"Banner image creation",
+"1 additional banner swap",
+"Extend exposure by 1 week"
+],
+"outcomes": [
+"Your banner shown on a game/IT blog with about 4,000 daily visitors",
+"Clicks routed to your website, Google Play, App Store or product page",
+"A promo post introducing your service (from DELUXE)"
+],
+"forWhom": [
+"Anyone promoting mobile or PC games, apps or IT services",
+"Indie developers and small teams who want to test response on a small budget",
+"Anyone targeting a late-teens to thirties game and IT audience"
+],
+"notFor": [
+"Gambling, adult or violent content, illegal pharmaceuticals and similar prohibited categories",
+"Anyone who wants guaranteed clicks or installs"
+],
+"inquiry": [
+"Type of service to promote (game / app / IT service)",
+"Destination link (website / Google Play / App Store)",
+"Goal (installs, traffic, awareness)",
+"Preferred exposure period and start date"
+],
+"faq": [
+[
+"Is there a free trial?",
+"A 1-day trial ad is possible. After a consultation I take your banner and URL and run it for real during the trial."
+],
+[
+"Where is the banner shown?",
+"At the top and bottom of blog posts. I check both PC and mobile before confirming placement."
+],
+[
+"How do I measure results?",
+"I recommend a short URL or UTM link, and I explain how to set it up."
+],
+[
+"Can you make the banner?",
+"By default you provide it. If you need one made, use the banner image creation add-on."
+]
+]
+}
 ]
 },
 ja: {
 ui: {
+secGames: "🎮 ゲーム",
+secUtils: "🧰 ユーティリティ",
 stats: [["45+", "リリース"], ["100+", "Kmong依頼"], ["4.9", "評価"], ["7年", "開発経験"]],
 title: "パク・ソンヒョン | ゲーム開発者",
 name: "パク・ソンヒョン | ゲーム開発者",
 intro: "Unityゲーム開発・リリース・最適化の専門家",
 metaDesc: "Unityゲーム開発、Google Play・App Storeリリース代行、コード最適化、1:1レッスン。ゲーム開発者パク・ソンヒョンのポートフォリオ。",
-responseNote: "平均2時間以内に返信",
+responseNote: "",
 themeAria: "ダークモード切替",
 shareAria: "リンクをコピー",
 avatarAlt: "プロフィール写真",
@@ -1420,6 +2549,7 @@ descs: [
 "ブラウザですぐ遊べる、横スクロールアクションゲーム。",
 "ブラウザですぐ遊べる、応援団リズムゲーム。",
 "ブラウザですぐ体験できる、スワイプ式のマッチングアプリ。",
+"ブラウザですぐ使える、デートコースをルーレットで選ぶアプリ。",
 "ブラウザですぐ使える英単語暗記アプリ。フラッシュカードとディフェンスゲームで覚えます。",
 "ブラウザですぐ使える、勉強タイマー・記録アプリ。",
 "小さなダンジョンの屋台を伝説の店に育てる、ピクセル店舗経営ゲーム。",
@@ -1671,16 +2801,416 @@ notes: [
 "新機能の開発は別オプションで、新規ゲームの制作は含まれません"
 ]
 }
+,
+{
+"title": "Apps in Toss ミニアプリゲーム変換・掲載代行",
+"tagline": "WebやFlutterのゲームをApps in Tossのミニアプリに変換し、審査提出までサポートします",
+"packages": [
+"掲載事前診断 · Apps in Tossへの登録可否を点検し、必要な作業と見積りをレポート",
+"変換・審査提出 · Web・Flutterゲームをミニアプリに変換、テスト、審査提出",
+"広告・決済連携リリース · 変換+広告・決済連携+審査対応+リリース、アフターサポート2週間"
+],
+"options": [
+"審査リジェクトの追加対応(1回)",
+"リーダーボード・ランキング機能の追加",
+"ゲームUIのモバイル最適化",
+"リリース後のバグ修正(1週間追加)",
+"ソース構成の整理・引き継ぎ資料",
+"特急作業(作業期間を半分に)"
+],
+"outcomes": [
+"Apps in Tossで動くミニアプリ形式のゲーム",
+"審査提出資料と提出完了の状態",
+"変更内容とビルド方法をまとめた引き継ぎ資料"
+],
+"forWhom": [
+"WebゲームやFlutterゲームをすでに作った開発者",
+"新しい配信チャネルでゲームを知らせたい方",
+"ミニアプリ開発に不慣れな個人開発者"
+],
+"notFor": [
+"アイデアだけでゲームがまったくない方(新規制作はゲーム開発サービスをご利用ください)",
+"掲載承認や収益の保証を求める方",
+"Apps in Tossのポリシーに合わないコンテンツのゲーム"
+],
+"inquiry": [
+"ゲームの種類と開発環境(Web / Flutter / Unity)",
+"現在の状態(完成 / 開発中)",
+"広告・決済連携の有無",
+"希望日程"
+],
+"faq": [
+[
+"どんなゲームでも変換できますか?",
+"Web、Flutter、Unityのゲームを主に扱います。ゲームの種類や使用機能によって変換の可否が変わるため、STANDARDの事前診断で先に確認できます。"
+],
+[
+"掲載承認は保証されますか?",
+"保証しません。審査と承認はトスが決定します。リジェクトされた場合は、理由を確認して修正し再提出する対応をお手伝いします。"
+],
+[
+"Apps in Tossのリリース経験はありますか?",
+"Apps in Tossのリリース実績はまだありません。公式の開発ドキュメントを基準に、ゲーム開発とGoogle Play・App Store 45本以上のリリース経験で作業し、事前診断で対応可能な範囲を先にご案内します。"
+],
+[
+"作業期間はどのくらいですか?",
+"STANDARD 2日、DELUXE 7日、PREMIUM 14日です。審査期間は含まれません。"
+]
+]
+},
+{
+"title": "Flutterアプリ制作、Android・iOS同時リリース",
+"tagline": "1つのコードでAndroid・iOSアプリを作り、ストアリリースまでサポートします",
+"packages": [
+"アプリ修正・機能追加 · 既存Flutterアプリの修正または簡単な機能1つの追加、修正2回",
+"アプリ制作5画面 · Android・iOS同時のアプリ5画面+ログインまたはプッシュ1つ",
+"アプリ+サーバー+リリース · 10画面アプリ+サーバー・API+Google Play・App Storeリリース"
+],
+"options": [
+"画面1つ追加",
+"ソーシャルログイン追加(Google・Apple・Kakao)",
+"プッシュ通知連携",
+"アプリ内課金・サブスクリプション連携",
+"AdMob連携",
+"Google Playリリース代行",
+"App Storeリリース代行",
+"特急作業(作業期間を半分に)"
+],
+"outcomes": [
+"Android・iOSで動作するアプリ(ソースコード込み)",
+"ストアに公開されたアプリ(PREMIUM)",
+"ソースコードとビルド方法をまとめた引き継ぎ資料"
+],
+"forWhom": [
+"初めてアプリサービスを作る創業者・小規模事業者",
+"社内ツールやイベント用アプリが必要な担当者",
+"既存Flutterアプリの保守を任せる開発者を探している方"
+],
+"notFor": [
+"3Dゲーム、高スペックなグラフィックアプリ(ゲーム開発サービスをご利用ください)",
+"範囲を決めずに機能追加を続けたい方",
+"ダウンロードや売上の保証を求める方"
+],
+"inquiry": [
+"アプリの種類と一行説明",
+"必要な機能とおおよその画面数",
+"デザイン案の有無",
+"リリースの有無と希望日程"
+],
+"faq": [
+[
+"AndroidとiOSを本当に同時に作りますか?",
+"はい。Flutterは1つのコードで両プラットフォームのアプリを作ります。一部の機能はプラットフォーム別の設定が必要ですが、別途の開発費はかかりません。"
+],
+[
+"デザインもしてもらえますか?",
+"デザイン案があればそのまま反映します。ない場合は基本UIで制作し、別途デザインが必要な場合は相談します。"
+],
+[
+"App Storeへのリリースも可能ですか?",
+"可能です。Appleデベロッパーアカウントが必要で、審査リジェクト時の対応も行います。審査通過自体は保証できません。"
+],
+[
+"作業期間はどのくらいですか?",
+"STANDARD 2日、DELUXE 10日、PREMIUM 25日です。機能の範囲により変わるため、お問い合わせ時に確定します。"
+]
+]
+},
+{
+"title": "バイブコーディングのアプリ・Webのエラー修正、完成・デプロイ代行",
+"tagline": "AIで作って行き詰まったアプリ・Webを、エラー修正からデプロイまで仕上げます",
+"packages": [
+"エラー診断レポート · プロジェクトを確認し、原因・残りの作業・見積りをレポート",
+"エラー修正+機能完成 · 詰まったエラー3件の解決+未完成機能1つの完成、修正2回",
+"リリースまで完成 · エラー修正、機能完成、デプロイ(Webまたはストア)、引き継ぎ、修正2回"
+],
+"options": [
+"エラー1件の追加修正",
+"機能1つの追加",
+"Webデプロイ・ドメイン接続",
+"Google Playリリース代行",
+"APIキー・セキュリティ点検",
+"使用説明書・引き継ぎ動画",
+"特急作業(作業期間を半分に)"
+],
+"outcomes": [
+"エラーの原因と解決内容が整理されたプロジェクト",
+"未完成だった機能が動作する状態",
+"公開されたWebアドレスまたはストア掲載(PREMIUM)",
+"変更内容と使い方をまとめた引き継ぎ資料"
+],
+"forWhom": [
+"AIでアプリ・Webサービスを作ったが完成できなかった非開発者",
+"開発知識なしで作ったものを実際に使える状態にしたい方",
+"外注の前に現状を開発者に点検してほしい方"
+],
+"notFor": [
+"アイデアだけでコードがまったくない方(ゲームならゲーム開発サービスをご利用ください)",
+"範囲を決めずにすべての機能開発を求める方",
+"サービスの成功や売上の保証を求める方"
+],
+"inquiry": [
+"プロジェクトの種類(Web / モバイルアプリ / その他)と使用した言語・ツール",
+"症状を一行とエラーメッセージ",
+"希望する結果(エラー解決のみ / 機能完成 / デプロイまで)",
+"希望日程"
+],
+"faq": [
+[
+"どんなプロジェクトまで対応できますか?",
+"Webとモバイルアプリを主に扱います。プロジェクトの種類と使用言語をお知らせいただければ、対応可否を先にご案内します。診断レポートで確認することもできます。"
+],
+[
+"診断レポートだけでも依頼できますか?",
+"可能です。原因、残りの作業、見積り目安をまとめます。その後は自分で進めるか、別のパッケージに続けてご依頼いただけます。"
+],
+[
+"AIが作ったコードの品質が心配です。",
+"コードを読み、まず構造を確認します。直せる範囲と、作り直したほうがよい部分を分けてお伝えします。"
+],
+[
+"作業期間はどのくらいですか?",
+"STANDARD 1日、DELUXE 3日、PREMIUM 7日です。Google Playの初回リリースは、クローズドテストのため最低14日かかります。"
+]
+]
+},
+{
+"title": "Unity・Flutter開発 1:1相談、コードレビュー",
+"tagline": "詰まった開発の問題を画面共有で一緒に解決し、コード構成までレビューします",
+"packages": [
+"30分開発相談 · 詰まった問題1件を画面共有で30分相談",
+"1時間相談+コードレビュー · 60分相談+主要コードの構成レビューレポート",
+"プロジェクト総合レビュー · 全体構成・性能・リリース準備のレビュー+60分相談+改善の順序"
+],
+"options": [
+"相談30分追加",
+"コードレビューのファイル5個追加",
+"パフォーマンスプロファイリング分析",
+"リリース前チェックリスト点検",
+"相談内容の録画提供",
+"特急日程(24時間以内)"
+],
+"outcomes": [
+"詰まった問題の原因と解決の方向",
+"コード構成の問題点と改善の優先順位(DELUXE、PREMIUM)",
+"性能とリリース準備状態の点検レポート(PREMIUM)"
+],
+"forWhom": [
+"一人で開発するインディー開発者、開発入門者",
+"外注した開発物の品質を確認したい企画者・代表",
+"AIコーディングの成果物を開発者に点検してほしい方"
+],
+"notFor": [
+"コードを代わりに書いてほしい方(作業は別のサービスをご利用ください)",
+"就職・転職の相談を希望する方",
+"Unity・Flutter以外の言語の深い相談を希望する方"
+],
+"inquiry": [
+"使用エンジン・言語とバージョン",
+"相談したい問題を一行で",
+"希望する相談時間帯",
+"コードを共有できる範囲"
+],
+"faq": [
+[
+"相談はどのように行いますか?",
+"ビデオ通話または画面共有で行います。購入後に日程を調整し、使用するツールをご案内します。"
+],
+[
+"30分で解決できますか?",
+"単純なエラーはほとんど可能です。時間が足りない場合も解決の方向まで案内し、相談時間の追加や作業サービスへ続けることもできます。"
+],
+[
+"問題を直接直してもらえますか?",
+"相談は原因を見つけて方法を案内するサービスです。直接の修正が必要な場合は、コード最適化サービスをご利用ください。"
+],
+[
+"コードを送っても安全ですか?",
+"相談の目的でのみ使用し、相談後に削除します。セキュリティが気になる場合は、コードを渡さず画面共有のみで進めることもできます。"
+]
+]
+},
+{
+"title": "モバイルゲーム リリース前QA・パフォーマンステストレポート",
+"tagline": "リリース前にバグ、クラッシュ、ラグを開発者が自ら見つけ、レポートでお渡しします",
+"packages": [
+"クイックプレイ点検 · コアプレイ1周の点検、バグ・クラッシュの要約レポート",
+"機能・性能点検 · 全機能の点検、フレーム・メモリ確認、再現手順つきレポート",
+"リリース前の総合QA · 総合QA+ストアポリシー点検+再検収1回、再現手順レポート"
+],
+"options": [
+"再検収1回追加",
+"テストシナリオ文書の作成",
+"見つかったバグの修正(コード最適化サービスと連携)",
+"広告・決済の動作点検",
+"特急作業(作業期間を半分に)"
+],
+"outcomes": [
+"バグ・クラッシュの一覧(再現手順、スクリーンショット付き)",
+"重要度別に整理した優先順位",
+"フレーム・メモリなど性能点検の結果(DELUXEから)",
+"ストアポリシーの点検結果と改善意見(PREMIUM)"
+],
+"forWhom": [
+"リリース直前で最後の点検が必要な開発者",
+"テストする人がいない個人・小規模チーム",
+"クローズドテストの前に問題を整理したい方",
+"AIで作ったゲーム・アプリで、どこが不安か分からない方"
+],
+"notFor": [
+"コード修正まで一括で任せたい方(コード最適化サービスも併せてご利用ください)",
+"大規模な同時接続、サーバー負荷テストが必要な方",
+"セキュリティ脆弱性の診断が必要な方"
+],
+"inquiry": [
+"ゲームの種類とプラットフォーム(Android / iOS / Web)",
+"ビルドの形式(APK、AAB、Webリンクなど)",
+"重点的に点検する部分",
+"希望日程"
+],
+"faq": [
+[
+"バグも直してもらえますか?",
+"このサービスは問題を見つけてレポートでお渡しするものです。修正が必要な場合は、コード最適化サービスに続けてご利用ください。"
+],
+[
+"レポートはどんな形式ですか?",
+"問題ごとの再現手順、スクリーンショット、重要度をまとめた文書でお渡しします。Googleスプレッドシートまたは文書形式を選べます。"
+],
+[
+"ソースコードを送る必要がありますか?",
+"いいえ。実行できるビルドがあれば十分です。"
+],
+[
+"リリース承認は保証されますか?",
+"ストア審査の通過、ダウンロード、売上は保証しません。見つかった問題を事前に整理するサービスです。"
+]
+]
+},
+{
+"title": "ゲーム・アプリ宣伝ショート動画制作 Shorts・Reels・TikTok",
+"tagline": "ゲーム・アプリのプレイ画面で、15秒の縦型宣伝動画を作ります",
+"packages": [
+"15秒ショート1本 · ゲーム・アプリ画面ベースの縦型動画1本、字幕・音楽込み、修正2回",
+"ショート3本+文言 · 15秒動画3本(切り口を変えて)+投稿文言・ハッシュタグ",
+"ショート6本+SNSセット · 動画6本+Instagram 1:1画像3種+文言・ハッシュタグ"
+],
+"options": [
+"動画1本追加",
+"動画の長さを延長(30秒)",
+"Instagram 1:1投稿画像1種追加",
+"英語字幕の追加",
+"元のプロジェクトファイル提供",
+"特急作業(作業期間を半分に)"
+],
+"outcomes": [
+"Shorts、Reels、TikTokにそのまま投稿できる9:16の縦型動画",
+"最初の3秒で目を引く構成の字幕と編集",
+"動画に合わせた投稿文言とハッシュタグ(DELUXEから)",
+"Instagram 1:1の投稿画像(PREMIUM)"
+],
+"forWhom": [
+"ゲーム・アプリをリリースしたが宣伝動画を作る時間がない開発者",
+"ストアリリースの前後でSNS宣伝を始めたいインディーチーム",
+"動画編集は難しいがプレイ画面は持っている方",
+"さまざまな切り口のショート動画を継続して投稿したい方"
+],
+"notFor": [
+"実写撮影、モデル出演、声優録音が必要な方",
+"3Dアニメーションや広告映画レベルの動画を求める方",
+"再生数・インストール数の保証を求める方"
+],
+"inquiry": [
+"ゲーム・アプリの種類とストアリンク",
+"プレイ映像の有無",
+"投稿するチャネル(Shorts / Reels / TikTok)",
+"希望する雰囲気(開発日誌型 / 宣伝型)"
+],
+"faq": [
+[
+"プレイ映像がなくても大丈夫ですか?",
+"Webリンクやテストビルドをいただければ、画面録画が可能かを先に確認してご案内します。"
+],
+[
+"動画の長さはどのくらいですか?",
+"基本は15秒です。30秒が必要な場合は追加オプションをご利用ください。"
+],
+[
+"投稿文言はどんなトーンで書きますか?",
+"広告文言型と、淡々とした開発日誌型から選べます。"
+],
+[
+"再生数やインストール数は保証されますか?",
+"保証しません。宣伝に使う動画と文言を制作するサービスです。"
+]
+]
+},
+{
+"title": "1日4千訪問のゲーム・ITブログ バナー広告",
+"tagline": "ゲーム・アプリ・ITサービスを、ゲーム・IT専門ブログで宣伝します",
+"packages": [
+"2日体験バナー · ブログの全投稿の上下にバナーを2日間表示、修正2回",
+"7日バナー+宣伝記事 · バナー7日表示+宣伝記事1本の掲載、修正2回",
+"30日バナー+宣伝記事 · バナー30日表示+宣伝記事1本+バナー差し替え1回"
+],
+"options": [
+"宣伝記事1本追加",
+"自分でプレイして書くレビュー記事",
+"バナー画像の制作",
+"バナー差し替え1回追加",
+"表示期間を1週間延長"
+],
+"outcomes": [
+"1日の訪問者が約4,000人のゲーム・ITブログにバナーを表示",
+"クリックでWebサイト、Google Play、App Store、商品ページに接続",
+"サービスを紹介する宣伝記事の掲載(DELUXEから)"
+],
+"forWhom": [
+"モバイル・PCゲーム、アプリ、ITサービスを宣伝したい方",
+"少ない予算で先に反応を見たいインディー開発者・小規模チーム",
+"10代後半から30代のゲーム・IT関心層を狙う方"
+],
+"notFor": [
+"ギャンブル、アダルト・暴力的コンテンツ、違法な医薬品など広告できない業種",
+"クリック数・インストール数の保証を求める方"
+],
+"inquiry": [
+"宣伝するサービスの種類(ゲーム / アプリ / ITサービス)",
+"クリック時の移動先(Webサイト / Google Play / App Store)",
+"目標(インストール、流入、認知度)",
+"希望する表示期間と開始日"
+],
+"faq": [
+[
+"無料体験はできますか?",
+"1日体験広告が可能です。相談後にバナーとURLをいただき、体験期間中に実際に表示します。"
+],
+[
+"バナーはどこに表示されますか?",
+"ブログ本文の上部と下部に表示されます。PCとモバイルの両方を確認したうえで位置をご案内します。"
+],
+[
+"効果はどう測定しますか?",
+"短縮URLやUTMリンクの利用をおすすめし、設定方法もご案内します。"
+],
+[
+"バナーを作ってもらえますか?",
+"基本はご自身で用意していただきます。制作が必要な場合は、追加オプション(バナー画像制作)をご利用ください。"
+]
+]
+}
 ]
 },
 zh: {
 ui: {
+secGames: "🎮 游戏",
+secUtils: "🧰 实用工具",
 stats: [["45+", "上架项目"], ["100+", "Kmong委托"], ["4.9", "评分"], ["7年", "开发经验"]],
 title: "朴成贤 | 游戏开发者",
 name: "朴成贤 | 游戏开发者",
 intro: "Unity游戏开发 · 上架 · 优化专家",
 metaDesc: "Unity游戏开发、Google Play与App Store上架代办、代码优化、1对1教学。游戏开发者朴成贤的作品集。",
-responseNote: "平均2小时内回复",
+responseNote: "",
 themeAria: "切换深色模式",
 shareAria: "复制链接",
 avatarAlt: "头像",
@@ -1756,6 +3286,7 @@ descs: [
 "在浏览器中即可畅玩的横版卷轴动作游戏。",
 "在浏览器中即可畅玩的啦啦队节奏游戏。",
 "在浏览器中即可体验的滑动式交友应用。",
+"在浏览器中即可使用的约会路线推荐轮盘应用。",
 "在浏览器中即可使用的英语单词记忆应用,通过闪卡和塔防游戏来背单词。",
 "在浏览器中即可使用的学习计时与记录应用。",
 "把地下城小摊经营成传说商店的像素店铺经营游戏。",
@@ -2007,6 +3538,404 @@ notes: [
 "新功能开发为另行选项,不包含新游戏制作"
 ]
 }
+,
+{
+"title": "Apps in Toss 小程序游戏转换·上架代办",
+"tagline": "把网页或Flutter游戏转换成Apps in Toss小程序,并协助提交审核",
+"packages": [
+"上架前诊断 · 检查能否在Apps in Toss注册,出具所需工作与报价报告",
+"转换·提交审核 · 将网页、Flutter游戏转换为小程序,测试并提交审核",
+"广告·支付对接上线 · 转换+广告·支付对接+审核应对+上线,2周售后支持"
+],
+"options": [
+"审核被拒后追加应对(1次)",
+"排行榜·排名功能",
+"游戏UI移动端优化",
+"上线后Bug修复(追加1周)",
+"源码结构整理·交接文档",
+"加急处理(工期减半)"
+],
+"outcomes": [
+"可在Apps in Toss运行的小程序形式的游戏",
+"审核提交资料及提交完成状态",
+"整理了变更内容和构建方法的交接资料"
+],
+"forWhom": [
+"已经做好网页或Flutter游戏的开发者",
+"想通过新的发行渠道推广游戏的人",
+"不熟悉小程序开发的个人开发者"
+],
+"notFor": [
+"只有创意、完全没有游戏的人(新制作请使用游戏开发服务)",
+"希望保证上架通过和收益的人",
+"内容不符合Apps in Toss政策的游戏"
+],
+"inquiry": [
+"游戏类型与开发环境(网页 / Flutter / Unity)",
+"当前状态(已完成 / 开发中)",
+"是否需要对接广告·支付",
+"希望的日程"
+],
+"faq": [
+[
+"任何游戏都能转换吗?",
+"主要处理网页、Flutter、Unity游戏。能否转换取决于游戏类型和使用的功能,可先通过STANDARD上架前诊断确认。"
+],
+[
+"能保证通过审核吗?",
+"不能保证。审核与批准由Toss决定。若被拒,我会协助确认原因、修改并重新提交。"
+],
+[
+"有Apps in Toss上线经验吗?",
+"目前还没有Apps in Toss的上线案例。我以官方开发文档为准,凭借游戏开发以及45个以上Google Play·App Store上架经验开展工作,并会在上架前诊断中先说明可行范围。"
+],
+[
+"需要多长时间?",
+"STANDARD 2天,DELUXE 7天,PREMIUM 14天。审核时间不包含在内。"
+]
+]
+},
+{
+"title": "Flutter应用开发,Android·iOS同步上架",
+"tagline": "用一套代码制作Android和iOS应用,并协助上架应用商店",
+"packages": [
+"应用修改·功能添加 · 修改现有Flutter应用或添加1个简单功能,可修改2次",
+"5屏应用制作 · Android·iOS同步应用5个页面+登录或推送1项",
+"应用+服务器+上架 · 10个页面的应用+服务器·API+Google Play·App Store上架"
+],
+"options": [
+"增加1个页面",
+"社交登录(Google·Apple·Kakao)",
+"推送通知对接",
+"应用内购买·订阅对接",
+"AdMob广告对接",
+"Google Play上架代办",
+"App Store上架代办",
+"加急处理(工期减半)"
+],
+"outcomes": [
+"可在Android·iOS运行的应用(含源码)",
+"已上架应用商店的应用(PREMIUM)",
+"整理了源码和构建方法的交接资料"
+],
+"forWhom": [
+"第一次开发应用服务的创业者、小商家",
+"需要内部工具或活动应用的负责人",
+"想为现有Flutter应用寻找维护开发者的人"
+],
+"notFor": [
+"3D游戏、高性能图形应用(请使用游戏开发服务)",
+"不界定范围、想不断追加功能的人",
+"希望保证下载量或收益的人"
+],
+"inquiry": [
+"应用类型与一句话介绍",
+"所需功能和大致页面数",
+"是否有设计稿",
+"是否需要上架及希望日程"
+],
+"faq": [
+[
+"真的能同时做Android和iOS吗?",
+"可以。Flutter用一套代码制作两个平台的应用。部分功能需要按平台单独设置,但不会产生额外的开发费用。"
+],
+[
+"也做设计吗?",
+"有设计稿就原样还原。没有的话使用基础UI制作,需要另外设计的话另行协商。"
+],
+[
+"可以上架App Store吗?",
+"可以。需要Apple开发者账号,被拒时也会协助应对。但无法保证审核一定通过。"
+],
+[
+"需要多长时间?",
+"STANDARD 2天,DELUXE 10天,PREMIUM 25天。会因功能范围而不同,咨询时确定。"
+]
+]
+},
+{
+"title": "氛围编程应用·网页报错修复,完成·部署代办",
+"tagline": "帮您把用AI做到一半卡住的应用和网页,从修复错误到部署全部收尾",
+"packages": [
+"错误诊断报告 · 检查项目,整理错误原因、剩余工作和报价",
+"修复错误+完成功能 · 解决3个卡住的错误+完成1个未完成的功能,可修改2次",
+"完成到上线 · 修复错误、完成功能、部署(网页或应用商店)、交接,可修改2次"
+],
+"options": [
+"追加修复1个错误",
+"追加1个功能",
+"网页部署·域名绑定",
+"Google Play上架代办",
+"API密钥·安全检查",
+"使用说明书·交接视频",
+"加急处理(工期减半)"
+],
+"outcomes": [
+"整理了错误原因和解决内容的项目",
+"原本未完成的功能可正常运行",
+"已上线的网址或应用商店页面(PREMIUM)",
+"整理了变更内容和使用方法的交接资料"
+],
+"forWhom": [
+"用AI做了应用·网站但没能完成的非开发者",
+"想让没有开发知识做出的成果真正可用的人",
+"外包前想先请开发者检查现状的人"
+],
+"notFor": [
+"只有创意、完全没有代码的人(游戏请使用游戏开发服务)",
+"不界定范围、想要开发所有功能的人",
+"希望保证服务成功或收入的人"
+],
+"inquiry": [
+"项目类型(网页 / 手机应用 / 其他)及使用的语言·工具",
+"一句话症状和错误信息",
+"期望的结果(仅解决错误 / 完成功能 / 到部署为止)",
+"希望的日程"
+],
+"faq": [
+[
+"哪些项目可以接?",
+"主要处理网页和手机应用。告诉我项目类型和使用的语言,我会先说明是否可行,也可以通过诊断报告确认。"
+],
+[
+"可以只要诊断报告吗?",
+"可以。会整理原因、剩余工作和预计报价。之后可自行推进,也可以继续委托其他套餐。"
+],
+[
+"担心AI生成代码的质量。",
+"我会先阅读代码并检查结构,区分哪些可以修复、哪些重写更好。"
+],
+[
+"需要多长时间?",
+"STANDARD 1天,DELUXE 3天,PREMIUM 7天。Google Play首次上架因封闭测试至少需要14天。"
+]
+]
+},
+{
+"title": "Unity·Flutter开发1对1咨询、代码评审",
+"tagline": "通过屏幕共享一起解决卡住的开发问题,并评审代码结构",
+"packages": [
+"30分钟开发咨询 · 通过屏幕共享咨询1个卡住的问题30分钟",
+"1小时咨询+代码评审 · 60分钟咨询+核心代码结构评审报告",
+"项目综合评审 · 整体结构·性能·上线准备评审+60分钟咨询+改进顺序"
+],
+"options": [
+"追加咨询30分钟",
+"追加5个代码评审文件",
+"性能分析(Profiling)",
+"上线前检查清单核对",
+"提供咨询录像",
+"加急日程(24小时内)"
+],
+"outcomes": [
+"卡住问题的原因和解决方向",
+"代码结构问题及改进优先级(DELUXE、PREMIUM)",
+"性能和上线准备状态检查报告(PREMIUM)"
+],
+"forWhom": [
+"独自开发的独立开发者、开发入门者",
+"想确认外包开发成果质量的策划、负责人",
+"想请开发者检查AI编程成果的人"
+],
+"notFor": [
+"希望由我代写代码的人(请使用其他的工作服务)",
+"想咨询求职·跳槽的人",
+"需要Unity·Flutter以外语言深度咨询的人"
+],
+"inquiry": [
+"使用的引擎·语言及版本",
+"想咨询的问题(一句话)",
+"希望的咨询时间段",
+"可共享的代码范围"
+],
+"faq": [
+[
+"咨询是怎么进行的?",
+"通过视频通话或屏幕共享进行。购买后协调日程,并告知使用的工具。"
+],
+[
+"30分钟能解决吗?",
+"简单的错误大多可以。时间不够时也会告知解决方向,可追加咨询时间或继续使用工作服务。"
+],
+[
+"会直接帮我修复问题吗?",
+"咨询是找出原因并告知方法的服务。需要直接修改的话,请使用代码优化服务。"
+],
+[
+"发送代码安全吗?",
+"仅用于咨询,咨询后会删除。若对安全很敏感,也可以不传代码、仅通过屏幕共享进行。"
+]
+]
+},
+{
+"title": "手游上线前QA·性能测试报告",
+"tagline": "上线前由开发者亲自找出Bug、崩溃和卡顿,并以报告形式交付",
+"packages": [
+"快速试玩检查 · 核心玩法过一遍的检查,Bug·崩溃摘要报告",
+"功能·性能检查 · 检查全部功能,确认帧率·内存,附复现步骤的报告",
+"上线前综合QA · 综合QA+应用商店政策检查+复测1次,复现步骤报告"
+],
+"options": [
+"追加复测1次",
+"测试场景文档编写",
+"修复发现的Bug(与代码优化服务联动)",
+"广告·支付运行检查",
+"加急处理(工期减半)"
+],
+"outcomes": [
+"Bug·崩溃清单(含复现步骤、截图)",
+"按严重程度整理的优先级",
+"帧率、内存等性能检查结果(DELUXE起)",
+"应用商店政策检查结果和改进意见(PREMIUM)"
+],
+"forWhom": [
+"临近上线、需要最后一次检查的开发者",
+"没有人测试的个人·小型团队",
+"想在封闭测试前先整理问题的人",
+"用AI做的游戏·应用,不知道哪里有风险的人"
+],
+"notFor": [
+"希望一并交给我修改代码的人(请同时使用代码优化服务)",
+"需要大规模并发、服务器压力测试的人",
+"需要安全漏洞诊断的人"
+],
+"inquiry": [
+"游戏类型与平台(Android / iOS / 网页)",
+"构建形式(APK、AAB、网页链接等)",
+"需要重点检查的部分",
+"希望的日程"
+],
+"faq": [
+[
+"也会修复Bug吗?",
+"本服务是找出问题并以报告交付。需要修复的话,请继续使用代码优化服务。"
+],
+[
+"报告是什么形式?",
+"整理了每个问题的复现步骤、截图和严重程度的文档。可选择Google表格或文档形式。"
+],
+[
+"需要发送源码吗?",
+"不需要。有可运行的构建版本即可。"
+],
+[
+"能保证通过上架审核吗?",
+"不保证应用商店审核通过、下载量和收入。本服务是提前整理发现的问题。"
+]
+]
+},
+{
+"title": "游戏·应用推广短视频制作 Shorts·Reels·TikTok",
+"tagline": "用游戏·应用的游玩画面制作15秒竖版推广视频",
+"packages": [
+"15秒短视频1条 · 基于游戏·应用画面的竖版视频1条,含字幕·音乐,可修改2次",
+"短视频3条+文案 · 15秒视频3条(不同素材)+上传文案·话题标签",
+"短视频6条+SNS套装 · 视频6条+Instagram 1:1图片3张+文案·话题标签"
+],
+"options": [
+"追加视频1条",
+"延长视频长度(30秒)",
+"追加Instagram 1:1帖子图片1张",
+"添加英文字幕",
+"提供原始项目文件",
+"加急处理(工期减半)"
+],
+"outcomes": [
+"可直接发布到Shorts、Reels、TikTok的9:16竖版视频",
+"前3秒就抓住视线的字幕与剪辑",
+"配合视频的上传文案和话题标签(DELUXE起)",
+"Instagram 1:1帖子图片(PREMIUM)"
+],
+"forWhom": [
+"已上线游戏·应用但没时间制作推广视频的开发者",
+"围绕应用商店上线前后开始SNS推广的独立团队",
+"不擅长剪辑但手上有游玩画面的人",
+"想持续发布不同素材短视频的人"
+],
+"notFor": [
+"需要实拍、模特出镜、配音录制的人",
+"想要3D动画或广告片水准视频的人",
+"希望保证播放量·安装量的人"
+],
+"inquiry": [
+"游戏·应用类型与应用商店链接",
+"是否有游玩视频",
+"要发布的渠道(Shorts / Reels / TikTok)",
+"期望的风格(开发日志型 / 宣传型)"
+],
+"faq": [
+[
+"没有游玩视频也可以吗?",
+"给我网页链接或测试版本,我会先确认能否录屏,然后告知您。"
+],
+[
+"视频有多长?",
+"默认15秒。需要30秒请使用附加选项。"
+],
+[
+"上传文案是什么风格?",
+"可在广告文案型和朴实的开发日志型中选择。"
+],
+[
+"能保证播放量或安装量吗?",
+"不保证。本服务是制作用于推广的视频和文案。"
+]
+]
+},
+{
+"title": "日访问4千的游戏·IT博客 横幅广告",
+"tagline": "在游戏·IT专业博客上推广游戏、应用和IT服务",
+"packages": [
+"2天体验横幅 · 博客全部文章上下方横幅展示2天,可修改2次",
+"7天横幅+推广文 · 横幅展示7天+发布推广文1篇,可修改2次",
+"30天横幅+推广文 · 横幅展示30天+推广文1篇+更换横幅1次"
+],
+"options": [
+"追加推广文1篇",
+"亲自游玩后撰写的评测文",
+"横幅图片制作",
+"追加更换横幅1次",
+"展示期延长1周"
+],
+"outcomes": [
+"在日访问量约4,000人的游戏·IT博客展示您的横幅",
+"点击后跳转到网站、Google Play、App Store或商品页面",
+"介绍服务的推广文发布(DELUXE起)"
+],
+"forWhom": [
+"想推广手机·PC游戏、应用、IT服务的人",
+"想用小预算先看反响的独立开发者、小型团队",
+"面向十几岁后半到三十岁游戏·IT关注群体的人"
+],
+"notFor": [
+"赌博、成人·暴力内容、非法药品等禁止推广的行业",
+"希望保证点击量·安装量的人"
+],
+"inquiry": [
+"要推广的服务类型(游戏 / 应用 / IT服务)",
+"点击后跳转的地址(网站 / Google Play / App Store)",
+"目标(安装、引流、知名度)",
+"希望的展示期间和开始日期"
+],
+"faq": [
+[
+"可以免费体验吗?",
+"可以进行1天体验广告。咨询后收取横幅和URL,在体验期间实际展示。"
+],
+[
+"横幅展示在哪里?",
+"展示在博客文章的上方和下方。会确认PC和手机端后再告知位置。"
+],
+[
+"如何衡量效果?",
+"建议使用短链接或UTM链接,并会告知设置方法。"
+],
+[
+"可以帮忙制作横幅吗?",
+"默认需自行准备。需要制作的话,请使用附加选项(横幅图片制作)。"
+]
+]
+}
 ]
 }
 };
@@ -2049,7 +3978,8 @@ if (LANG === "ko") return str;
 return str.replace(/([\d,]+)원/g, "₩$1");
 }
 
-function pickList(tr, base) {
+function pickList(tr, base, partial) {
+if (partial) return tr || [];
 return tr && tr.length === base.length ? tr : base;
 }
 
@@ -2083,7 +4013,7 @@ return out;
 });
 const services = BASE.services.map(function (s, i) {
 const t = (pack.services && pack.services[i]) || {};
-const optList = pickList(t.options, s.options);
+const optList = pickList(t.options, s.options, s.partial);
 const options = s.options.map(function (o, k) {
 const price = o.split(" · ").pop();
 const label = optList[k];
@@ -2094,7 +4024,7 @@ const packages = s.packages.map(function (p, k) {
 const d = t.packages && t.packages.length === s.packages.length ? t.packages[k] : p.desc;
 return { name: p.name, price: won(p.price), desc: d };
 });
-const faq = t.faq && t.faq.length === s.faq.length ? t.faq : s.faq;
+const faq = s.partial ? (t.faq || []) : (t.faq && t.faq.length === s.faq.length ? t.faq : s.faq);
 return Object.assign({}, s, {
 title: t.title || s.title,
 tagline: t.tagline || s.tagline,
@@ -2102,15 +4032,15 @@ badge: s.badge ? (t.badge || s.badge) : s.badge,
 price: won(s.price),
 sales: s.sales ? s.sales.replace(/(\d+)건 판매/, function (m, n) { return fmt(U.sold, { n: n }); }) : s.sales,
 faq: faq,
-outcomes: pickList(t.outcomes, s.outcomes),
-forWhom: pickList(t.forWhom, s.forWhom),
-notFor: pickList(t.notFor, s.notFor),
-process: pickList(t.process, s.process),
+outcomes: pickList(t.outcomes, s.outcomes, s.partial),
+forWhom: pickList(t.forWhom, s.forWhom, s.partial),
+notFor: pickList(t.notFor, s.notFor, s.partial),
+process: pickList(t.process, s.process, s.partial),
 packages: packages,
 options: options,
-inquiry: pickList(t.inquiry, s.inquiry),
-prep: pickList(t.prep, s.prep),
-notes: pickList(t.notes, s.notes)
+inquiry: pickList(t.inquiry, s.inquiry, s.partial),
+prep: pickList(t.prep, s.prep, s.partial),
+notes: pickList(t.notes, s.notes, s.partial)
 });
 });
 D = Object.assign({}, BASE, { profile: profile, about: about, works: works, services: services, responseNote: U.responseNote });
@@ -2184,7 +4114,7 @@ const hook = hookOld.cloneNode(false);
 hook.hidden = false;
 hookOld.replaceWith(hook);
 let playable = 0;
-for (let i = 0; i < D.works.length; i++) if (D.works[i].url) playable++;
+for (let i = 0; i < D.works.length; i++) if (D.works[i].url && D.works[i].kind !== "util") playable++;
 if (playable) {
 hook.textContent = fmt(U.hook, { n: playable });
 hook.appendChild(el("span", null, "▶"));
@@ -2232,7 +4162,7 @@ const oldNote = document.querySelector(".reply-note");
 if (oldNote) oldNote.remove();
 actions.appendChild(iconLink(P.kakao, "btn kakao", ICONS.kakao, U.kakao));
 actions.appendChild(iconLink(P.kmong, "btn kmong", ICONS.kmong, U.kmongProfile));
-actions.parentNode.insertBefore(el("p", "reply-note", D.responseNote), actions.nextSibling);
+if (D.responseNote) actions.parentNode.insertBefore(el("p", "reply-note", D.responseNote), actions.nextSibling);
 const chRoot = document.getElementById("channels");
 chRoot.textContent = "";
 for (let i = 0; i < P.channels.length; i++) {
@@ -2249,12 +4179,25 @@ chRoot.appendChild(a);
 document.getElementById("footer").textContent = "© " + new Date().getFullYear() + " " + P.name;
 }
 
+function ratingKey(s) {
+const m = /([\d.]+)\s*\((\d+)\)/.exec(s.rating || "");
+return m ? [parseFloat(m[1]), parseInt(m[2], 10)] : [0, 0];
+}
+
 function buildServices() {
 const outer = el("div");
 outer.appendChild(el("p", "hint", U.hintServices));
 const root = el("div", "list");
 outer.appendChild(root);
-for (let i = 0; i < D.services.length; i++) {
+const order = [];
+for (let i = 0; i < D.services.length; i++) order.push(i);
+order.sort(function (x, y) {
+const rx = ratingKey(D.services[x]);
+const ry = ratingKey(D.services[y]);
+return ry[0] - rx[0] || ry[1] - rx[1] || x - y;
+});
+for (let k = 0; k < order.length; k++) {
+const i = order[k];
 const s = D.services[i];
 const a = el("a", "item");
 a.href = "#";
@@ -2263,7 +4206,9 @@ a.dataset.index = i;
 a.setAttribute("aria-label", fmt(U.detail, { n: s.title }));
 a.appendChild(img(s.image, "thumb", s.title, 652, 488, BOX_FALLBACK));
 const info = el("div", "item-body");
-info.appendChild(el("h3", null, s.title));
+const h3 = el("h3", null, s.title);
+if (s.tag) h3.insertBefore(el("span", "tag " + s.tag.toLowerCase(), s.tag), h3.firstChild);
+info.appendChild(h3);
 info.appendChild(el("p", "tagline", s.tagline));
 const meta = el("div", "meta");
 meta.appendChild(el("b", null, s.price));
@@ -2392,10 +4337,10 @@ box.appendChild(el("p", null, p.desc));
 pk.appendChild(box);
 }
 body.appendChild(section(U.secPackages, pk));
-body.appendChild(section(U.secOutcomes, textList(s.outcomes, "check"), "box"));
-body.appendChild(section(U.secForWhom, textList(s.forWhom, "check"), "box"));
+if (s.outcomes.length) body.appendChild(section(U.secOutcomes, textList(s.outcomes, "check"), "box"));
+if (s.forWhom.length) body.appendChild(section(U.secForWhom, textList(s.forWhom, "check"), "box"));
 const folds = el("div", "folds");
-folds.appendChild(fold(U.secProcess, textList(s.process, "dot")));
+if (s.process.length) folds.appendChild(fold(U.secProcess, textList(s.process, "dot")));
 if (s.options && s.options.length) folds.appendChild(fold(U.secOptions, textList(s.options, "dot")));
 if (s.notFor && s.notFor.length) folds.appendChild(fold(U.secNotFor, textList(s.notFor, "dot no")));
 if (s.prep.length) folds.appendChild(fold(U.secPrep, textList(s.prep, "dot")));
@@ -2483,6 +4428,7 @@ return b;
 function buildWorks() {
 const wrap = el("div");
 wrap.appendChild(el("p", "hint", U.hintWorks));
+wrap.appendChild(el("h3", "sec-head", U.secGames));
 
 const chips = el("div", "chips");
 chips.setAttribute("role", "group");
@@ -2499,16 +4445,27 @@ chips.appendChild(c);
 wrap.appendChild(chips);
 
 const grid = el("div", "games");
+const utilGrid = el("div", "games");
 const games = [];
+let utilCount = 0;
 for (let i = 0; i < D.works.length; i++) {
 const g = buildGame(i);
 games.push(g);
+if (D.works[i].kind === "util") {
+utilGrid.appendChild(g);
+utilCount++;
+} else {
 grid.appendChild(g);
+}
 }
 wrap.appendChild(grid);
 const empty = el("p", "empty", U.empty);
 empty.hidden = true;
 wrap.appendChild(empty);
+if (utilCount) {
+wrap.appendChild(el("h3", "sec-head", U.secUtils));
+wrap.appendChild(utilGrid);
+}
 
 chips.addEventListener("click", function (e) {
 const c = e.target.closest("button.chip");
@@ -2517,6 +4474,7 @@ const cat = c.dataset.cat;
 for (let i = 0; i < chipBtns.length; i++) chipBtns[i].setAttribute("aria-pressed", chipBtns[i] === c ? "true" : "false");
 let shown = 0;
 for (let i = 0; i < games.length; i++) {
+if (BASE.works[i].kind === "util") continue;
 const ok = workMatches(BASE.works[i], cat);
 games[i].hidden = !ok;
 if (ok) shown++;
