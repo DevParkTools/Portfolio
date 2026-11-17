@@ -289,12 +289,12 @@ opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s 
 .game { position: relative; padding-top: 17px; }
 .game::after { top: 6px; }
 .game.p-both::after { font-size: 0.45rem; letter-spacing: 0; right: 4px; }
-.game.p-web { background: linear-gradient(rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.03)), var(--card); }
+.game.p-web { background: var(--card); }
 .game.p-web::after { content: "WEB"; color: #3b82f6; }
 .game.p-web, .game.p-web:hover, .game.p-maple, .game.p-roblox, .game.p-store { border-width: 2px; border-style: solid; }
 .game.p-web, .game.p-web:hover { border-color: #3b82f6; }
 .game.p-web.new, .game.p-web.hot { box-shadow: 0 0 0 1px #3b82f6; }
-.game.p-both { background: linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(22, 163, 74, 0.14)), var(--card); border-width: 2px; border-style: solid; }
+.game.p-both { background: var(--card); border-width: 2px; border-style: solid; }
 .game.p-both, .game.p-both:hover { border-color: #3b82f6 #16a34a #16a34a #3b82f6; }
 .game.p-both.new, .game.p-both.hot { box-shadow: 0 0 0 1px #16a34a; }
 .game.p-both::after { content: "WEB · STORE"; background: linear-gradient(90deg, #3b82f6, #16a34a); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -1445,148 +1445,91 @@ icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F200
 url: "https://www.roblox.com/ko/games/118325758250889/unnamed"
 },
 {
-name: "Mini LOL",
-genre: "웹 · AOS",
-desc: "브라우저에서 바로 즐기는 2 vs 2 칼바람나락 스타일 AOS 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e3a8a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%232563eb%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%2098L128%2062V128H0Z%22%20fill%3D%22%231e40af%22%20opacity%3D%22.6%22%2F%3E%3Cpath%20d%3D%22M0%20114L128%2082%22%20stroke%3D%22%2393c5fd%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%226%206%22%2F%3E%3Cpath%20d%3D%22M44%20108V62L64%2050L84%2062V108Z%22%20fill%3D%22%23cbd5e1%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M38%2062H90L64%2040Z%22%20fill%3D%22%2394a3b8%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M64%2012L74%2028L64%2044L54%2028Z%22%20fill%3D%22%2338bdf8%22%20stroke%3D%22%23e0f2fe%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2228%22%20r%3D%2222%22%20fill%3D%22%2338bdf8%22%20opacity%3D%22.25%22%2F%3E%3Ccircle%20cx%3D%2222%22%20cy%3D%22104%22%20r%3D%228%22%20fill%3D%22%2360a5fa%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%22106%22%20cy%3D%2286%22%20r%3D%228%22%20fill%3D%22%23f87171%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%2258%22%20y%3D%2280%22%20width%3D%2212%22%20height%3D%2228%22%20rx%3D%222%22%20fill%3D%22%23475569%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_LOL/"
-},
-{
-name: "Mini Dungeon Fighter",
-genre: "웹 · 액션",
-desc: "브라우저에서 바로 즐기는 벨트스크롤 액션 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231c1917%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237f1d1d%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23292524%22%20stroke%3D%22%2344403c%22%20stroke-width%3D%222%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2224%22%2F%3E%3Crect%20x%3D%2244%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2224%22%2F%3E%3Crect%20x%3D%2288%22%20y%3D%220%22%20width%3D%2240%22%20height%3D%2224%22%2F%3E%3Crect%20x%3D%2222%22%20y%3D%2228%22%20width%3D%2240%22%20height%3D%2224%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2228%22%20width%3D%2240%22%20height%3D%2224%22%2F%3E%3C%2Fg%3E%3Crect%20y%3D%22100%22%20width%3D%22128%22%20height%3D%2228%22%20fill%3D%22%2344403c%22%2F%3E%3Cpath%20d%3D%22M0%20100H128%22%20stroke%3D%22%2378716c%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M14%2096Q60%2020%20116%2044%22%20fill%3D%22none%22%20stroke%3D%22%23fef08a%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M24%20100Q66%2040%20112%2060%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2270%22%20r%3D%229%22%20fill%3D%22%23fcd9b0%22%2F%3E%3Cpath%20d%3D%22M36%2066Q46%2052%2058%2066Z%22%20fill%3D%22%2378350f%22%2F%3E%3Cpath%20d%3D%22M38%2080H54L58%20102H34Z%22%20fill%3D%22%23b91c1c%22%2F%3E%3Cpath%20d%3D%22M52%2084L84%2056%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M50%2088L58%2080%22%20stroke%3D%22%23a16207%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_DnF/"
-},
-{
-name: "Mini Pokemon",
-genre: "웹 · RPG",
-desc: "브라우저에서 바로 즐기는 미니 몬스터 RPG.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237dd3fc%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23bbf7d0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%2222%22%20r%3D%2210%22%20fill%3D%22%23fef9c3%22%2F%3E%3Cpath%20d%3D%22M0%2084Q60%2066%20128%2082V128H0Z%22%20fill%3D%22%234ade80%22%2F%3E%3Cpath%20d%3D%22M0%20104Q64%2088%20128%20104V128H0Z%22%20fill%3D%22%2322c55e%22%2F%3E%3Cg%20fill%3D%22%2315803d%22%3E%3Cpath%20d%3D%22M14%2090l4-12%204%2012zM24%2092l4-10%204%2010zM102%2096l4-12%204%2012z%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M62%2054Q50%2030%2034%2034Q38%2052%2056%2058ZM62%2054Q74%2030%2090%2034Q86%2052%2068%2058Z%22%20fill%3D%22%2316a34a%22%20stroke%3D%22%2314532d%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cellipse%20cx%3D%2262%22%20cy%3D%2278%22%20rx%3D%2228%22%20ry%3D%2224%22%20fill%3D%22%23bef264%22%20stroke%3D%22%2314532d%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%2276%22%20r%3D%225%22%20fill%3D%22%2314532d%22%2F%3E%3Ccircle%20cx%3D%2272%22%20cy%3D%2276%22%20r%3D%225%22%20fill%3D%22%2314532d%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2274%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2274%22%20r%3D%221.8%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2244%22%20cy%3D%2286%22%20r%3D%225%22%20fill%3D%22%23fb7185%22%20opacity%3D%22.6%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2286%22%20r%3D%225%22%20fill%3D%22%23fb7185%22%20opacity%3D%22.6%22%2F%3E%3Cpath%20d%3D%22M57%2086Q62%2091%2067%2086%22%20fill%3D%22none%22%20stroke%3D%22%2314532d%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%22102%22%20r%3D%2214%22%20fill%3D%22%2338bdf8%22%20stroke%3D%22%230c4a6e%22%20stroke-width%3D%223%22%2F%3E%3Cellipse%20cx%3D%2299%22%20cy%3D%2296%22%20rx%3D%225%22%20ry%3D%223%22%20fill%3D%22%23e0f2fe%22%20transform%3D%22rotate%28-30%2099%2096%29%22%2F%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%22102%22%20r%3D%2214%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%224%205%22%20opacity%3D%22.7%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Pokemon/"
-},
-{
-name: "Mini StarCraft",
-genre: "웹 · 전략",
-desc: "브라우저에서 바로 즐기는 미니 실시간 전략 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23020617%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231e1b4b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2220%22%20r%3D%222%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%2214%22%20r%3D%222%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2256%22%20r%3D%221.6%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2226%22%20cy%3D%2262%22%20r%3D%221.6%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2212%22%20r%3D%221.4%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2294%22%20r%3D%221.6%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2298%22%20cy%3D%2296%22%20r%3D%2224%22%20fill%3D%22%23b45309%22%2F%3E%3Cpath%20d%3D%22M80%2090Q98%2080%20118%2092%22%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%224%22%20opacity%3D%22.6%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%22102%22%20r%3D%225%22%20fill%3D%22%2392400e%22%2F%3E%3Cpath%20d%3D%22M20%2074L68%2056L84%2062L84%2072L68%2078L28%2086Z%22%20fill%3D%22%2394a3b8%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M44%2066L50%2046L58%2062Z%22%20fill%3D%22%2364748b%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%222.5%22%2F%3E%3Cpath%20d%3D%22M44%2080L50%20100L58%2082Z%22%20fill%3D%22%2364748b%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%2272%22%20cy%3D%2267%22%20r%3D%224%22%20fill%3D%22%2322d3ee%22%2F%3E%3Cpath%20d%3D%22M20%2074L8%2070M20%2080L6%2082%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M24%2026L34%2034L24%2042L14%2034Z%22%20fill%3D%22%2322d3ee%22%2F%3E%3Cpath%20d%3D%22M106%2032L112%2038L106%2044L100%2038Z%22%20fill%3D%22%23a3e635%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_StarCraft/"
-},
-{
-name: "Mini Crazy Arcade",
-genre: "웹 · 대전",
-desc: "브라우저에서 바로 즐기는 물풍선 대전 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237dd3fc%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2338bdf8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23bae6fd%22%20opacity%3D%22.7%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2264%22%20y%3D%220%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2296%22%20y%3D%2232%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%220%22%20y%3D%2264%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2264%22%20y%3D%2264%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2232%22%20y%3D%2296%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3Crect%20x%3D%2296%22%20y%3D%2296%22%20width%3D%2232%22%20height%3D%2232%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M64%2014V114M14%2064H114%22%20stroke%3D%22%23e0f2fe%22%20stroke-width%3D%2214%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.7%22%2F%3E%3Cpath%20d%3D%22M64%2034Q64%2024%2070%2020Q72%2032%2082%2036%22%20fill%3D%22%23475569%22%2F%3E%3Cpath%20d%3D%22M60%2030h8v8h-8z%22%20fill%3D%22%23475569%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2268%22%20r%3D%2230%22%20fill%3D%22%232563eb%22%20stroke%3D%22%231e3a8a%22%20stroke-width%3D%224%22%2F%3E%3Cellipse%20cx%3D%2254%22%20cy%3D%2258%22%20rx%3D%229%22%20ry%3D%226%22%20fill%3D%22%2393c5fd%22%20transform%3D%22rotate%28-30%2054%2058%29%22%2F%3E%3Ccircle%20cx%3D%2256%22%20cy%3D%2272%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2272%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M58%2082Q64%2087%2070%2082%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_BnB/"
-},
-{
-name: "Mini Warcraft",
-genre: "웹 · 전략",
-desc: "브라우저에서 바로 즐기는 영웅·자원·건설 RTS 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fed7aa%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fb923c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2270%22%20r%3D%2230%22%20fill%3D%22%23fef3c7%22%20opacity%3D%22.6%22%2F%3E%3Cpath%20d%3D%22M0%2096Q40%2078%2080%2090T128%2082V128H0Z%22%20fill%3D%22%23166534%22%2F%3E%3Cpath%20d%3D%22M0%20112Q50%2098%20128%20110V128H0Z%22%20fill%3D%22%2314532d%22%2F%3E%3Cpath%20d%3D%22M30%20100V54H42V46H52V54H64V46H74V54H86V100Z%22%20fill%3D%22%23cbd5e1%22%20stroke%3D%22%231e293b%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M52%20100V80A10%2010%200%200%201%2064%2080V100Z%22%20fill%3D%22%231e293b%22%2F%3E%3Cpath%20d%3D%22M58%2046V22%22%20stroke%3D%22%231e293b%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M58%2022L82%2030L58%2038Z%22%20fill%3D%22%23dc2626%22%20stroke%3D%22%231e293b%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M94%2044L116%2096%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M116%2044L94%2096%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M90%2052L100%2040Q106%2044%20104%2054Z%22%20fill%3D%22%23cbd5e1%22%20stroke%3D%22%231e293b%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Warcraft/"
-},
-{
-name: "Mini Street Fighter",
-genre: "웹 · 대전",
-desc: "브라우저에서 바로 즐기는 2.5D 대전 격투 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237c2d12%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ea580c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20stroke%3D%22%23fed7aa%22%20stroke-width%3D%223%22%20opacity%3D%22.5%22%3E%3Cpath%20d%3D%22M64%2064L0%2024M64%2064L0%2064M64%2064L0%20104M64%2064L128%2024M64%2064L128%2064M64%2064L128%20104M64%2064L40%200M64%2064L88%200%22%2F%3E%3C%2Fg%3E%3Crect%20y%3D%22104%22%20width%3D%22128%22%20height%3D%2224%22%20fill%3D%22%23431407%22%2F%3E%3Cg%20fill%3D%22%231c0a04%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2254%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22M20%2066H42L46%20104H18Z%22%2F%3E%3Cpath%20d%3D%22M40%2070L62%2062%22%20stroke%3D%22%231c0a04%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2298%22%20cy%3D%2254%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22M86%2066H108L110%20104H82Z%22%2F%3E%3Cpath%20d%3D%22M88%2070L66%2062%22%20stroke%3D%22%231c0a04%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M64%2036L70%2054L90%2050L74%2062L84%2080L64%2070L44%2080L54%2062L38%2050L58%2054Z%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3Crect%20x%3D%2214%22%20y%3D%2214%22%20width%3D%22100%22%20height%3D%2210%22%20rx%3D%225%22%20fill%3D%22%2316a34a%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.5%22%2F%3E%3Crect%20x%3D%2264%22%20y%3D%2214%22%20width%3D%2250%22%20height%3D%2210%22%20rx%3D%225%22%20fill%3D%22%23ef4444%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.5%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_StreetFighter/"
-},
-{
-name: "Mini Zelda",
-genre: "웹 · 모험",
-desc: "브라우저에서 바로 즐기는 탑다운 어드벤처 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23bbf7d0%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234ade80%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%2088Q64%2066%20128%2088V128H0Z%22%20fill%3D%22%2316a34a%22%2F%3E%3Cg%20fill%3D%22%23166534%22%3E%3Cpath%20d%3D%22M16%2096l5-14%205%2014zM104%20100l5-14%205%2014z%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M42%20100H86L80%2082H48Z%22%20fill%3D%22%2394a3b8%22%20stroke%3D%22%23334155%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Crect%20x%3D%2258%22%20y%3D%2230%22%20width%3D%2212%22%20height%3D%2252%22%20rx%3D%223%22%20fill%3D%22%23e2e8f0%22%20stroke%3D%22%23334155%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M64%2018L72%2030H56Z%22%20fill%3D%22%23e2e8f0%22%20stroke%3D%22%23334155%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Crect%20x%3D%2248%22%20y%3D%2252%22%20width%3D%2232%22%20height%3D%228%22%20rx%3D%223%22%20fill%3D%22%23ca8a04%22%20stroke%3D%22%23334155%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2240%22%20r%3D%2222%22%20fill%3D%22%23fef08a%22%20opacity%3D%22.35%22%2F%3E%3Cpath%20d%3D%22M26%2034c-6-8%206-14%2010-6%204-8%2016-2%2010%206l-10%2010z%22%20fill%3D%22%23ef4444%22%2F%3E%3Cpath%20d%3D%22M92%2024c-5-7%205-12%209-5%203-7%2014-2%209%205l-9%209z%22%20fill%3D%22%23ef4444%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Zelda/"
-},
-{
-name: "Mini Tetris",
-genre: "웹 · 퍼즐",
-desc: "브라우저에서 바로 즐기는 클래식 모드와 AI 대전 테트리스.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e1b4b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23312e81%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2226%22%20y%3D%2210%22%20width%3D%2276%22%20height%3D%22110%22%20rx%3D%226%22%20fill%3D%22%230f172a%22%20stroke%3D%22%236366f1%22%20stroke-width%3D%223%22%2F%3E%3Cg%20stroke%3D%22%230f172a%22%20stroke-width%3D%222%22%3E%3Crect%20x%3D%2230%22%20y%3D%2296%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23ef4444%22%2F%3E%3Crect%20x%3D%2246%22%20y%3D%2296%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23ef4444%22%2F%3E%3Crect%20x%3D%2262%22%20y%3D%2296%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2278%22%20y%3D%2296%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2230%22%20y%3D%2280%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%233b82f6%22%2F%3E%3Crect%20x%3D%2246%22%20y%3D%2280%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2262%22%20y%3D%2280%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2278%22%20y%3D%2280%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23a855f7%22%2F%3E%3Crect%20x%3D%2246%22%20y%3D%2264%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2262%22%20y%3D%2264%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2246%22%20y%3D%2218%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2306b6d4%22%2F%3E%3Crect%20x%3D%2262%22%20y%3D%2218%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2306b6d4%22%2F%3E%3Crect%20x%3D%2278%22%20y%3D%2218%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2306b6d4%22%2F%3E%3Crect%20x%3D%2262%22%20y%3D%2234%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2306b6d4%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M70%2052V62%22%20stroke%3D%22%2367e8f9%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%204%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Tetris/"
-},
-{
-name: "Mini BrickBreaker",
-genre: "웹 · 액션",
-desc: "패들로 공을 튕겨 무지개 벽돌을 깨는 벽돌깨기 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e293b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%22112%22%20height%3D%22112%22%20rx%3D%2214%22%20fill%3D%22none%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%225%22%2F%3E%3Cg%20stroke%3D%22%230f172a%22%20stroke-width%3D%222%22%3E%3Crect%20x%3D%2218%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23ef4444%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23f97316%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2290%22%20y%3D%2218%22%20width%3D%2220%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2232%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23f97316%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2232%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2232%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2290%22%20y%3D%2232%22%20width%3D%2220%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%233b82f6%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2246%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2246%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%233b82f6%22%2F%3E%3Crect%20x%3D%2290%22%20y%3D%2246%22%20width%3D%2220%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23a855f7%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M62%2070L50%2086%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%204%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2266%22%20r%3D%227%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2296%22%20width%3D%2252%22%20height%3D%2210%22%20rx%3D%225%22%20fill%3D%22%2338bdf8%22%20stroke%3D%22%23e0f2fe%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_BrickBreaker/"
-},
-{
-name: "Mini BounceBall",
-genre: "웹 · 캐주얼",
-desc: "공을 튕겨 발판을 건너 별을 모으는 공튀기기 스테이지 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237dd3fc%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e0f2fe%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23fff%22%20opacity%3D%22.9%22%3E%3Cellipse%20cx%3D%2226%22%20cy%3D%2226%22%20rx%3D%2218%22%20ry%3D%227%22%2F%3E%3Cellipse%20cx%3D%22100%22%20cy%3D%2246%22%20rx%3D%2216%22%20ry%3D%226%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M64%208l4%209%2010%201-8%206%203%2010-9-5-9%205%203-10-8-6%2010-1z%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cg%20stroke%3D%22%230f172a%22%20stroke-width%3D%223%22%3E%3Crect%20x%3D%2210%22%20y%3D%22100%22%20width%3D%2240%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2278%22%20y%3D%2282%22%20width%3D%2240%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%23f97316%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2260%22%20width%3D%2240%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%23a855f7%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M30%2092Q38%2056%2058%2052%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%205%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M62%2078Q76%2050%2096%2074%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%205%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.6%22%2F%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%2238%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%20stroke%3D%22%237f1d1d%22%20stroke-width%3D%223%22%2F%3E%3Cellipse%20cx%3D%2257%22%20cy%3D%2233%22%20rx%3D%225%22%20ry%3D%223%22%20fill%3D%22%23fecaca%22%20transform%3D%22rotate%28-30%2057%2033%29%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%2240%22%20r%3D%222.4%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2240%22%20r%3D%222.4%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%2240%22%20r%3D%221.2%22%20fill%3D%22%230f172a%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2240%22%20r%3D%221.2%22%20fill%3D%22%230f172a%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_BounceBall/"
-},
-{
-name: "Mini Sonic",
-genre: "웹 · 액션",
-desc: "브라우저에서 바로 즐기는 고속 횡스크롤 액션 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2338bdf8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%232563eb%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.6%22%3E%3Cpath%20d%3D%22M4%2040H44M12%2056H56M2%2072H36%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M-6%20112Q20%20112%2040%2088Q64%2040%20100%2070Q116%2084%20134%2076V128H-6Z%22%20fill%3D%22%2316a34a%22%2F%3E%3Cpath%20d%3D%22M-6%20112Q20%20112%2040%2088Q64%2040%20100%2070Q116%2084%20134%2076%22%20fill%3D%22none%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%226%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%226%22%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%2240%22%20r%3D%2213%22%2F%3E%3Ccircle%20cx%3D%2288%22%20cy%3D%2232%22%20r%3D%2213%22%2F%3E%3Ccircle%20cx%3D%22108%22%20cy%3D%2256%22%20r%3D%2213%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23fef3c7%22%20stroke-width%3D%222%22%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%2240%22%20r%3D%228%22%2F%3E%3Ccircle%20cx%3D%2288%22%20cy%3D%2232%22%20r%3D%228%22%2F%3E%3Ccircle%20cx%3D%22108%22%20cy%3D%2256%22%20r%3D%228%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10%20104L20%2092L24%20100Z%22%20fill%3D%22%23fff%22%20opacity%3D%22.7%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2288%22%20r%3D%223%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Sonic/"
-},
-{
-name: "Mini Run & Gun",
-genre: "웹 · 액션",
-desc: "브라우저에서 바로 즐기는 2D 픽셀 런앤건 액션 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fcd34d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fb923c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2296%22%20cy%3D%2234%22%20r%3D%2216%22%20fill%3D%22%23fef3c7%22%2F%3E%3Cpath%20d%3D%22M0%2096Q50%2084%20128%2094V128H0Z%22%20fill%3D%22%23a16207%22%2F%3E%3Cpath%20d%3D%22M0%20104H128%22%20stroke%3D%22%23713f12%22%20stroke-width%3D%223%22%2F%3E%3Cg%20fill%3D%22%234d7c0f%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M70%2098V80H112L118%2090V98Z%22%2F%3E%3Crect%20x%3D%2282%22%20y%3D%2268%22%20width%3D%2222%22%20height%3D%2214%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M82%2074H58%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%231a2e05%22%3E%3Ccircle%20cx%3D%2278%22%20cy%3D%22102%22%20r%3D%226%22%2F%3E%3Ccircle%20cx%3D%2298%22%20cy%3D%22102%22%20r%3D%226%22%2F%3E%3Ccircle%20cx%3D%22114%22%20cy%3D%22102%22%20r%3D%225%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2262%22%20r%3D%229%22%20fill%3D%22%23fcd9b0%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M20%2058Q30%2046%2040%2058Z%22%20fill%3D%22%23dc2626%22%2F%3E%3Cpath%20d%3D%22M22%2072H38L40%2096H20Z%22%20fill%3D%22%2365a30d%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M38%2078L60%2072%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2252%22%20r%3D%226%22%20fill%3D%22%23fef08a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2252%22%20r%3D%223%22%20fill%3D%22%23ef4444%22%2F%3E%3Cpath%20d%3D%22M60%2048l10-4M62%2056l12%202%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_MetalSlug/"
-},
-{
-name: "Mini 1945",
-genre: "웹 · 슈팅",
-desc: "브라우저에서 바로 즐기는 종스크롤 비행기 슈팅 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230ea5e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23bae6fd%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23fff%22%20opacity%3D%22.9%22%3E%3Cellipse%20cx%3D%2224%22%20cy%3D%2238%22%20rx%3D%2220%22%20ry%3D%228%22%2F%3E%3Cellipse%20cx%3D%2240%22%20cy%3D%2244%22%20rx%3D%2216%22%20ry%3D%227%22%2F%3E%3Cellipse%20cx%3D%22104%22%20cy%3D%2294%22%20rx%3D%2218%22%20ry%3D%227%22%2F%3E%3Cellipse%20cx%3D%2288%22%20cy%3D%22100%22%20rx%3D%2214%22%20ry%3D%226%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M64%2012L72%2040L116%2062V74L72%2068L70%2092L84%20102V110L64%20106L44%20110V102L58%2092L56%2068L12%2074V62L56%2040Z%22%20fill%3D%22%2365a30d%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2254%22%20r%3D%225%22%20fill%3D%22%23bae6fd%22%20stroke%3D%22%231a2e05%22%20stroke-width%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%2226%22%20cy%3D%2268%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%3Ccircle%20cx%3D%22102%22%20cy%3D%2268%22%20r%3D%224%22%20fill%3D%22%23ef4444%22%2F%3E%3Cg%20fill%3D%22%23fde047%22%3E%3Crect%20x%3D%2238%22%20y%3D%2214%22%20width%3D%224%22%20height%3D%2214%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2286%22%20y%3D%2214%22%20width%3D%224%22%20height%3D%2214%22%20rx%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_1945/"
-},
-{
-name: "Mini Undertale",
-genre: "웹 · RPG",
-desc: "브라우저에서 바로 즐기는 언더테일풍 스토리 RPG.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23020617%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231e1b4b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2216%22%20y%3D%2264%22%20width%3D%2296%22%20height%3D%2252%22%20fill%3D%22%23000%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M64%2098C64%2098%2044%2086%2044%2076A10%2010%200%200%201%2064%2074A10%2010%200%200%201%2084%2076C84%2086%2064%2098%2064%2098Z%22%20fill%3D%22%23ef4444%22%2F%3E%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2276%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2288%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%22106%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%2292%22%20cy%3D%2272%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2228%22%20r%3D%2214%22%20fill%3D%22%23e2e8f0%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%2226%22%20r%3D%223%22%20fill%3D%22%230f172a%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%2226%22%20r%3D%223%22%20fill%3D%22%230f172a%22%2F%3E%3Cpath%20d%3D%22M58%2034Q64%2038%2070%2034%22%20fill%3D%22none%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M48%2044H80%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M96%2018l4%208%208%204-8%204-4%208-4-8-8-4%208-4z%22%20fill%3D%22%23fde047%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Undertale/"
-},
-{
-name: "Mini Hollow Knight",
-genre: "웹 · 액션",
-desc: "브라우저에서 바로 즐기는 메트로이드바니아 액션 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230f172a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231e293b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%20128V60Q10%2020%2040%2010L44%200H0Z%22%20fill%3D%22%23020617%22%2F%3E%3Cpath%20d%3D%22M128%20128V70Q118%2024%2090%2012L86%200H128Z%22%20fill%3D%22%23020617%22%2F%3E%3Cg%20fill%3D%22%2394a3b8%22%20opacity%3D%22.5%22%3E%3Cpath%20d%3D%22M30%200V16L36%200ZM60%200V10L66%200Z%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2242%22%20r%3D%225%22%20fill%3D%22%237dd3fc%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2242%22%20r%3D%2211%22%20fill%3D%22%237dd3fc%22%20opacity%3D%22.2%22%2F%3E%3Crect%20y%3D%22108%22%20width%3D%22128%22%20height%3D%2220%22%20fill%3D%22%23020617%22%2F%3E%3Ccircle%20cx%3D%2286%22%20cy%3D%2286%22%20r%3D%2226%22%20fill%3D%22%23fde68a%22%20opacity%3D%22.22%22%2F%3E%3Cpath%20d%3D%22M64%2052Q42%2056%2038%20110H90Q86%2056%2064%2052Z%22%20fill%3D%22%231d4ed8%22%20stroke%3D%22%230b1020%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2268%22%20r%3D%2215%22%20fill%3D%22%23e2e8f0%22%20stroke%3D%22%230b1020%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%2268%22%20r%3D%223%22%20fill%3D%22%230b1020%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%2268%22%20r%3D%223%22%20fill%3D%22%230b1020%22%2F%3E%3Cpath%20d%3D%22M52%2056Q64%2044%2076%2056%22%20fill%3D%22%231e3a8a%22%20stroke%3D%22%230b1020%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M88%2080V92%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%2282%22%20y%3D%2292%22%20width%3D%2212%22%20height%3D%2214%22%20rx%3D%223%22%20fill%3D%22%23fbbf24%22%20stroke%3D%22%230b1020%22%20stroke-width%3D%222.5%22%2F%3E%3Cpath%20d%3D%22M40%20100L28%2062%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_HollowKnight/"
-},
-{
-name: "Mini Celeste",
-genre: "웹 · 플랫포머",
-desc: "브라우저에서 바로 즐기는 대시·벽점프 픽셀 플랫포머.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23312e81%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f472b6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2254%22%20r%3D%2226%22%20fill%3D%22%23fde68a%22%20opacity%3D%22.85%22%2F%3E%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2220%22%20r%3D%221.6%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%2216%22%20r%3D%222%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%22112%22%20cy%3D%2250%22%20r%3D%221.4%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2256%22%20r%3D%221.4%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20112L32%2070L50%2090L74%2044L102%2086L128%2062V128H0Z%22%20fill%3D%22%234c1d95%22%2F%3E%3Cpath%20d%3D%22M74%2044L62%2062L72%2058L78%2066L88%2060Z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M32%2070L24%2082L32%2080L38%2086Z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M0%20118Q64%20104%20128%20118V128H0Z%22%20fill%3D%22%232e1065%22%2F%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2276%22%20r%3D%227%22%20fill%3D%22%23fcd9b0%22%2F%3E%3Cpath%20d%3D%22M38%2072Q46%2058%2054%2072Z%22%20fill%3D%22%2314b8a6%22%2F%3E%3Cpath%20d%3D%22M40%2082H52L54%2098H38Z%22%20fill%3D%22%2338bdf8%22%2F%3E%3Cpath%20d%3D%22M38%2076L24%2070M36%2084L18%2086%22%20stroke%3D%22%2314b8a6%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M54%2090L90%2098%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%224%205%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Celeste/"
-},
-{
-name: "Mini Megaman",
-genre: "웹 · 액션",
-desc: "브라우저에서 바로 즐기는 횡스크롤 액션 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230c4a6e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230891b2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20stroke%3D%22%230e7490%22%20stroke-width%3D%222%22%20opacity%3D%22.7%22%3E%3Cpath%20d%3D%22M0%2028H128M0%2060H128M0%2092H128M32%200V128M64%200V128M96%200V128%22%2F%3E%3C%2Fg%3E%3Crect%20y%3D%22104%22%20width%3D%22128%22%20height%3D%2224%22%20fill%3D%22%23082f49%22%2F%3E%3Cpath%20d%3D%22M0%20104H128%22%20stroke%3D%22%2322d3ee%22%20stroke-width%3D%223%22%2F%3E%3Cg%20fill%3D%22%232563eb%22%20stroke%3D%22%23082f49%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%2214%22%20y%3D%2262%22%20width%3D%2240%22%20height%3D%2222%22%20rx%3D%228%22%2F%3E%3Cpath%20d%3D%22M50%2058H72V88H50Z%22%2F%3E%3C%2Fg%3E%3Crect%20x%3D%2272%22%20y%3D%2264%22%20width%3D%2222%22%20height%3D%2218%22%20rx%3D%224%22%20fill%3D%22%2338bdf8%22%20stroke%3D%22%23082f49%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2294%22%20cy%3D%2273%22%20r%3D%227%22%20fill%3D%22%23fef08a%22%2F%3E%3Cg%20fill%3D%22%23fef08a%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%222%22%3E%3Ccircle%20cx%3D%22106%22%20cy%3D%2273%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%22118%22%20cy%3D%2273%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M62%2038L70%2052H58Z%22%20fill%3D%22%2322d3ee%22%2F%3E%3Cpath%20d%3D%22M28%2040l6-12%206%2012z%22%20fill%3D%22%23fde047%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Megaman/"
-},
-{
-name: "Mini Rhythm Hero",
+name: "힘내라 응원단",
 genre: "웹 · 리듬",
 desc: "브라우저에서 바로 즐기는 응원단 리듬 게임.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239d174d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f472b6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23fff%22%20opacity%3D%22.25%22%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2264%22%20r%3D%2250%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2264%22%20r%3D%2234%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20108Q64%2094%20128%20108V128H0Z%22%20fill%3D%22%23500724%22%2F%3E%3Cg%20fill%3D%22%23fde047%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M50%2082V40L88%2030V70%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%2F%3E%3Cellipse%20cx%3D%2242%22%20cy%3D%2284%22%20rx%3D%2212%22%20ry%3D%229%22%2F%3E%3Cellipse%20cx%3D%2280%22%20cy%3D%2272%22%20rx%3D%2212%22%20ry%3D%229%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M22%2046l8-8M104%2044l8-8M18%2070h-8M118%2080h-8%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M98%20100L112%2082%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22114%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M14%2022l4%208%208%204-8%204-4%208-4-8-8-4%208-4z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_EliteBeatAgents/"
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239d174d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f472b6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M30%2056h22l30-18v52L52%2072H30z%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M92%2050q10%2014%200%2028M100%2042q16%2022%200%2044%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2296%22%20r%3D%227%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M47%2096V78%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_CheerRhythm/"
 },
 {
-name: "Mini Dating App",
-kind: "util",
-genre: "웹 · 앱",
-desc: "브라우저에서 바로 즐기는 스와이프 데이팅 앱 체험.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fb7185%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f43f5e%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2230%22%20y%3D%2222%22%20width%3D%2264%22%20height%3D%2286%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%20opacity%3D%22.55%22%20transform%3D%22rotate%28-12%2062%2064%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2216%22%20width%3D%2264%22%20height%3D%2292%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%20transform%3D%22rotate%288%2070%2062%29%22%2F%3E%3Cg%20transform%3D%22rotate%288%2070%2062%29%22%3E%3Crect%20x%3D%2246%22%20y%3D%2224%22%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%228%22%20fill%3D%22%23fecdd3%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%2244%22%20r%3D%229%22%20fill%3D%22%23fb7185%22%2F%3E%3Cpath%20d%3D%22M54%2070Q70%2050%2086%2070Z%22%20fill%3D%22%23fb7185%22%2F%3E%3Crect%20x%3D%2248%22%20y%3D%2280%22%20width%3D%2234%22%20height%3D%226%22%20rx%3D%223%22%20fill%3D%22%23cbd5e1%22%2F%3E%3Crect%20x%3D%2248%22%20y%3D%2290%22%20width%3D%2222%22%20height%3D%225%22%20rx%3D%222.5%22%20fill%3D%22%23e2e8f0%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%22100%22%20r%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M18%2094L30%20106M30%2094L18%20106%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22106%22%20cy%3D%22100%22%20r%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M106%20108C106%20108%2095%20102%2095%2096A5%205%200%200%201%20106%2095A5%205%200%200%201%20117%2096C117%20102%20106%20108%20106%20108Z%22%20fill%3D%22%23f43f5e%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_DatingApp/"
+name: "갈림길 이야기",
+genre: "웹 · RPG",
+desc: "브라우저에서 바로 즐기는 선택이 갈리는 스토리 RPG.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e1b4b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%236d28d9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M64%2098C30%2076%2028%2052%2044%2044c10-4%2018%202%2020%208%202-6%2010-12%2020-8%2016%208%2014%2032-20%2054z%22%20fill%3D%22%23ef4444%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M82%2022h28a8%208%200%20018%208v14a8%208%200%2001-8%208H98l-8%2010v-10h-8a8%208%200%2001-8-8V30a8%208%200%20018-8z%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2237%22%20r%3D%223%22%20fill%3D%22%231e1b4b%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2237%22%20r%3D%223%22%20fill%3D%22%231e1b4b%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_SoulStory/"
 },
 {
-name: "Mini Date Course",
+name: "정상 도전기",
+genre: "웹 · 플랫포머",
+desc: "브라우저에서 바로 즐기는 대시·벽점프 픽셀 플랫포머.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23312e81%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f472b6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M0%20112L38%2056l20%2026%2026-48%2044%2078V128H0z%22%20fill%3D%22%234c1d95%22%2F%3E%3Cpath%20d%3D%22M84%2034l-9%2015%207-3%205%208%206-8z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M20%2096h40M14%20106h30%22%20stroke%3D%22%23fde68a%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2292%22%20r%3D%229%22%20fill%3D%22%23fcd9b0%22%2F%3E%3Cpath%20d%3D%22M62%2088q12-18%2024%200z%22%20fill%3D%22%2314b8a6%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_ClimbDash/"
+},
+{
+name: "물풍선 대작전",
+genre: "웹 · 대전",
+desc: "브라우저에서 바로 즐기는 물풍선 대전 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237dd3fc%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%232563eb%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M64%2024C86%2052%2090%2062%2090%2074a26%2026%200%2001-52%200c0-12%204-22%2026-50z%22%20fill%3D%22%23fff%22%20opacity%3D%22.95%22%2F%3E%3Cpath%20d%3D%22M64%2034C80%2056%2082%2064%2082%2074a18%2018%200%2001-18%2018%22%20fill%3D%22none%22%20stroke%3D%22%2338bdf8%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%2276%22%20r%3D%224%22%20fill%3D%22%231e3a8a%22%2F%3E%3Ccircle%20cx%3D%2272%22%20cy%3D%2276%22%20r%3D%224%22%20fill%3D%22%231e3a8a%22%2F%3E%3Cpath%20d%3D%22M56%2086q8%206%2016%200%22%20fill%3D%22none%22%20stroke%3D%22%231e3a8a%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M30%2030l6%206M100%2028l-6%206M26%2070h-8M110%2070h-8%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_WaterBalloon/"
+},
+{
+name: "협곡 듀오전",
+genre: "웹 · AOS",
+desc: "브라우저에서 바로 즐기는 2 vs 2 칼바람나락 스타일 AOS 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230f766e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23134e4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M36%20100V56l-8-8h24l-8%208v44zM92%20100V56l-8-8h24l-8%208v44z%22%20fill%3D%22%235eead4%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2240%22%20r%3D%2214%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M42%2086q22%2014%2044%200%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_ArenaDuo/"
+},
+{
+name: "모래시계 모험",
+genre: "웹 · 모험",
+desc: "브라우저에서 바로 즐기는 탑다운 어드벤처 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23166534%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234ade80%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M64%2014l8%208-4%2052h-8l-4-52z%22%20fill%3D%22%23e2e8f0%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M44%2074h40v8H44z%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23854d0e%22%20stroke-width%3D%223%22%2F%3E%3Crect%20x%3D%2258%22%20y%3D%2282%22%20width%3D%2212%22%20height%3D%2218%22%20fill%3D%22%2392400e%22%2F%3E%3Cpath%20d%3D%22M0%20116q20-14%2036%200t36%200%2032%200%2024%200v12H0z%22%20fill%3D%22%2314532d%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_SwordAdventure/"
+},
+{
+name: "던전 주먹왕",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 벨트스크롤 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239a3412%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fb923c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M38%2060q0-18%2018-18h24q14%200%2014%2014v22q0%2020-20%2020H56q-18%200-18-18z%22%20fill%3D%22%23fde68a%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M56%2048v26M70%2046v28M84%2052v22%22%20stroke%3D%22%239a3412%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M14%2054h14M10%2072h16M16%2090h12%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_BeltFighter/"
+},
+{
+name: "등불 기사",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 메트로이드바니아 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230c4a6e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23164e63%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M64%2014v12%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M46%2034h36l8%2022v34q0%2012-26%2012T38%2090V56z%22%20fill%3D%22%23fbbf24%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M46%2052h36M46%2070h36%22%20stroke%3D%22%2392400e%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M58%2090c0-12%2012-14%206-26%2014%206%2016%2018%206%2026z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_LanternKnight/"
+},
+{
+name: "블록 쌓기 대결",
+genre: "웹 · 퍼즐",
+desc: "브라우저에서 바로 즐기는 클래식 모드와 AI 대전 블록 퍼즐.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230e7490%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231e3a8a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%3E%3Crect%20x%3D%2222%22%20y%3D%2290%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%23f472b6%22%2F%3E%3Crect%20x%3D%2244%22%20y%3D%2290%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2290%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%234ade80%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2268%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%234ade80%22%2F%3E%3Crect%20x%3D%2244%22%20y%3D%2222%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%2338bdf8%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2222%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%2338bdf8%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2244%22%20width%3D%2222%22%20height%3D%2222%22%20fill%3D%22%2338bdf8%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M100%2030v36M94%2058l6%208%206-8%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_BlockDrop/"
+},
+{
+name: "하늘의 에이스",
+genre: "웹 · 슈팅",
+desc: "브라우저에서 바로 즐기는 종스크롤 비행기 슈팅 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2338bdf8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231d4ed8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cellipse%20cx%3D%2232%22%20cy%3D%2240%22%20rx%3D%2218%22%20ry%3D%227%22%20fill%3D%22%23fff%22%20opacity%3D%22.8%22%2F%3E%3Cellipse%20cx%3D%2298%22%20cy%3D%2296%22%20rx%3D%2220%22%20ry%3D%227%22%20fill%3D%22%23fff%22%20opacity%3D%22.7%22%2F%3E%3Cpath%20d%3D%22M64%2018l8%2034%2034%2022v10l-34-8%204%2022-12%206-12-6%204-22-34%208V74l34-22z%22%20fill%3D%22%23f8fafc%22%20stroke%3D%22%231e3a8a%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2248%22%20r%3D%225%22%20fill%3D%22%23ef4444%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_SkyAce/"
+},
+{
+name: "달려라 총잡이",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 2D 픽셀 런앤건 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%233f6212%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231a2e05%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%2238%22%20r%3D%2212%22%20fill%3D%22%23fcd9b0%22%2F%3E%3Cpath%20d%3D%22M38%2034q14-16%2028%200z%22%20fill%3D%22%23ef4444%22%2F%3E%3Cpath%20d%3D%22M44%2052h22l8%2024-10%2020H46l-4-20z%22%20fill%3D%22%2384cc16%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M72%2062h30%22%20stroke%3D%22%23fff%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M108%2056l8%206-8%206M16%20100h26M26%20112h20%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_RunGun/"
+},
+{
+name: "대포팔 사냥꾼",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 횡스크롤 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231d4ed8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M20%2072h40l12-14h34v36H72L60%2082H20z%22%20fill%3D%22%2338bdf8%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22106%22%20cy%3D%2276%22%20r%3D%228%22%20fill%3D%22%230f172a%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2276%22%20r%3D%224%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M92%2034l4%2010%2010%204-10%204-4%2010-4-10-10-4%2010-4z%22%20fill%3D%22%23fde047%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_ArmCannon/"
+},
+{
+name: "데이트 코스 룰렛",
 kind: "util",
 genre: "웹 · 앱",
 desc: "브라우저에서 바로 쓰는 데이트 코스 추천 룰렛 앱.",
@@ -1594,7 +1537,23 @@ icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F200
 url: "https://devparktools.github.io/MoonDate/"
 },
 {
-name: "Mini Voca",
+name: "밀어서 짝 찾기",
+kind: "util",
+genre: "웹 · 앱",
+desc: "브라우저에서 바로 즐기는 스와이프 데이팅 앱 체험.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23fb7185%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f43f5e%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2230%22%20y%3D%2222%22%20width%3D%2264%22%20height%3D%2286%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%20opacity%3D%22.55%22%20transform%3D%22rotate%28-12%2062%2064%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2216%22%20width%3D%2264%22%20height%3D%2292%22%20rx%3D%2212%22%20fill%3D%22%23fff%22%20transform%3D%22rotate%288%2070%2062%29%22%2F%3E%3Cg%20transform%3D%22rotate%288%2070%2062%29%22%3E%3Crect%20x%3D%2246%22%20y%3D%2224%22%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%228%22%20fill%3D%22%23fecdd3%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%2244%22%20r%3D%229%22%20fill%3D%22%23fb7185%22%2F%3E%3Cpath%20d%3D%22M54%2070Q70%2050%2086%2070Z%22%20fill%3D%22%23fb7185%22%2F%3E%3Crect%20x%3D%2248%22%20y%3D%2280%22%20width%3D%2234%22%20height%3D%226%22%20rx%3D%223%22%20fill%3D%22%23cbd5e1%22%2F%3E%3Crect%20x%3D%2248%22%20y%3D%2290%22%20width%3D%2222%22%20height%3D%225%22%20rx%3D%222.5%22%20fill%3D%22%23e2e8f0%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%22100%22%20r%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M18%2094L30%20106M30%2094L18%20106%22%20stroke%3D%22%2364748b%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%22106%22%20cy%3D%22100%22%20r%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M106%20108C106%20108%2095%20102%2095%2096A5%205%200%200%201%20106%2095A5%205%200%200%201%20117%2096C117%20102%20106%20108%20106%20108Z%22%20fill%3D%22%23f43f5e%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_DatingApp/"
+},
+{
+name: "열공 타이머",
+kind: "util",
+genre: "웹 · 앱",
+desc: "브라우저에서 바로 쓰는 공부 타이머·기록 앱.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232dd4bf%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f766e%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M14%2040H58A8%208%200%200%201%2064%2046V104A16%2016%200%200%200%2048%2092H14ZM114%2040H70A8%208%200%200%200%2064%2046V104A16%2016%200%200%201%2080%2092H114Z%22%20fill%3D%22%23fff%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cg%20stroke%3D%22%2399f6e4%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M24%2054H52M24%2064H52M24%2074H44M76%2054H104M76%2064H104%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2296%22%20cy%3D%2228%22%20r%3D%2216%22%20fill%3D%22%23fef3c7%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M96%2018V28L103%2032%22%20fill%3D%22none%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M20%2022L44%2014L48%2022L24%2030Z%22%20fill%3D%22%23fbbf24%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M20%2022L16%2030L24%2030Z%22%20fill%3D%22%23fcd9b0%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_StudyTimer/"
+},
+{
+name: "영단어 반복왕",
 kind: "util",
 genre: "웹 · 학습",
 desc: "브라우저에서 바로 쓰는 영단어 암기 앱. 플래시카드와 디펜스 게임으로 외웁니다.",
@@ -1602,27 +1561,131 @@ icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F200
 url: "https://devparktools.github.io/Mini_Voca/"
 },
 {
-name: "Mini Study App",
-kind: "util",
-genre: "웹 · 앱",
-desc: "브라우저에서 바로 쓰는 공부 타이머·기록 앱.",
-icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232dd4bf%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f766e%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M14%2040H58A8%208%200%200%201%2064%2046V104A16%2016%200%200%200%2048%2092H14ZM114%2040H70A8%208%200%200%200%2064%2046V104A16%2016%200%200%201%2080%2092H114Z%22%20fill%3D%22%23fff%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cg%20stroke%3D%22%2399f6e4%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M24%2054H52M24%2064H52M24%2074H44M76%2054H104M76%2064H104%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2296%22%20cy%3D%2228%22%20r%3D%2216%22%20fill%3D%22%23fef3c7%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M96%2018V28L103%2032%22%20fill%3D%22none%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M20%2022L44%2014L48%2022L24%2030Z%22%20fill%3D%22%23fbbf24%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M20%2022L16%2030L24%2030Z%22%20fill%3D%22%23fcd9b0%22%20stroke%3D%22%23134e4a%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E",
-url: "https://devparktools.github.io/Mini_Yeolpumta/"
+name: "맞짱 격투",
+genre: "웹 · 대전",
+desc: "브라우저에서 바로 즐기는 2.5D 대전 격투 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237f1d1d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ef4444%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M18%2080V54l16-8%206%208-8%2010%208%2016zM110%2048v26l-16%208-6-8%208-10-8-16z%22%20fill%3D%22%23fde68a%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ctext%20x%3D%2264%22%20y%3D%2276%22%20font-family%3D%22Arial%20Black%2CArial%22%20font-weight%3D%22900%22%20font-size%3D%2234%22%20text-anchor%3D%22middle%22%20fill%3D%22%23fff%22%20stroke%3D%22%23450a0a%22%20stroke-width%3D%222%22%3EVS%3C%2Ftext%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_VersusFighter/"
 },
 {
-name: "던전 앞 상점",
+name: "영웅 전쟁",
+genre: "웹 · 전략",
+desc: "브라우저에서 바로 즐기는 영웅·자원·건설 RTS 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2392400e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23451a03%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M28%2098V56h12v8h12v-8h12v8h12v-8h12v42z%22%20fill%3D%22%23d6d3d1%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M56%2098V80a8%208%200%200116%200v18z%22%20fill%3D%22%2378350f%22%2F%3E%3Cpath%20d%3D%22M64%2056V24%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M64%2024h26l-8%208%208%208H64z%22%20fill%3D%22%23ef4444%22%2F%3E%3Cpath%20d%3D%22M0%20110h128v18H0z%22%20fill%3D%22%23365314%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_HeroRTS/"
+},
+{
+name: "초고속 질주",
+genre: "웹 · 액션",
+desc: "브라우저에서 바로 즐기는 고속 횡스크롤 액션 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e40af%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2338bdf8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M40%2076q4-26%2030-26l26%2014q8%206%204%2014H44q-6%200-4-2z%22%20fill%3D%22%23fff%22%20stroke%3D%22%231e3a8a%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M40%2088h60%22%20stroke%3D%22%231e3a8a%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M8%2050h28M14%2066h20M6%2082h24%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.85%22%2F%3E%3Cpath%20d%3D%22M82%2034l-8%2014h10l-8%2014%22%20fill%3D%22none%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_SpeedRunner/"
+},
+{
+name: "별바다 함대",
+genre: "웹 · 전략",
+desc: "브라우저에서 바로 즐기는 미니 실시간 전략 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23020617%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23312e81%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2224%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%22104%22%20cy%3D%2220%22%20r%3D%222.4%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%2270%22%20r%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2292%22%20r%3D%221.8%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M64%2016l14%2030%2022%2026-22-2-6%2022H56l-6-22-22%202%2022-26z%22%20fill%3D%22%2394a3b8%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2256%22%20r%3D%227%22%20fill%3D%22%2338bdf8%22%2F%3E%3Cpath%20d%3D%22M58%2096l6%2016%206-16z%22%20fill%3D%22%23fb923c%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_StarFleet/"
+},
+{
+name: "통통 별 튀기기",
+genre: "웹 · 캐주얼",
+desc: "공을 튕겨 발판을 건너 별을 모으는 공튀기기 스테이지 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237dd3fc%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23e0f2fe%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20fill%3D%22%23fff%22%20opacity%3D%22.9%22%3E%3Cellipse%20cx%3D%2226%22%20cy%3D%2226%22%20rx%3D%2218%22%20ry%3D%227%22%2F%3E%3Cellipse%20cx%3D%22100%22%20cy%3D%2246%22%20rx%3D%2216%22%20ry%3D%226%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M64%208l4%209%2010%201-8%206%203%2010-9-5-9%205%203-10-8-6%2010-1z%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23f59e0b%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cg%20stroke%3D%22%230f172a%22%20stroke-width%3D%223%22%3E%3Crect%20x%3D%2210%22%20y%3D%22100%22%20width%3D%2240%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2278%22%20y%3D%2282%22%20width%3D%2240%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%23f97316%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2260%22%20width%3D%2240%22%20height%3D%2212%22%20rx%3D%226%22%20fill%3D%22%23a855f7%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M30%2092Q38%2056%2058%2052%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%205%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M62%2078Q76%2050%2096%2074%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%205%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.6%22%2F%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%2238%22%20r%3D%2214%22%20fill%3D%22%23ef4444%22%20stroke%3D%22%237f1d1d%22%20stroke-width%3D%223%22%2F%3E%3Cellipse%20cx%3D%2257%22%20cy%3D%2233%22%20rx%3D%225%22%20ry%3D%223%22%20fill%3D%22%23fecaca%22%20transform%3D%22rotate%28-30%2057%2033%29%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%2240%22%20r%3D%222.4%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2240%22%20r%3D%222.4%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2258%22%20cy%3D%2240%22%20r%3D%221.2%22%20fill%3D%22%230f172a%22%2F%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2240%22%20r%3D%221.2%22%20fill%3D%22%230f172a%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_BounceBall/"
+},
+{
+name: "벽돌 와르르",
+genre: "웹 · 액션",
+desc: "패들로 공을 튕겨 무지개 벽돌을 깨는 벽돌깨기 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e293b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%22112%22%20height%3D%22112%22%20rx%3D%2214%22%20fill%3D%22none%22%20stroke%3D%22%2394a3b8%22%20stroke-width%3D%225%22%2F%3E%3Cg%20stroke%3D%22%230f172a%22%20stroke-width%3D%222%22%3E%3Crect%20x%3D%2218%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23ef4444%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23f97316%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2290%22%20y%3D%2218%22%20width%3D%2220%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2232%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23f97316%22%2F%3E%3Crect%20x%3D%2242%22%20y%3D%2232%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2232%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%2322c55e%22%2F%3E%3Crect%20x%3D%2290%22%20y%3D%2232%22%20width%3D%2220%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%233b82f6%22%2F%3E%3Crect%20x%3D%2218%22%20y%3D%2246%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23facc15%22%2F%3E%3Crect%20x%3D%2266%22%20y%3D%2246%22%20width%3D%2222%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%233b82f6%22%2F%3E%3Crect%20x%3D%2290%22%20y%3D%2246%22%20width%3D%2220%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23a855f7%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M62%2070L50%2086%22%20stroke%3D%22%23e2e8f0%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%223%204%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2266%22%20r%3D%227%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2296%22%20width%3D%2252%22%20height%3D%2210%22%20rx%3D%225%22%20fill%3D%22%2338bdf8%22%20stroke%3D%22%23e0f2fe%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_BrickBreaker/"
+},
+{
+name: "괴물 수집 모험",
+genre: "웹 · RPG",
+desc: "브라우저에서 바로 즐기는 미니 몬스터 RPG.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23166534%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2386efac%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M64%2030c26%200%2036%2020%2036%2040%200%2018-14%2030-36%2030S28%2088%2028%2070c0-20%2010-40%2036-40z%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M28%2062l16%206%2010-12%2010%2012%2010-12%2010%2012%2016-6%22%20fill%3D%22none%22%20stroke%3D%22%23166534%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2252%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%2314532d%22%2F%3E%3Ccircle%20cx%3D%2276%22%20cy%3D%2280%22%20r%3D%224%22%20fill%3D%22%2314532d%22%2F%3E%3Cpath%20d%3D%22M58%2090q6%205%2012%200%22%20fill%3D%22none%22%20stroke%3D%22%2314532d%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_MonsterQuest/"
+},
+{
+name: "시간의 틈새",
+genre: "웹 · RPG",
+desc: "파티 3명과 현재·과거를 오가며 싸우는 턴제 JRPG.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%234c1d95%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23be185d%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2264%22%20r%3D%2236%22%20fill%3D%22%23fff%22%20stroke%3D%22%231e1b4b%22%20stroke-width%3D%225%22%2F%3E%3Cpath%20d%3D%22M64%2040v26l16%2010%22%20fill%3D%22none%22%20stroke%3D%22%231e1b4b%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M80%2028L70%2052l14-4-10%2030%22%20fill%3D%22none%22%20stroke%3D%22%23ef4444%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M96%2096l16%2016%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_MondayBreaker/"
+},
+{
+name: "네온 미로",
+genre: "웹 · 액션",
+desc: "화난 표정의 주인공이 유령을 피해 미로의 도트를 모으는 네온 미로 아케이드.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237f1d1d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23dc2626%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M22%2022h84v84H22z%22%20fill%3D%22none%22%20stroke%3D%22%23fecaca%22%20stroke-width%3D%225%22%2F%3E%3Cpath%20d%3D%22M40%2022v40h24V40h24v48H64M22%2080h28v26M88%2022v18%22%20fill%3D%22none%22%20stroke%3D%22%23fecaca%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2264%22%20r%3D%2214%22%20fill%3D%22%23fde047%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M55%2058l8%204M73%2058l-8%204%22%20stroke%3D%22%237f1d1d%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M57%2072q7-5%2014%200%22%20fill%3D%22none%22%20stroke%3D%22%237f1d1d%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_RageMaze/"
+},
+{
+name: "닭 떼 탄막",
+genre: "웹 · 슈팅",
+desc: "방을 돌파하며 총기를 모으는 탑다운 탄막 로그라이크 슈터.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c2410c%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23431407%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cellipse%20cx%3D%2260%22%20cy%3D%2272%22%20rx%3D%2228%22%20ry%3D%2224%22%20fill%3D%22%23fff%22%20stroke%3D%22%237c2d12%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M82%2052q10-14%206-26-8%208-14%2020%22%20fill%3D%22%23ef4444%22%2F%3E%3Cpath%20d%3D%22M84%2066l16%204-16%206z%22%20fill%3D%22%23fbbf24%22%2F%3E%3Ccircle%20cx%3D%2276%22%20cy%3D%2264%22%20r%3D%223%22%20fill%3D%22%23431407%22%2F%3E%3Cpath%20d%3D%22M14%2040h16M10%2058h14M20%2076h12%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_CommuteWar/"
+},
+{
+name: "땅굴 탐험",
+genre: "웹 · 모험",
+desc: "채굴하고 제작하며 보스에 도전하는 2D 픽셀 샌드박스 게임.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2378350f%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231c1917%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M30%2040q34-22%2068%200%22%20fill%3D%22none%22%20stroke%3D%22%23e7e5e4%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M64%2034v66%22%20stroke%3D%22%23a16207%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M52%20104l12%2012%2012-12-12-16z%22%20fill%3D%22%2322d3ee%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2286%22%20r%3D%225%22%20fill%3D%22%2357534e%22%2F%3E%3Ccircle%20cx%3D%22108%22%20cy%3D%2292%22%20r%3D%226%22%20fill%3D%22%2357534e%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_DeepDelve/"
+},
+{
+name: "야근하는 성",
+genre: "웹 · 액션",
+desc: "연결된 성을 탐험하고 능력을 해금하며 보스를 쓰러뜨리는 메트로배니아.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%231e1b4b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23581c87%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ccircle%20cx%3D%2296%22%20cy%3D%2230%22%20r%3D%2214%22%20fill%3D%22%23fde68a%22%2F%3E%3Ccircle%20cx%3D%22102%22%20cy%3D%2226%22%20r%3D%2212%22%20fill%3D%22%231e1b4b%22%2F%3E%3Cpath%20d%3D%22M24%20104V58h12v8h10v-8h10v-18h16v18h10v8h10v-8h12v46z%22%20fill%3D%22%236b7280%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M58%20104V88a8%208%200%200116%200v16z%22%20fill%3D%22%23fde047%22%2F%3E%3Crect%20x%3D%2234%22%20y%3D%2276%22%20width%3D%228%22%20height%3D%2210%22%20fill%3D%22%23fde047%22%2F%3E%3Crect%20x%3D%2288%22%20y%3D%2276%22%20width%3D%228%22%20height%3D%2210%22%20fill%3D%22%23fde047%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_NightShiftCastle/"
+},
+{
+name: "퇴근길 대난투",
+genre: "웹 · 액션",
+desc: "3명의 캐릭터와 3개 스테이지, 2인 협동을 지원하는 벨트스크롤 격투 액션.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23991b1b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231e293b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Crect%20x%3D%2234%22%20y%3D%2252%22%20width%3D%2260%22%20height%3D%2244%22%20rx%3D%228%22%20fill%3D%22%2392400e%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M52%2052v-8a6%206%200%20016-6h12a6%206%200%20016%206v8M34%2072h60%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Crect%20x%3D%2258%22%20y%3D%2268%22%20width%3D%2212%22%20height%3D%2210%22%20fill%3D%22%23fde047%22%2F%3E%3Cpath%20d%3D%22M96%2028l8%2014%2014-4-6%2014M16%2030l10%208-10%208%22%20fill%3D%22none%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_CommuteBrawl/"
+},
+{
+name: "야근 던전",
+genre: "웹 · 액션",
+desc: "랜덤 스테이지를 돌파하며 영구 강화하는 2D 픽셀 로그라이크 플랫포머.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230f172a%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231e3a8a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M34%20108V50a30%2030%200%200160%200v58z%22%20fill%3D%22%23334155%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2264%22%20r%3D%2220%22%20fill%3D%22%23fff%22%20stroke%3D%22%23fbbf24%22%20stroke-width%3D%224%22%2F%3E%3Cpath%20d%3D%22M64%2052v13l9%206%22%20fill%3D%22none%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M30%2024l6%208M98%2024l-6%208%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M44%20108h40%22%20stroke%3D%22%23fde047%22%20stroke-width%3D%225%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_OvertimeDungeon/"
+},
+{
+name: "물방울 대탐험",
+genre: "웹 · 슈팅",
+desc: "랜덤 던전에서 눈물 탄환으로 보스를 쓰러뜨리는 탑다운 로그라이크 슈터.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230c4a6e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230369a1%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M64%2018C86%2046%2092%2058%2092%2074a28%2028%200%2001-56%200c0-16%206-28%2028-56z%22%20fill%3D%22%237dd3fc%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2274%22%20r%3D%225%22%20fill%3D%22%230c4a6e%22%2F%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2274%22%20r%3D%225%22%20fill%3D%22%230c4a6e%22%2F%3E%3Cpath%20d%3D%22M54%2090q10-8%2020%200%22%20fill%3D%22none%22%20stroke%3D%22%230c4a6e%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M96%2092v12M28%2088v10M110%2074v8%22%20stroke%3D%22%23bae6fd%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_DropletDepths/"
+},
+{
+name: "삽질 용사",
+genre: "웹 · 액션",
+desc: "삽을 휘두르며 스테이지를 돌파해 보스에 도전하는 8비트 레트로 액션.",
+icon: "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23a16207%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23422006%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M84%2018l18%2018-10%2010-18-18z%22%20fill%3D%22%2378350f%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M78%2040L50%2068%22%20stroke%3D%22%23fde68a%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M26%20112c0-20%2010-34%2024-44l18%2018c-8%2014-22%2026-42%2026z%22%20fill%3D%22%23e2e8f0%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M0%20116h128v12H0z%22%20fill%3D%22%23292524%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2298%22%20r%3D%226%22%20fill%3D%22%2322d3ee%22%2F%3E%3C%2Fsvg%3E",
+url: "https://devparktools.github.io/Mini_DigQuest/"
+},
+{
+name: "던전 앞 잡화점",
 genre: "시뮬레이션",
 tag: "NEW",
-desc: "작은 던전 노점을 전설의 상점으로 키우는 픽셀 상점 경영 게임.",
+desc: "던전 앞 작은 노점을 전설의 상점으로! 출퇴근길 10분 도트 경영 시뮬레이션.",
 icon: "https://play-lh.googleusercontent.com/biYWXMQT_kJYZ20kilUtO23nGX7go9urw__uMpZ3TtW95Ii06Vfv4xP_tW3_djf_-eMpxJGcYEaVDq_figsqauM=s128",
 url: "https://dungeonfrontshop.web.app",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.dungeonfrontshop" }]
 },
 {
-name: "룬 어센드",
+name: "룬 아센드",
 genre: "카드",
 tag: "NEW",
-desc: "룬을 새기고 원소를 융합해 탑을 오르는 덱빌딩 카드 로그라이크.",
+desc: "원소 카드로 룬을 새기고 융합을 터뜨리는 덱빌딩 로그라이크. 여섯 직업으로 별의 탑에 오르세요.",
 icon: "https://play-lh.googleusercontent.com/6Z1_zUOqvAwImpTBC70a0QAimC-zdCGMLZwbMJuzskpVjw7QUWIB-5zDVH_rZSKAovQrocMRLq9xTJ3RUOQziw=s128",
 url: "https://runehand-93a17.web.app",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.runehand" }]
@@ -1631,7 +1694,7 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 name: "왕국 디펜스 M",
 genre: "전략",
 tag: "NEW",
-desc: "타워를 짓고 영웅을 이끌어 왕국을 지키는 디펜스 게임.",
+desc: "타워를 세우고 영웅을 이끌어 몰려오는 적에게서 왕국을 지켜라!",
 icon: "https://play-lh.googleusercontent.com/tsXFBKZFBAXTtqxWGT2CRH0BB5IwMYIxX9hhfxlI6xrPGh28fMXV8tieC4z3A_wyiEhIq5HhV6lKkVktqRJ_ng=s128",
 url: "https://kingdom-defense-m.web.app",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.kingdomdefensem" }]
@@ -1640,7 +1703,7 @@ stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/d
 name: "깨면 레전드",
 genre: "아케이드",
 tag: "HOT",
-desc: "미사일과 레이저를 피해 달에서 탈출하는 하드코어 탑다운 아케이드.",
+desc: "한 번의 실수도 허용되지 않는 하드코어 탑뷰 아케이드. 달토끼를 지구로 탈출시키세요.",
 icon: "https://play-lh.googleusercontent.com/kNidkPRnYP6jKccBgi4l2PIgIhYOedvrFJdg92tH6M7CwdDJ49RD1FUy41p6-vqZxao4LVuotIZUTBPVOzvpiA=s128",
 stores: [
 { label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.chaosstudio.superhardgame" },
@@ -1652,35 +1715,35 @@ stores: [
 name: "윈드체스",
 genre: "보드게임",
 tag: "HOT",
-desc: "귀여운 영웅들과 PvP 대결을 즐기는 픽셀 아트 전략 보드게임.",
+desc: "귀여운 픽셀아트 캐릭터로 즐기는 전략 보드게임. PVP 대결과 스토리까지.",
 icon: "https://play-lh.googleusercontent.com/WFtPfUAuMIEeDrX9a96Dv_tCwuPmuQtQ5LD2c3xaiOMU5-i3Gn_Tu0NnEkIY9zBDBOgUZKVx3cdeyoowt92E=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.bluebook.windchess" }]
 },
 {
-name: "푸드 마스터",
+name: "푸드 어드벤처",
 genre: "시뮬레이션",
-desc: "우주에서 가장 강력한 음식을 모으고 키우는 방치형 게임.",
-icon: "https://play-lh.googleusercontent.com/ucRVJio847sY5Y4cT2y75Tf7iQN_e8UFbTBkUzN0uVpp0x8EshfS8NMg9ejOrUTeHnz1O9YnitpvQq-iysftXA=s128",
+desc: "클릭만 해도 쑥쑥 자라는 귀여운 3D 음식 강화! 푸드트럭 방치형 키우기.",
+icon: "https://play-lh.googleusercontent.com/YJmyF8cM-GHbFxu1Qdle2yOvJgI6tMLKaz7pZYuQIqjQBRse3HcAS1USYfIbqQ8mA3CIlr2PcFAdsxmhZbzvd5M=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.whilili.foodtruck" }]
 },
 {
-name: "벽돌 깨기",
+name: "벽돌깨기: 볼 브레이커",
 genre: "퍼즐",
-desc: "지루할 때 즐기는 쉽고 재미있는 벽돌 깨기.",
+desc: "공을 쏘고 벽돌을 부수는 벽돌깨기 퍼즐. AI 대결, 보스 모드, 세계 랭킹.",
 icon: "https://play-lh.googleusercontent.com/zSKBZVGvPRImuDdhefCBdZyQJksPcH-TDges42f5PugcJdz1Mg05gm-9erJQg-ZVK3GiBYMqFMFCujonez3jxA=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.brickbreaker" }]
 },
 {
-name: "지뢰 찾기",
+name: "지뢰찾기 라이트",
 genre: "캐주얼",
-desc: "지루할 때 즐기는 쉽고 재미있는 지뢰찾기.",
+desc: "추억의 고전 지뢰찾기 퍼즐. 오프라인으로 쉽게 즐기는 두뇌 게임.",
 icon: "https://play-lh.googleusercontent.com/tRpICPqwh5AkfdyByACc5aZMe2WTO6dxdqu6uN6AUKJAXIlwvTqeV-aLQ1-T7ecJl8NuSSzOvvTUL-qRTknYqgE=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.spnk.minesweeper" }]
 },
 {
 name: "비둘기의 모험",
 genre: "캐주얼",
-desc: "비둘기가 되어 신비로운 도시를 날아 탐험하는 게임.",
+desc: "비둘기가 되어 신비한 도시를 날아 최대한 멀리 가보세요. 쉬운 터치 조작.",
 icon: "https://play-lh.googleusercontent.com/T5afSP6kY5uWLphMJ4R6uj1CO6QkRGNJ7VQ3kblCvJQp4JF1tehpMiUwfKNLGDOzc3eHkQr6YgdOatuUUvoT=s128",
 stores: [
 { label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.unity3d.doveincity" },
@@ -1688,38 +1751,38 @@ stores: [
 ]
 },
 {
-name: "OX Quiz",
+name: "OX 퀴즈",
 genre: "퀴즈",
-desc: "60초 안에 상식 퀴즈를 풀고 부엉이 펫을 키우는 게임.",
+desc: "60초 안에 풀고 올빼미를 키우세요! 1,800개 이상의 재미있는 상식 퀴즈.",
 icon: "https://play-lh.googleusercontent.com/LNJ7xuWIS2QDkCWrCREWeCv6VPmt4lJ9GrXlA-p7laSYjGPR8dk48HEIJSMb4kHNcUxa68L1lPfC1rJK3m3omg=s128",
 url: "https://touch-party-67378457.web.app",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.flutter.gosuoflife" }]
 },
 {
-name: "Drag & Touch",
+name: "드래그 앤 터치",
 genre: "퍼즐",
-desc: "드래그와 탭으로 즐기는 8가지 두뇌 퍼즐.",
+desc: "드래그하고 터치하는 8가지 두뇌 퍼즐 모음. 반응속도 테스트.",
 icon: "https://play-lh.googleusercontent.com/aL57OVqA9aA8UJRjlV-Tds-mcxYqN-1tIX82EiwQ2EnaL7m1LGLCJ-mwSuXMIbnwEktqLDEKgu3tqzrKT7U02s0=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.unity3d.toucharcade" }]
 },
 {
 name: "포티페이블",
 genre: "시뮬레이션",
-desc: "동화 속 영웅들이 한자리에 모이는 판타지 세계.",
+desc: "역변한 동화 속 영웅들이 한자리에 모이는 판타지 세계!",
 icon: "https://play-lh.googleusercontent.com/D8OWYJMHj5teZRI6goWmhBXjhRwjqSquhKmQXgG5ycNvXaLQwRYPCk5MafBnfbI31gP8DC6UCcORitIceRXG=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.huweetie.fortyfable" }]
 },
 {
-name: "헤비워키데이",
+name: "워키데이",
 genre: "방치형",
-desc: "직장인이 되어 업무를 처리하고 승진하며 성장하는 캐주얼 방치형 RPG.",
+desc: "오늘도 출근! 직장인이 되어 회사 생활을 경험하며 성장하는 방치형 RPG.",
 icon: "https://play-lh.googleusercontent.com/u92bqjLe3E0cry81La0EA9iEgtkYr8cL84cDAK4Ns_G6UYfkazivPRS9-BnoKgkpGYIJi8Igt-kjrf3_Gm8KBQ=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.huweetie.workyday" }]
 },
 {
-name: "Hidden Cat",
+name: "찾았냥",
 genre: "퍼즐",
-desc: "제한 시간 안에 숨어 있는 고양이와 물건을 찾는 힐링 퍼즐 게임.",
+desc: "사라진 고양이를 찾아 도감을 완성하는 힐링 숨은그림찾기 퍼즐.",
 icon: "https://play-lh.googleusercontent.com/0BKLY3GYs8r-8ly5tl4stBnPRGypr_rPe67Q-lEiX2Y3qey7iDK4P_rrWYmf0qYTNMpJp7kptbUJ5o1_4YJ_3Q=s128",
 stores: [{ label: "구글 플레이", url: "https://play.google.com/store/apps/details?id=com.hyeonu.seekcats" }]
 }
@@ -1853,43 +1916,52 @@ about: [
 descs: [
 "A MapleStory Worlds survivor game where you mow down waves of monsters.",
 "A Roblox space-pet game: hatch eggs, collect and merge pets, and explore the Moon and Mars.",
-"A 2 vs 2 ARAM-style AOS game you can play right in your browser.",
-"A belt-scroll action game you can play right in your browser.",
-"A mini monster RPG you can play right in your browser.",
-"A mini real-time strategy game you can play right in your browser.",
-"A water-balloon battle game you can play right in your browser.",
-"A hero, resource and base-building RTS game you can play right in your browser.",
-"A 2.5D fighting game you can play right in your browser.",
-"A top-down adventure game you can play right in your browser.",
-"Classic mode and AI battle Tetris you can play right in your browser.",
-"A brick-breaker game: bounce the ball with your paddle to smash rainbow bricks.",
-"A ball-bouncing stage game: hop across platforms and collect the stars.",
-"A high-speed side-scrolling action game you can play right in your browser.",
-"A 2D pixel run-and-gun action game you can play right in your browser.",
-"A vertical-scrolling airplane shooter you can play right in your browser.",
-"An Undertale-style story RPG you can play right in your browser.",
-"A metroidvania action game you can play right in your browser.",
-"A pixel platformer with dashes and wall jumps, playable right in your browser.",
-"A side-scrolling action game you can play right in your browser.",
 "A cheer-squad rhythm game you can play right in your browser.",
-"A swipe-style dating app experience you can try right in your browser.",
+"A choice-driven story RPG you can play right in your browser.",
+"A pixel platformer with dashes and wall jumps, playable right in your browser.",
+"A water-balloon battle game you can play right in your browser.",
+"A 2 vs 2 ARAM-style AOS game you can play right in your browser.",
+"A top-down adventure game you can play right in your browser.",
+"A belt-scroll action game you can play right in your browser.",
+"A metroidvania action game you can play right in your browser.",
+"Classic mode and AI battle block puzzle you can play right in your browser.",
+"A vertical-scrolling airplane shooter you can play right in your browser.",
+"A 2D pixel run-and-gun action game you can play right in your browser.",
+"A side-scrolling action game you can play right in your browser.",
 "A date-course recommendation roulette app you can use right in your browser.",
-"An English vocabulary app you can use right in your browser. Memorize with flashcards and a defense game.",
+"A swipe-style dating app experience you can try right in your browser.",
 "A study timer and tracking app you can use right in your browser.",
-"A pixel shop-management game where you grow a small dungeon stall into a legendary shop.",
-"A deck-building card roguelike where you inscribe runes and fuse elements to climb the tower.",
-"A defense game where you build towers and lead heroes to protect the kingdom.",
-"A hardcore top-down arcade game: dodge missiles and lasers to escape the moon.",
-"A pixel-art strategy board game with PvP battles featuring cute heroes.",
-"An idle game where you collect and raise the most powerful food in the universe.",
-"Easy and fun brick breaker for when you're bored.",
-"Easy and fun Minesweeper for when you're bored.",
-"A game where you become a pigeon and fly through a mysterious city.",
-"A game where you answer trivia quizzes in 60 seconds and raise an owl pet.",
-"8 brain puzzles played with drags and taps.",
-"A fantasy world where fairy-tale heroes gather in one place.",
-"A casual idle RPG where you become an office worker, handle tasks and get promoted.",
-"A relaxing puzzle game where you find hidden cats and objects before time runs out."
+"An English vocabulary app you can use right in your browser. Memorize with flashcards and a defense game.",
+"A 2.5D fighting game you can play right in your browser.",
+"A hero, resource and base-building RTS game you can play right in your browser.",
+"A high-speed side-scrolling action game you can play right in your browser.",
+"A mini real-time strategy game you can play right in your browser.",
+"A ball-bouncing stage game: hop across platforms and collect the stars.",
+"A brick-breaker game: bounce the ball with your paddle to smash rainbow bricks.",
+"A mini monster RPG you can play right in your browser.",
+"A turn-based JRPG: a party of three fights across the present and the past.",
+"A neon maze arcade: an angry hero dodges ghosts and gathers dots.",
+"A top-down bullet-hell roguelike shooter: clear rooms and collect guns.",
+"A 2D pixel sandbox: dig, craft and challenge bosses.",
+"A metroidvania: explore a connected castle, unlock abilities and defeat bosses.",
+"A side-scrolling brawler with 3 characters, 3 stages and 2-player co-op.",
+"A 2D pixel roguelike platformer: clear random stages and grow stronger permanently.",
+"A top-down roguelike shooter: defeat bosses with tear shots in random dungeons.",
+"An 8-bit retro action game: swing your shovel through stages and take on the boss.",
+"Turn a tiny stall outside the dungeon into a legendary shop! A 10-minute pixel shop-management sim for your commute.",
+"A deck-building roguelike where you inscribe runes with element cards and trigger fusions. Climb the Tower of Stars with six classes.",
+"Build towers and lead your heroes to defend the kingdom from the oncoming enemy waves!",
+"A hardcore top-down arcade where one mistake is too many. Help the moon rabbit escape to Earth.",
+"A strategy board game with cute pixel-art characters. PVP battles and a story to follow.",
+"Cute 3D foods grow just by tapping! An idle food-truck growing game.",
+"A brick-breaker puzzle where you fire balls and smash bricks. AI battles, boss mode and world rankings.",
+"The classic nostalgic Minesweeper puzzle. An easy offline brain game.",
+"Become a pigeon and fly through a mysterious city as far as you can. Simple touch controls.",
+"Answer within 60 seconds and raise your owl! Over 1,800 fun trivia quizzes.",
+"A collection of 8 brain puzzles you play by dragging and tapping. Test your reflexes.",
+"A fantasy world where twisted fairy-tale heroes gather in one place!",
+"Off to work again today! An idle RPG where you live the office life and grow.",
+"Find the missing cats and complete your collection in a healing hidden-object puzzle."
 ],
 services: [
 {
@@ -2594,43 +2666,52 @@ about: [
 descs: [
 "押し寄せるモンスターを一掃する、メイプルストーリーワールドのサバイバーゲーム。",
 "卵を孵化させてペットを集め・合成し、月や火星を探索するRobloxの宇宙ペットゲーム。",
-"ブラウザですぐ遊べる、2対2のARAMスタイルAOSゲーム。",
-"ブラウザですぐ遊べる、ベルトスクロールアクションゲーム。",
-"ブラウザですぐ遊べる、ミニモンスターRPG。",
-"ブラウザですぐ遊べる、ミニリアルタイムストラテジー。",
-"ブラウザですぐ遊べる、水風船対戦ゲーム。",
-"ブラウザですぐ遊べる、ヒーロー・資源・建設のRTSゲーム。",
-"ブラウザですぐ遊べる、2.5D対戦格闘ゲーム。",
-"ブラウザですぐ遊べる、トップダウンのアドベンチャーゲーム。",
-"ブラウザですぐ遊べる、クラシックモードとAI対戦のテトリス。",
-"パドルでボールを跳ね返してカラフルなブロックを崩すブロック崩しゲーム。",
-"ボールを弾ませて足場を渡り、星を集めるステージゲーム。",
-"ブラウザですぐ遊べる、高速横スクロールアクションゲーム。",
-"ブラウザですぐ遊べる、2Dピクセルのラン&ガンアクションゲーム。",
-"ブラウザですぐ遊べる、縦スクロールの飛行機シューティングゲーム。",
-"ブラウザですぐ遊べる、Undertale風ストーリーRPG。",
-"ブラウザですぐ遊べる、メトロイドヴァニアアクションゲーム。",
-"ブラウザですぐ遊べる、ダッシュと壁ジャンプのピクセルプラットフォーマー。",
-"ブラウザですぐ遊べる、横スクロールアクションゲーム。",
 "ブラウザですぐ遊べる、応援団リズムゲーム。",
-"ブラウザですぐ体験できる、スワイプ式のマッチングアプリ。",
+"ブラウザですぐ遊べる、選択が分かれるストーリーRPG。",
+"ブラウザですぐ遊べる、ダッシュと壁ジャンプのピクセルプラットフォーマー。",
+"ブラウザですぐ遊べる、水風船対戦ゲーム。",
+"ブラウザですぐ遊べる、2対2のARAMスタイルAOSゲーム。",
+"ブラウザですぐ遊べる、トップダウンのアドベンチャーゲーム。",
+"ブラウザですぐ遊べる、ベルトスクロールアクションゲーム。",
+"ブラウザですぐ遊べる、メトロイドヴァニアアクションゲーム。",
+"ブラウザですぐ遊べる、クラシックモードとAI対戦のテトリス。",
+"ブラウザですぐ遊べる、縦スクロールの飛行機シューティングゲーム。",
+"ブラウザですぐ遊べる、2Dピクセルのラン&ガンアクションゲーム。",
+"ブラウザですぐ遊べる、横スクロールアクションゲーム。",
 "ブラウザですぐ使える、デートコースをルーレットで選ぶアプリ。",
-"ブラウザですぐ使える英単語暗記アプリ。フラッシュカードとディフェンスゲームで覚えます。",
+"ブラウザですぐ体験できる、スワイプ式のマッチングアプリ。",
 "ブラウザですぐ使える、勉強タイマー・記録アプリ。",
-"小さなダンジョンの屋台を伝説の店に育てる、ピクセル店舗経営ゲーム。",
-"ルーンを刻み属性を融合して塔を登る、デッキ構築カードローグライク。",
-"タワーを建て英雄を率いて王国を守る、ディフェンスゲーム。",
-"ミサイルとレーザーをかわして月から脱出する、ハードコアなトップダウンアーケード。",
-"かわいい英雄たちとPvP対戦を楽しむ、ピクセルアートの戦略ボードゲーム。",
-"宇宙で最も強力な食べ物を集めて育てる、放置型ゲーム。",
-"退屈なときに楽しめる、手軽で面白いブロック崩し。",
-"退屈なときに楽しめる、手軽で面白いマインスイーパー。",
-"ハトになって不思議な街を飛び回り探検するゲーム。",
-"60秒以内に一般常識クイズを解き、フクロウのペットを育てるゲーム。",
-"ドラッグとタップで遊ぶ8種類の頭脳パズル。",
-"童話の英雄たちが一堂に集まるファンタジーの世界。",
-"会社員になって業務をこなし昇進して成長する、カジュアル放置型RPG。",
-"制限時間内に隠れているネコやモノを探す、癒やしのパズルゲーム。"
+"ブラウザですぐ使える英単語暗記アプリ。フラッシュカードとディフェンスゲームで覚えます。",
+"ブラウザですぐ遊べる、2.5D対戦格闘ゲーム。",
+"ブラウザですぐ遊べる、ヒーロー・資源・建設のRTSゲーム。",
+"ブラウザですぐ遊べる、高速横スクロールアクションゲーム。",
+"ブラウザですぐ遊べる、ミニリアルタイムストラテジー。",
+"ボールを弾ませて足場を渡り、星を集めるステージゲーム。",
+"パドルでボールを跳ね返してカラフルなブロックを崩すブロック崩しゲーム。",
+"ブラウザですぐ遊べる、ミニモンスターRPG。",
+"3人のパーティで現在と過去を行き来して戦うターン制JRPG。",
+"怒った主人公がゴーストを避けてドットを集めるネオン調の迷路アーケード。",
+"部屋を突破して銃を集める、見下ろし型の弾幕ローグライクシューター。",
+"掘って作ってボスに挑む2Dピクセルのサンドボックスゲーム。",
+"つながった城を探索し、能力を解放してボスを倒すメトロイドヴァニア。",
+"3人のキャラクター、3ステージ、2人協力に対応したベルトスクロール格闘アクション。",
+"ランダムなステージを突破して永続強化していく2Dピクセルのローグライクプラットフォーマー。",
+"ランダムなダンジョンで涙の弾丸を放ちボスを倒す、見下ろし型ローグライクシューター。",
+"シャベルを振るってステージを突破しボスに挑む8ビットのレトロアクション。",
+"ダンジョン前の小さな屋台を伝説のお店に育てよう！通勤時間に10分で遊べるドット経営シミュレーション。",
+"属性カードでルーンを刻み、融合を炸裂させるデッキ構築ローグライク。6つの職業で星の塔を登ろう。",
+"タワーを建て、英雄を率いて、押し寄せる敵から王国を守れ！",
+"ミスが一度も許されないハードコアなトップビューアーケード。月のウサギを地球へ脱出させよう。",
+"かわいいピクセルアートのキャラで楽しむ戦略ボードゲーム。PVP対戦とストーリー付き。",
+"タップするだけでぐんぐん育つかわいい3D食べ物！フードトラック放置育成ゲーム。",
+"ボールを撃ってブロックを壊すブロック崩しパズル。AI対戦、ボスモード、世界ランキング。",
+"懐かしの定番マインスイーパー。オフラインで気軽に遊べる頭脳ゲーム。",
+"ハトになって不思議な街をできるだけ遠くまで飛ぼう。かんたんタッチ操作。",
+"60秒以内に解いてフクロウを育てよう！1,800問以上の楽しい雑学クイズ。",
+"ドラッグとタッチで遊ぶ8種類の頭脳パズル集。反応速度テスト。",
+"童話のヒーローたちが一堂に会するファンタジー世界！",
+"今日も出勤！会社員になって会社生活を体験しながら成長する放置系RPG。",
+"いなくなった猫を探して図鑑を完成させる、癒やしの隠し絵探しパズル。"
 ],
 services: [
 {
@@ -3335,43 +3416,52 @@ about: [
 descs: [
 "横扫蜂拥而来的怪物,新枫之谷世界的生存游戏。",
 "孵化蛋、收集并合成宠物、探索月球与火星的Roblox太空宠物游戏。",
-"在浏览器中即可畅玩的2对2大乱斗风格AOS游戏。",
-"在浏览器中即可畅玩的横版清关动作游戏。",
-"在浏览器中即可畅玩的迷你怪物RPG。",
-"在浏览器中即可畅玩的迷你即时战略游戏。",
-"在浏览器中即可畅玩的水球对战游戏。",
-"在浏览器中即可畅玩的英雄、资源、建造类RTS游戏。",
-"在浏览器中即可畅玩的2.5D对战格斗游戏。",
-"在浏览器中即可畅玩的俯视角冒险游戏。",
-"在浏览器中即可畅玩的经典模式与AI对战俄罗斯方块。",
-"用挡板弹球击碎彩虹砖块的打砖块游戏。",
-"弹跳小球越过平台、收集星星的关卡游戏。",
-"在浏览器中即可畅玩的高速横版卷轴动作游戏。",
-"在浏览器中即可畅玩的2D像素跑酷射击动作游戏。",
-"在浏览器中即可畅玩的纵向卷轴飞机射击游戏。",
-"在浏览器中即可畅玩的Undertale风格剧情RPG。",
-"在浏览器中即可畅玩的银河恶魔城式动作游戏。",
-"在浏览器中即可畅玩的冲刺、蹬墙跳像素平台跳跃游戏。",
-"在浏览器中即可畅玩的横版卷轴动作游戏。",
 "在浏览器中即可畅玩的啦啦队节奏游戏。",
-"在浏览器中即可体验的滑动式交友应用。",
+"在浏览器中即可畅玩的选择分歧的剧情RPG。",
+"在浏览器中即可畅玩的冲刺、蹬墙跳像素平台跳跃游戏。",
+"在浏览器中即可畅玩的水球对战游戏。",
+"在浏览器中即可畅玩的2对2大乱斗风格AOS游戏。",
+"在浏览器中即可畅玩的俯视角冒险游戏。",
+"在浏览器中即可畅玩的横版清关动作游戏。",
+"在浏览器中即可畅玩的银河恶魔城式动作游戏。",
+"在浏览器中即可畅玩的经典模式与AI对战俄罗斯方块。",
+"在浏览器中即可畅玩的纵向卷轴飞机射击游戏。",
+"在浏览器中即可畅玩的2D像素跑酷射击动作游戏。",
+"在浏览器中即可畅玩的横版卷轴动作游戏。",
 "在浏览器中即可使用的约会路线推荐轮盘应用。",
-"在浏览器中即可使用的英语单词记忆应用,通过闪卡和塔防游戏来背单词。",
+"在浏览器中即可体验的滑动式交友应用。",
 "在浏览器中即可使用的学习计时与记录应用。",
-"把地下城小摊经营成传说商店的像素店铺经营游戏。",
-"镌刻符文、融合元素攀登高塔的卡组构筑卡牌Roguelike。",
-"建造防御塔、率领英雄守护王国的塔防游戏。",
-"躲避导弹和激光、逃离月球的硬核俯视角街机游戏。",
-"与可爱英雄展开PvP对战的像素风策略桌游。",
-"收集并养成宇宙最强美食的放置游戏。",
-"无聊时轻松有趣的打砖块。",
-"无聊时轻松有趣的扫雷。",
-"化身鸽子,在神秘城市中飞行探险的游戏。",
-"在60秒内回答常识问答并养成猫头鹰宠物的游戏。",
-"用拖动和点击来玩的8种烧脑益智游戏。",
-"童话英雄齐聚一堂的奇幻世界。",
-"成为上班族处理工作、晋升成长的休闲放置RPG。",
-"在限定时间内找出藏起来的猫咪和物品的治愈益智游戏。"
+"在浏览器中即可使用的英语单词记忆应用,通过闪卡和塔防游戏来背单词。",
+"在浏览器中即可畅玩的2.5D对战格斗游戏。",
+"在浏览器中即可畅玩的英雄、资源、建造类RTS游戏。",
+"在浏览器中即可畅玩的高速横版卷轴动作游戏。",
+"在浏览器中即可畅玩的迷你即时战略游戏。",
+"弹跳小球越过平台、收集星星的关卡游戏。",
+"用挡板弹球击碎彩虹砖块的打砖块游戏。",
+"在浏览器中即可畅玩的迷你怪物RPG。",
+"三人小队穿梭于现在与过去战斗的回合制JRPG。",
+"愤怒的主角躲避幽灵、收集豆子的霓虹迷宫街机游戏。",
+"通关房间并收集枪械的俯视角弹幕Roguelike射击游戏。",
+"挖掘、制作并挑战Boss的2D像素沙盒游戏。",
+"探索相连的城堡、解锁能力并击败Boss的银河恶魔城游戏。",
+"支持3名角色、3个关卡和双人合作的横版格斗动作游戏。",
+"通关随机关卡并永久强化的2D像素Roguelike平台跳跃游戏。",
+"在随机地牢中用泪弹击败Boss的俯视角Roguelike射击游戏。",
+"挥舞铁锹闯过关卡并挑战Boss的8位复古动作游戏。",
+"把地下城前的小摊打造成传说中的商店！通勤路上10分钟的像素经营模拟游戏。",
+"用元素卡牌刻下符文并引爆融合的构筑类Roguelike。选择六种职业登上星之塔。",
+"建造防御塔，率领英雄，守护王国抵御汹涌而来的敌人！",
+"不允许任何失误的硬核俯视角街机游戏。帮助月兔逃往地球。",
+"用可爱的像素风角色玩的策略棋盘游戏。含PVP对战和剧情。",
+"只需点击就能茁壮成长的可爱3D美食！美食餐车放置养成游戏。",
+"发射球击碎砖块的打砖块益智游戏。AI对战、Boss模式、世界排行榜。",
+"怀旧经典扫雷益智游戏。可离线轻松游玩的头脑游戏。",
+"化身鸽子，飞越神秘的城市，飞得越远越好。简单的触控操作。",
+"在60秒内答题并养大猫头鹰！超过1,800道有趣的常识问答。",
+"通过拖动和点击来玩的8款益智小游戏合集。测试你的反应速度。",
+"童话英雄齐聚一堂的奇幻世界！",
+"今天也要上班！化身上班族体验公司生活并成长的放置RPG。",
+"找到走失的小猫，完成图鉴的治愈系找图益智游戏。"
 ],
 services: [
 {
@@ -4053,6 +4143,8 @@ if (partial) return tr || [];
 return tr && tr.length === base.length ? tr : base;
 }
 
+const NAME_EN = {"힘내라 응원단":"Cheer Beat","갈림길 이야기":"Soul Tale","정상 도전기":"Peak Dash","물풍선 대작전":"Splash Arena","협곡 듀오전":"Duo Rift","모래시계 모험":"Hourglass Quest","던전 주먹왕":"Dungeon Brawler","등불 기사":"Lantern Knight","블록 쌓기 대결":"Block Rush","하늘의 에이스":"Sky Ace","달려라 총잡이":"Run & Gun","대포팔 사냥꾼":"Cannon Hunter","데이트 코스 룰렛":"Date Roulette","밀어서 짝 찾기":"Swipe Match","열공 타이머":"Study Timer","영단어 반복왕":"Voca Loop","맞짱 격투":"Versus Fighter","영웅 전쟁":"Hero Siege RTS","초고속 질주":"Speed Rush","별바다 함대":"Star Fleet","통통 별 튀기기":"Bounce Hop","벽돌 와르르":"Brick Rush","괴물 수집 모험":"Monster Quest","시간의 틈새":"Time Rift","네온 미로":"Neon Maze","닭 떼 탄막":"Chicken Barrage","야근하는 성":"Night Castle","퇴근길 대난투":"Commute Brawl","야근 던전":"Overtime Dungeon","물방울 대탐험":"Droplet Depths","땅굴 탐험":"Deep Delve","삽질 용사":"Dig Quest"};
+
 function localize(lang) {
 LANG = lang;
 const pack = I18N[lang] || I18N.ko;
@@ -4071,6 +4163,7 @@ const parts = w.genre.split(" · ").map(function (g) {
 return U.genres[g] || g;
 });
 const out = Object.assign({}, w, {
+name: NAME_EN[w.name] || w.name,
 genre: parts.join(" · "),
 desc: pack.descs && pack.descs[i] ? pack.descs[i] : w.desc
 });
@@ -4526,7 +4619,6 @@ function buildWorks() {
 const wrap = el("div");
 wrap.appendChild(el("p", "hint", U.hintWorks));
 const utilSlot = el("div");
-wrap.appendChild(utilSlot);
 wrap.appendChild(el("h3", "sec-head", U.secGames));
 
 const chips = el("div", "chips");
@@ -4561,6 +4653,7 @@ wrap.appendChild(grid);
 const empty = el("p", "empty", U.empty);
 empty.hidden = true;
 wrap.appendChild(empty);
+wrap.appendChild(utilSlot);
 if (utilCount) {
 utilSlot.appendChild(el("h3", "sec-head", U.secUtils));
 utilSlot.appendChild(utilGrid);
